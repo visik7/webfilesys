@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-import sun.io.MalformedInputException;
 import de.webfilesys.WebFileSys;
 import de.webfilesys.util.CommonUtils;
 
@@ -188,7 +187,7 @@ public class TailRequestHandler extends UserRequestHandler
                         queueLine(line);
                     }
                 } 
-                catch (MalformedInputException miEx) {
+                catch (Exception miEx) {
                     Logger.getLogger(getClass()).warn("error during reading file for tail", miEx);
                     excCounter++;
                     queueLine(ENCODING_ERROR);

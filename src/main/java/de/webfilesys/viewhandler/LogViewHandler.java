@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import sun.io.MalformedInputException;
 import de.webfilesys.ViewHandlerConfig;
 import de.webfilesys.util.CommonUtils;
 
@@ -168,7 +167,7 @@ public class LogViewHandler implements ViewHandler
                         }
         	        }
         	    } 
-        	    catch (MalformedInputException miEx) {
+        	    catch (Exception miEx) {
         	        Logger.getLogger(getClass()).warn("error during read of log file", miEx);
         	        excCounter++;
         	    }
