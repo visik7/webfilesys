@@ -650,7 +650,7 @@ function deleteAppointment(eventId)
 	{
 		return;
 	}
-	var url = "/webfilesys/servlet?command=calendar&cmd=delAppointment&eventId=" + eventId;
+	var url = "/doxee-internal/servlet?command=calendar&cmd=delAppointment&eventId=" + eventId;
 	xmlRequest(url, showDeleteResult);
 }
 
@@ -689,7 +689,7 @@ function showDeleteResult()
 
 function moveAppointment(eventId)
 {
-	var url = "/webfilesys/servlet?command=calendar&cmd=moveAppointment&eventId=" + eventId;
+	var url = "/doxee-internal/servlet?command=calendar&cmd=moveAppointment&eventId=" + eventId;
 	xmlRequest(url, showMoveResult);
 }
 
@@ -713,7 +713,7 @@ function showMoveResult()
 
 function pasteAppointment(year, month, dayOfMonth)
 {
-	var url = "/webfilesys/servlet?command=calendar&cmd=pasteAppointment&year=" + year + "&month=" + month + "&dayOfMonth=" + dayOfMonth;
+	var url = "/doxee-internal/servlet?command=calendar&cmd=pasteAppointment&year=" + year + "&month=" + month + "&dayOfMonth=" + dayOfMonth;
 	xmlRequest(url, showPasteResult);
 }
 
@@ -746,7 +746,7 @@ function changeAppointment()
 	
 	formData = formData + "command=calendar&cmd=changeAppointment";
 	
-	xmlRequestPost("/webfilesys/servlet", formData, showChangeResult)	
+	xmlRequestPost("/doxee-internal/servlet", formData, showChangeResult)	
 }
 
 function showChangeResult()
@@ -812,7 +812,7 @@ function createAppointment()
 	
 	formData = formData + "&year=" + selectedDay.year + "&month=" + selectedDay.month + "&day=" + selectedDay.dayOfMonth;
 	
-	xmlRequestPost("/webfilesys/servlet", formData, showCreateResult)	
+	xmlRequestPost("/doxee-internal/servlet", formData, showCreateResult)	
 }
 
 function showCreateResult()
@@ -871,7 +871,7 @@ function showCreateResult()
 
 function reloadMonth()
 {
-    window.location.href = "/webfilesys/servlet?command=calendar&cmd=month&year=" + selectedDay.year + "&month=" + selectedDay.month;
+    window.location.href = "/doxee-internal/servlet?command=calendar&cmd=month&year=" + selectedDay.year + "&month=" + selectedDay.month;
 }
 
 function getAppointmentById(dayOfMonth, appointmentId)

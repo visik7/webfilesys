@@ -8,7 +8,7 @@
 
 <div class="promptHead" resource="label.renamedir"></div>
     
-<form accept-charset="utf-8" name="mkdirForm" id="mkdirForm" method="get" action="/webfilesys/servlet" style="display:inline;">
+<form accept-charset="utf-8" name="mkdirForm" id="mkdirForm" method="get" action="/doxee-internal/servlet" style="display:inline;">
   <input type="hidden" name="command" value="renameDir" />
   <input type="hidden" name="path">
     <xsl:attribute name="value"><xsl:value-of select="/renameFolder/currentPath" /></xsl:attribute>

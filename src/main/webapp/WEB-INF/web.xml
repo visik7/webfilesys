@@ -35,7 +35,7 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
     <servlet-class>de.webfilesys.servlet.WebFileSysServlet</servlet-class>
     <init-param>
       <param-name>config</param-name>
-      <param-value>/WEB-INF/webfilesys.conf</param-value>
+      <param-value>/WEB-INF/doxee-internal.conf</param-value>
     </init-param>
     <init-param>
       <param-name>log4jConfig</param-name>

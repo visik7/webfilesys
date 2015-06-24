@@ -14,41 +14,41 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
 </link>
 
 <xsl:if test="not(/fileList/browserXslEnabled)">
-  <script src="/webfilesys/javascript/ajaxslt/util.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/dom.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/util.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/dom.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
 </xsl:if>
 
-<script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/fmweb.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/thumbnail.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/viewMode.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/graphicsContextMenu.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/graphicsLinkMenu.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/contextMenuMouse.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/ajax.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/ajaxGraphics.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/popupPicture.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/keyFileList.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/fmweb.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/thumbnail.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/viewMode.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/graphicsContextMenu.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/graphicsLinkMenu.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/contextMenuMouse.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/ajax.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/ajaxGraphics.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/popupPicture.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/keyFileList.js" type="text/javascript"></script>
 
-<script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 <script type="text/javascript">
-  <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
+  <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
 </script>
 
 <xsl:if test="/fileList/geoTag">
-  <script src="/webfilesys/javascript/geoMap.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/geoMap.js" type="text/javascript"></script>
 </xsl:if>
 
 <script type="text/javascript">
@@ -68,10 +68,10 @@
   function publish(path)
   {
       <xsl:if test="/fileList/mailEnabled">
-        publishWin=window.open('/webfilesys/servlet?command=publishForm&amp;actPath=<xsl:value-of select="fileList/encodedPath" />&amp;type=common&amp;viewMode=2','publish','status=no,toolbar=no,menu=no,width=620,height=580,resizable=yes,scrollbars=no,left=40,top=20,screenX=30,screenY=20');
+        publishWin=window.open('/doxee-internal/servlet?command=publishForm&amp;actPath=<xsl:value-of select="fileList/encodedPath" />&amp;type=common&amp;viewMode=2','publish','status=no,toolbar=no,menu=no,width=620,height=580,resizable=yes,scrollbars=no,left=40,top=20,screenX=30,screenY=20');
       </xsl:if>
       <xsl:if test="not(/fileList/mailEnabled)">
-        publishWin=window.open('/webfilesys/servlet?command=publishParms&amp;actPath=<xsl:value-of select="fileList/encodedPath" />&amp;type=common&amp;viewMode=2','publish','status=no,toolbar=no,menu=no,width=620,height=320,resizable=yes,scrollbars=no,left=40,top=80,screenX=30,screenY=80');
+        publishWin=window.open('/doxee-internal/servlet?command=publishParms&amp;actPath=<xsl:value-of select="fileList/encodedPath" />&amp;type=common&amp;viewMode=2','publish','status=no,toolbar=no,menu=no,width=620,height=320,resizable=yes,scrollbars=no,left=40,top=80,screenX=30,screenY=80');
       </xsl:if>
       publishWin.focus();
   }
@@ -79,7 +79,7 @@
   function showImage(imgPath, width, height)
   {
       randNum = (new Date()).getTime();
-      picWin = window.open('/webfilesys/servlet?command=showImg&amp;imgname=' + encodeURIComponent(imgPath) + '&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height + '&amp;random=' + randNum,'picWin' + randNum,'status=no,toolbar=no,location=no,menu=no,width=' + width + ',height=' + (height + 52) + ',resizable=yes,left=1,top=1,screenX=1,screenY=1');
+      picWin = window.open('/doxee-internal/servlet?command=showImg&amp;imgname=' + encodeURIComponent(imgPath) + '&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height + '&amp;random=' + randNum,'picWin' + randNum,'status=no,toolbar=no,location=no,menu=no,width=' + width + ',height=' + (height + 52) + ',resizable=yes,left=1,top=1,screenX=1,screenY=1');
       picWin.focus();
   }
   
@@ -103,7 +103,7 @@
        if (ajaxRPC("checkForGeoData", "") == 'true')
        {
            hideHourGlass();
-           window.location.href = "/webfilesys/servlet?command=googleEarthDirPlacemarks";
+           window.location.href = "/doxee-internal/servlet?command=googleEarthDirPlacemarks";
        } 
        else
        {
@@ -118,7 +118,7 @@
        if (ajaxRPC("checkForGeoData", "") == 'true')
        {
            hideHourGlass();
-           var mapWin = window.open('/webfilesys/servlet?command=osMapFiles&amp;path=' + encodeURIComponent('<xsl:value-of select="/fileList/pathForScript" />'),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
+           var mapWin = window.open('/doxee-internal/servlet?command=osMapFiles&amp;path=' + encodeURIComponent('<xsl:value-of select="/fileList/pathForScript" />'),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
            mapWin.focus();
        } 
        else
@@ -166,7 +166,7 @@
 
       function zoomLink<xsl:value-of select="@id" />()
       {
-          showPicturePopup('/webfilesys/servlet?command=getFile&amp;filePath=' + encodeURIComponent('<xsl:value-of select="realPathForScript" />'),<xsl:value-of select="xpix" />,<xsl:value-of select="ypix" />);
+          showPicturePopup('/doxee-internal/servlet?command=getFile&amp;filePath=' + encodeURIComponent('<xsl:value-of select="realPathForScript" />'),<xsl:value-of select="xpix" />,<xsl:value-of select="ypix" />);
       }
 
     </xsl:if>
@@ -183,7 +183,7 @@
 
       function zoom<xsl:value-of select="@id" />()
       {
-          showPicturePopup('/webfilesys/servlet?command=getFile&amp;filePath=' + encodeURIComponent('<xsl:value-of select="/fileList/pathForScript" /><xsl:value-of select="@name" />'),<xsl:value-of select="xpix" />,<xsl:value-of select="ypix" />);
+          showPicturePopup('/doxee-internal/servlet?command=getFile&amp;filePath=' + encodeURIComponent('<xsl:value-of select="/fileList/pathForScript" /><xsl:value-of select="@name" />'),<xsl:value-of select="xpix" />,<xsl:value-of select="ypix" />);
       }
 
       <!--
@@ -284,7 +284,7 @@
 
           <td id="mapIcon" class="mapIcon" valign="top">
             <a href="javascript:showMapSelection()">
-              <img src="/webfilesys/images/geoTag.gif" width="30" height="30" border="0" style="float:right">
+              <img src="/doxee-internal/images/geoTag.gif" width="30" height="30" border="0" style="float:right">
                 <xsl:attribute name="titleResource">label.geoMapLink</xsl:attribute>
               </img>
             </a>
@@ -334,7 +334,7 @@
   </table>
   <!-- tabs end -->
 
-  <form accept-charset="utf-8" name="sortform" method="get" action="/webfilesys/servlet" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="sortform" method="get" action="/doxee-internal/servlet" style="padding:0px;margin:0px;">
   
     <input type="hidden" name="command" value="thumbnail" />
   
@@ -443,7 +443,7 @@
     </table>    
   </form>
 
-  <form accept-charset="utf-8" name="form2" action="/webfilesys/servlet" method="post" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="form2" action="/doxee-internal/servlet" method="post" style="padding:0px;margin:0px;">
     <input type="hidden" name="actpath">
       <xsl:attribute name="value">
         <xsl:value-of select="currentPath" />
@@ -677,11 +677,11 @@
                   <xsl:if test="not(/fileList/readonly)">
 
                     <input type="button" resource="button.upload">
-                      <xsl:attribute name="onclick">javascript:window.location.href='/webfilesys/servlet?command=uploadParms&amp;actpath='+encodeURIComponent('<xsl:value-of select="/fileList/menuPath" />');</xsl:attribute>
+                      <xsl:attribute name="onclick">javascript:window.location.href='/doxee-internal/servlet?command=uploadParms&amp;actpath='+encodeURIComponent('<xsl:value-of select="/fileList/menuPath" />');</xsl:attribute>
                     </input> 
                                  
                     <input type="button" resource="button.paste" id="pasteButton">
-                      <xsl:attribute name="onclick">javascript:window.location.href='/webfilesys/servlet?command=pasteFiles';</xsl:attribute>
+                      <xsl:attribute name="onclick">javascript:window.location.href='/doxee-internal/servlet?command=pasteFiles';</xsl:attribute>
                       <xsl:if test="/fileList/clipBoardEmpty">
                         <xsl:attribute name="style">display:none</xsl:attribute>
                       </xsl:if>

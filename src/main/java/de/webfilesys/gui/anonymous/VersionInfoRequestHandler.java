@@ -22,8 +22,8 @@ public class VersionInfoRequestHandler
 		output.println("<HEAD>");
 		output.println("<TITLE> WebFileSys Version Info </TITLE>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/fmweb.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/fmweb.css\">");
 
 		output.println("</HEAD>");
 		output.println("<BODY>");

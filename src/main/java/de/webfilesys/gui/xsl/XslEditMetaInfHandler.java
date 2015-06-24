@@ -276,15 +276,15 @@ public class XslEditMetaInfHandler extends XslRequestHandlerBase
 		
         if (isMobile()) 
 		{
-		    output.println("window.location.href='/webfilesys/servlet?command=mobile&cmd=folderFileList&keepListStatus=true';");
+		    output.println("window.location.href='/doxee-internal/servlet?command=mobile&cmd=folderFileList&keepListStatus=true';");
 		}
 		else
 		{
 			if (path.endsWith(".") && (colorChanged || iconChanged)) {
 				String encodedPath  = UTF8URLEncoder.encode(path.substring(0, path.length() - 1));
-	            output.println("if (window.opener) {window.opener.parent.frames[1].location.href='/webfilesys/servlet?command=exp&actPath=" + encodedPath + "&expand=" + encodedPath + "&fastPath=true'};");
+	            output.println("if (window.opener) {window.opener.parent.frames[1].location.href='/doxee-internal/servlet?command=exp&actPath=" + encodedPath + "&expand=" + encodedPath + "&fastPath=true'};");
 		    } else {
-	            output.println("if (window.opener) {window.opener.parent.frames[2].location.href='/webfilesys/servlet?command=listFiles&keepListStatus=true'};");
+	            output.println("if (window.opener) {window.opener.parent.frames[2].location.href='/doxee-internal/servlet?command=listFiles&keepListStatus=true'};");
 		    }
 		}
 		
@@ -314,7 +314,7 @@ public class XslEditMetaInfHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(metaInfElement);
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/editMetaInf.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/editMetaInf.xsl\"");
 
 		doc.insertBefore(xslRef, metaInfElement);
 
@@ -625,7 +625,7 @@ public class XslEditMetaInfHandler extends XslRequestHandlerBase
 		
 		if (thumbnailFile.exists())
 		{
-			srcFileName = "/webfilesys/servlet?command=getThumb&imgFile=" + UTF8URLEncoder.encode(filePath);
+			srcFileName = "/doxee-internal/servlet?command=getThumb&imgFile=" + UTF8URLEncoder.encode(filePath);
 
 			useThumb = true;
 		}
@@ -669,7 +669,7 @@ public class XslEditMetaInfHandler extends XslRequestHandlerBase
 							thumbHeight = exifThumbHeight * thumbnailSize / exifThumbWidth;
 						}
 						
-						srcFileName = "/webfilesys/servlet?command=exifThumb&imgFile=" + UTF8URLEncoder.encode(filePath);
+						srcFileName = "/doxee-internal/servlet?command=exifThumb&imgFile=" + UTF8URLEncoder.encode(filePath);
 						
 						useThumb = true;
 					}
@@ -682,7 +682,7 @@ public class XslEditMetaInfHandler extends XslRequestHandlerBase
 
 		if (!useThumb)
 		{
-			srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(srcFileName);
+			srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(srcFileName);
 		}
 		
 		XmlUtil.setChildText(thumbnailElement, "imgPath", srcFileName);

@@ -58,7 +58,7 @@ public class BlogEditEntryHandler extends XslRequestHandlerBase {
 			
 		doc.appendChild(blogElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/blog/blogEditEntry.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/blog/blogEditEntry.xsl\"");
 
 		doc.insertBefore(xslRef, blogElement);
 
@@ -70,7 +70,7 @@ public class BlogEditEntryHandler extends XslRequestHandlerBase {
 		
 		XmlUtil.setChildText(blogEntryElement, "fileName", fileName);
 
-		String srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(picFile.getAbsolutePath()) + "&cached=true";
+		String srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(picFile.getAbsolutePath()) + "&cached=true";
 		
 		XmlUtil.setChildText(blogEntryElement, "imgPath", srcFileName);
 		

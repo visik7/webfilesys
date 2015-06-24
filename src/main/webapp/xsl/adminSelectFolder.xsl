@@ -15,10 +15,10 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
 </link>
 
 <script language="javascript">
@@ -33,12 +33,12 @@
   
   function expandFolder(path) 
   {
-      window.location.href = '/webfilesys/servlet?command=admin&amp;cmd=selectDocRootExp&amp;expand=' + encodeURIComponent(path);
+      window.location.href = '/doxee-internal/servlet?command=admin&amp;cmd=selectDocRootExp&amp;expand=' + encodeURIComponent(path);
   }
 
   function collapseFolder(path) 
   {
-      window.location.href = '/webfilesys/servlet?command=admin&amp;cmd=selectDocRootCol&amp;collapse=' + encodeURIComponent(path);
+      window.location.href = '/doxee-internal/servlet?command=admin&amp;cmd=selectDocRootCol&amp;collapse=' + encodeURIComponent(path);
   }
   
   function selectDocRoot(path)
@@ -82,8 +82,8 @@
 
 <xsl:template name="computer" match="computer"> 
 
-  <img src="/webfilesys/images/space.gif" border="0" width="12" height="17" />
-  <img src="/webfilesys/images/computer.gif" border="0" width="17" height="14" />
+  <img src="/doxee-internal/images/space.gif" border="0" width="12" height="17" />
+  <img src="/doxee-internal/images/computer.gif" border="0" width="17" height="14" />
   <a class="dirtree">
     <xsl:value-of select="@name" />
   </a>
@@ -105,10 +105,10 @@
           <xsl:attribute name="onclick">javascript:collapseFolder(decodeURIComponent('<xsl:value-of select="@path" />'))</xsl:attribute>
 
           <xsl:if test="position()=last()">
-            <img src="/webfilesys/images/minusLast.gif" border="0" width="15" height="17" />
+            <img src="/doxee-internal/images/minusLast.gif" border="0" width="15" height="17" />
           </xsl:if>
           <xsl:if test="position()!=last()">
-            <img src="/webfilesys/images/minusMore.gif" border="0" width="15" height="17" />
+            <img src="/doxee-internal/images/minusMore.gif" border="0" width="15" height="17" />
           </xsl:if>
         </a>
       </xsl:if>
@@ -121,27 +121,27 @@
             <xsl:attribute name="onclick">expandFolder(decodeURIComponent('<xsl:value-of select="@path" />'))</xsl:attribute>
 
             <xsl:if test="position()=last()">
-              <img src="/webfilesys/images/plusLast.gif" border="0" width="15" height="17" />
+              <img src="/doxee-internal/images/plusLast.gif" border="0" width="15" height="17" />
             </xsl:if>
             <xsl:if test="position()!=last()">
-              <img src="/webfilesys/images/plusMore.gif" border="0" width="15" height="17" />
+              <img src="/doxee-internal/images/plusMore.gif" border="0" width="15" height="17" />
             </xsl:if>
           </a>
 
         </xsl:if>
         <xsl:if test="@leaf">
           <xsl:if test="position()=last()">
-            <img src="/webfilesys/images/branchLast.gif" border="0" width="15" height="17" />
+            <img src="/doxee-internal/images/branchLast.gif" border="0" width="15" height="17" />
           </xsl:if>
           <xsl:if test="position()!=last()">
-            <img src="/webfilesys/images/branch.gif" border="0" width="15" height="17" />
+            <img src="/doxee-internal/images/branch.gif" border="0" width="15" height="17" />
           </xsl:if>
         </xsl:if>
       </xsl:if>
 
       
       <xsl:if test="@type='drive'">
-        <img src="/webfilesys/images/miniDisk.gif" border="0" width="17" height="14">
+        <img src="/doxee-internal/images/miniDisk.gif" border="0" width="17" height="14">
           <xsl:if test="@label">
             <xsl:attribute name="title"><xsl:value-of select="@label" /></xsl:attribute>
           </xsl:if>
@@ -149,7 +149,7 @@
       </xsl:if>
 
       <xsl:if test="@type='floppy'">
-        <img src="/webfilesys/images/miniFloppy.gif" border="0" width="18" height="16">
+        <img src="/doxee-internal/images/miniFloppy.gif" border="0" width="18" height="16">
           <xsl:if test="@label">
             <xsl:attribute name="title"><xsl:value-of select="@label" /></xsl:attribute>
           </xsl:if>
@@ -158,18 +158,18 @@
 
       <xsl:if test="not(@type)">
         <xsl:if test="@current">
-          <img src="/webfilesys/images/folder1.gif" border="0" width="17" height="14" />
+          <img src="/doxee-internal/images/folder1.gif" border="0" width="17" height="14" />
           <script language="javascript">
             currentDirId = '<xsl:value-of select="@id" />';
           </script>
         </xsl:if>
         <xsl:if test="not(@current)">
-          <img src="/webfilesys/images/folder.gif" border="0" width="17" height="14" />
+          <img src="/doxee-internal/images/folder.gif" border="0" width="17" height="14" />
         </xsl:if>
       </xsl:if>
 
 
-    <img src="/webfilesys/images/space.gif" border="0" width="4" height="1" />
+    <img src="/doxee-internal/images/space.gif" border="0" width="4" height="1" />
     <a>
       <xsl:attribute name="href">javascript:void()</xsl:attribute>
       <xsl:attribute name="onclick">selectDocRoot(decodeURIComponent('<xsl:value-of select="@path" />'))</xsl:attribute>

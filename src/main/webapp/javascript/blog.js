@@ -374,7 +374,7 @@ function singleFileBinaryUpload(file) {
         firstUploadServerFileName.value = serverFileName;
     }
 
-    var uploadUrl = "/webfilesys/upload/singleBinary/blog/" + serverFileName; 
+    var uploadUrl = "/doxee-internal/upload/singleBinary/blog/" + serverFileName; 
 
     xhr = new XMLHttpRequest();  
 
@@ -470,16 +470,16 @@ function uploadComplete(e) {
       
 function returnToList() {
     if (confirm(resourceBundle["blog.confirmCancel"])) {
-        window.location.href = '/webfilesys/servlet?command=blog&cmd=list';
+        window.location.href = '/doxee-internal/servlet?command=blog&cmd=list';
     }
 }
 
 function editBlogEntry(fileName) {
-    window.location.href = "/webfilesys/servlet?command=blog&cmd=editEntry&fileName=" + encodeURIComponent(fileName);
+    window.location.href = "/doxee-internal/servlet?command=blog&cmd=editEntry&fileName=" + encodeURIComponent(fileName);
 }
 
 function jsComments(path) {
-    var commentWin = window.open("/webfilesys/servlet?command=listComments&actPath=" + encodeURIComponent(path),"commentWin","status=no,toolbar=no,location=no,menu=no,scrollbars=yes,width=550,height=400,resizable=yes,left=80,top=100,screenX=80,screenY=100");
+    var commentWin = window.open("/doxee-internal/servlet?command=listComments&actPath=" + encodeURIComponent(path),"commentWin","status=no,toolbar=no,location=no,menu=no,scrollbars=yes,width=550,height=400,resizable=yes,left=80,top=100,screenX=80,screenY=100");
     commentWin.focus();
 }
 
@@ -491,7 +491,7 @@ function deleteBlogEntry(fileName) {
 
     showHourGlass();
     
-    var url = "/webfilesys/servlet?command=blog&cmd=deleteEntry&fileName=" + encodeURIComponent(fileName);
+    var url = "/doxee-internal/servlet?command=blog&cmd=deleteEntry&fileName=" + encodeURIComponent(fileName);
     
     var responseXml = xmlRequestSynchron(url);
    
@@ -507,7 +507,7 @@ function deleteBlogEntry(fileName) {
     hideHourGlass();    
     
     if (success == "deleted") {
-        window.location.href = "/webfilesys/servlet?command=blog";
+        window.location.href = "/doxee-internal/servlet?command=blog";
     } else {
         alert(resourceBundle["blog.deleteError"]);
     }
@@ -525,7 +525,7 @@ function moveBlogEntry(fileName, direction) {
 
     showHourGlass();
     
-    var url = "/webfilesys/servlet?command=blog&cmd=moveEntry&fileName=" + encodeURIComponent(fileName) + "&direction=" + direction;
+    var url = "/doxee-internal/servlet?command=blog&cmd=moveEntry&fileName=" + encodeURIComponent(fileName) + "&direction=" + direction;
     
     var responseXml = xmlRequestSynchron(url);
    
@@ -541,7 +541,7 @@ function moveBlogEntry(fileName, direction) {
     hideHourGlass();    
     
     if (success == "true") {
-        window.location.href = "/webfilesys/servlet?command=blog";
+        window.location.href = "/doxee-internal/servlet?command=blog";
     } else {
         alert(resourceBundle["blog.moveError"]);
     }
@@ -736,9 +736,9 @@ function publishBlog() {
 
     publishCont.style.top = publishContYpos + 'px';
         
-    var xmlUrl = "/webfilesys/servlet?command=blog&cmd=publishForm";
+    var xmlUrl = "/doxee-internal/servlet?command=blog&cmd=publishForm";
         
-    var xslUrl = "/webfilesys/xsl/blog/publishBlog.xsl";    
+    var xslUrl = "/doxee-internal/xsl/blog/publishBlog.xsl";    
         
     publishCont.innerHTML = browserXslt(xmlUrl, xslUrl);
     
@@ -783,7 +783,7 @@ function validatePublishFormAndSubmit() {
     
 	var formData = getFormData(document.getElementById("publishForm"));
 	
-	xmlRequestPost("/webfilesys/servlet", formData, showPublishResult);	
+	xmlRequestPost("/doxee-internal/servlet", formData, showPublishResult);	
 }
 
 function showPublishResult() {
@@ -836,7 +836,7 @@ function showPublishResult() {
 }
 
 function queryPublicLink() {
-    var url = "/webfilesys/servlet?command=blog&cmd=getPublicURL";
+    var url = "/doxee-internal/servlet?command=blog&cmd=getPublicURL";
     
     xmlRequest(url, handleQueryPublicLinkResult);
 }
@@ -913,7 +913,7 @@ function unpublish() {
         return;
     }
     
-    var url = "/webfilesys/servlet?command=blog&cmd=unpublish";
+    var url = "/doxee-internal/servlet?command=blog&cmd=unpublish";
 
     xmlRequest(url, handleUnpublishResult);
 }
@@ -940,9 +940,9 @@ function blogComments(filePath) {
 
     var commentCont = document.getElementById("commentCont");
     
-    var xmlUrl = '/webfilesys/servlet?command=blog&cmd=listComments&filePath=' + encodeURIComponent(filePath);
+    var xmlUrl = '/doxee-internal/servlet?command=blog&cmd=listComments&filePath=' + encodeURIComponent(filePath);
     
-    var xslUrl = '/webfilesys/xsl/blog/comments.xsl';
+    var xslUrl = '/doxee-internal/xsl/blog/comments.xsl';
 
     commentCont.innerHTML = browserXslt(xmlUrl, xslUrl);
     
@@ -967,7 +967,7 @@ function submitComment() {
     var commentCont = document.getElementById("commentCont");
     commentCont.style.visibility = "hidden";
 
-    xmlRequestPost("/webfilesys/servlet", getFormData(document.getElementById("blogCommentForm")), showPostCommentResult);
+    xmlRequestPost("/doxee-internal/servlet", getFormData(document.getElementById("blogCommentForm")), showPostCommentResult);
 }
 
 function showPostCommentResult() {
@@ -977,7 +977,7 @@ function showPostCommentResult() {
             var success = resultElem.getElementsByTagName("success")[0].firstChild.nodeValue;
 
             if (success == 'true') {
-                window.location.href = "/webfilesys/servlet?command=blog";
+                window.location.href = "/doxee-internal/servlet?command=blog";
                 /*
                 var filePath = resultElem.getElementsByTagName("filePath")[0].firstChild.nodeValue;
                 blogComments(filePath);
@@ -1004,7 +1004,7 @@ function confirmDelComments(filePath) {
     
     showHourGlass();
     
-    var url = "/webfilesys/servlet?command=blog&cmd=delComments&filePath=" + encodeURIComponent(filePath);
+    var url = "/doxee-internal/servlet?command=blog&cmd=delComments&filePath=" + encodeURIComponent(filePath);
 
     var responseXml = xmlRequestSynchron(url);
    
@@ -1030,9 +1030,9 @@ function showSettings() {
 
     var settingsCont = document.getElementById("settingsCont");
     
-    var xmlUrl = "/webfilesys/servlet?command=blog&cmd=showSettings";
+    var xmlUrl = "/doxee-internal/servlet?command=blog&cmd=showSettings";
     
-    var xslUrl = "/webfilesys/xsl/blog/settings.xsl";
+    var xslUrl = "/doxee-internal/xsl/blog/settings.xsl";
 
     settingsCont.innerHTML = browserXslt(xmlUrl, xslUrl);
     
@@ -1076,7 +1076,7 @@ function validateSettingsForm() {
 
     showHourGlass();
 
-    xmlRequestPost("/webfilesys/servlet", getFormData(document.getElementById("blogSettingsForm")), showSaveSettingsResult);
+    xmlRequestPost("/doxee-internal/servlet", getFormData(document.getElementById("blogSettingsForm")), showSaveSettingsResult);
 }
 
 function showSaveSettingsResult() {
@@ -1098,7 +1098,7 @@ function showSaveSettingsResult() {
             hideHourGlass();
 
             if ((pageSizeChanged && (pageSizeChanged == "true")) || (blogTitleChanged && (blogTitleChanged == "true"))) {
-                window.location.href = "/webfilesys/servlet?command=blog";
+                window.location.href = "/doxee-internal/servlet?command=blog";
             }
         }
         hideHourGlass();
@@ -1141,7 +1141,7 @@ function rotateBlogPic(imgName, direction) {
 
     showHourGlass();
 
-    var xmlUrl = "/webfilesys/servlet?command=blog&cmd=rotate&imgName=" + imgName + "&direction=" + direction;
+    var xmlUrl = "/doxee-internal/servlet?command=blog&cmd=rotate&imgName=" + imgName + "&direction=" + direction;
 
 	xmlRequest(xmlUrl, function() {
         if (req.readyState == 4) {
@@ -1150,7 +1150,7 @@ function rotateBlogPic(imgName, direction) {
                 var success = successItem.firstChild.nodeValue;
              
                 if (success == 'true') {
-                    window.location.href = "/webfilesys/servlet?command=blog";
+                    window.location.href = "/doxee-internal/servlet?command=blog";
                 } else {
                     alert(resourceBundle["blog.rotateError"]);
                 }

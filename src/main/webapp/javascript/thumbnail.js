@@ -36,7 +36,7 @@ function resetSelected() {
 
 function compare() {
     if (checkSelected()) {
-	    compareWin = window.open('/webfilesys/servlet?command=blank','compareWin','scrollbars=no,resizable=yes,status=no,menubar=no,toolbar=no,location=no,directories=no,screenX=0,screenY=0,left=0,top=0');
+	    compareWin = window.open('/doxee-internal/servlet?command=blank','compareWin','scrollbars=no,resizable=yes,status=no,menubar=no,toolbar=no,location=no,directories=no,screenX=0,screenY=0,left=0,top=0');
         
         if (!compareWin) {
             alert(resourceBundle["alert.enablePopups"]);
@@ -109,7 +109,7 @@ function resize() {
 function multiImageCopyMove() {
     if (anySelected()) {
         document.form2.command.value = 'multiImageCopyMove';
-        xmlRequestPost("/webfilesys/servlet", getFormData(document.form2), showCopyResult);
+        xmlRequestPost("/doxee-internal/servlet", getFormData(document.form2), showCopyResult);
 	    document.form2.command.value = 'compareImg';
     } else {   
         alert(selectOnePic + '!');

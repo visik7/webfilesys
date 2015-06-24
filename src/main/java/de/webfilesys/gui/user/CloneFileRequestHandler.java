@@ -89,7 +89,7 @@ public class CloneFileRequestHandler extends UserRequestHandler
 
 			output.println("alert('" + errorMsg + "');");
 			
-            output.println("window.location.href='/webfilesys/servlet?command=listFiles&keepListStatus=true';");
+            output.println("window.location.href='/doxee-internal/servlet?command=listFiles&keepListStatus=true';");
 			output.println("</script>");
 			output.println("</head>");
 			output.println("</html>");

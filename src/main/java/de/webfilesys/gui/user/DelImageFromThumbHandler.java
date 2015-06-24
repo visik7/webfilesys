@@ -100,7 +100,7 @@ public class DelImageFromThumbHandler extends UserRequestHandler
 
 			javascriptAlert(alertText);
 
-			output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/webfilesys/servlet?command=thumbnail&zoom=no&random=" + (new Date()).getTime() + "\">");
+			output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/doxee-internal/servlet?command=thumbnail&zoom=no&random=" + (new Date()).getTime() + "\">");
 
 			output.println("</head></html>");
 			output.flush();

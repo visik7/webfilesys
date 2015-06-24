@@ -99,11 +99,11 @@ public class RenameFileRequestHandler extends UserRequestHandler
 			
 			if (mobile != null) 
 			{
-                output.println("window.location.href='/webfilesys/servlet?command=mobile&cmd=folderFileList';");
+                output.println("window.location.href='/doxee-internal/servlet?command=mobile&cmd=folderFileList';");
 			}
 			else
 			{
-	            output.println("window.location.href='/webfilesys/servlet?command=listFiles&keepListStatus=true';");
+	            output.println("window.location.href='/doxee-internal/servlet?command=listFiles&keepListStatus=true';");
 			}
 			output.println("</script>");
 			output.println("</head>");

@@ -51,7 +51,7 @@ public class XslWatchFolderHandler extends XmlRequestHandlerBase
 			
 		doc.appendChild(folderWatchElement);
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/folderWatch.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/folderWatch.xsl\"");
 
 		doc.insertBefore(xslRef, folderWatchElement);
 

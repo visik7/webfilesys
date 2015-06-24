@@ -18,30 +18,30 @@
 
       <title>WebFileSys Blog</title>
 
-      <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
-      <link rel="stylesheet" type="text/css" href="/webfilesys/styles/blog.css" />
-      <link rel="stylesheet" type="text/css" href="/webfilesys/styles/icons.css" />
+      <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
+      <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/blog.css" />
+      <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/icons.css" />
 
       <link rel="stylesheet" type="text/css">
-        <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/blog/css" />.css</xsl:attribute>
+        <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/blog/css" />.css</xsl:attribute>
       </link>
       
       <style id="calendarStyle"></style>
       
-      <script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/ajaxUpload.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/ajaxUpload.js" type="text/javascript"></script>
       <script src="javascript/calendar/CalendarPopup.js" type="text/javascript"></script>
       <script src="javascript/calendar/AnchorPosition.js" type="text/javascript"></script>
       <script src="javascript/calendar/date.js" type="text/javascript"></script>
       <script src="javascript/calendar/PopupWindow.js" type="text/javascript"></script>
       <script src="javascript/blog.js" type="text/javascript"></script>
       
-	  <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+	  <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 
       <script type="text/javascript">
-        <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/blog/language" /></xsl:attribute>
+        <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/blog/language" /></xsl:attribute>
       </script>
       
       <script type="text/javascript">
@@ -96,7 +96,7 @@
         
         </form>
 
-        <form accept-charset="utf-8" id="blogForm" name="blogForm" method="post" action="/webfilesys/servlet">
+        <form accept-charset="utf-8" id="blogForm" name="blogForm" method="post" action="/doxee-internal/servlet">
       
           <input type="hidden" name="command" value="blog" />
           <input type="hidden" name="cmd" value="setDescr" />
@@ -215,8 +215,8 @@
       <center>
 
         <div class="uploadStatusBar">
-          <img id="done" src="/webfilesys/images/bluedot.gif" width="1" height="20" border="0" />
-          <img id="todo" src="/webfilesys/images/space.gif" width="299" height="20" border="0" />  
+          <img id="done" src="/doxee-internal/images/bluedot.gif" width="1" height="20" border="0" />
+          <img id="todo" src="/doxee-internal/images/space.gif" width="299" height="20" border="0" />  
         </div>
 
         <table border="0" cellspacing="0" cellpadding="0" style="width:300px">
@@ -237,8 +237,8 @@
 	    </div>
 	  
         <div class="uploadStatusBar">
-          <img id="totalDone" src="/webfilesys/images/bluedot.gif" width="1" height="20" border="0" />
-          <img id="totalTodo" src="/webfilesys/images/space.gif" width="299" height="20" border="0" />  
+          <img id="totalDone" src="/doxee-internal/images/bluedot.gif" width="1" height="20" border="0" />
+          <img id="totalTodo" src="/doxee-internal/images/space.gif" width="299" height="20" border="0" />  
         </div>
 
         <table border="0" cellspacing="0" cellpadding="0" style="width:300px">

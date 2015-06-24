@@ -16,10 +16,10 @@
 
 <title>WebFileSys: <xsl:value-of select="/categoryList/resources/msg[@key='label.manageCategories']/@value" /></title>
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/categoryList/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/categoryList/css" />.css</xsl:attribute>
 </link>
 
 <script language="javascript">
@@ -87,7 +87,7 @@
 
   <br/>
 
-  <form accept-charset="utf-8" name="form0" method="post" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" name="form0" method="post" action="/doxee-internal/servlet">
     <input type="hidden" name="command" value="category" />
     <input type="hidden" name="cmd" value="new" />
     <input type="hidden" name="filePath">
@@ -120,7 +120,7 @@
 
   </form>
 
-  <form accept-charset="utf-8" name="form1" method="post" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" name="form1" method="post" action="/doxee-internal/servlet">
     <input type="hidden" name="command" value="category" />
     <input type="hidden" name="cmd" value="new" />
     <input type="hidden" name="filePath">
@@ -165,7 +165,7 @@
     </xsl:if>
 
     <a class="button" onclick="this.blur();"> 
-      <xsl:attribute name="href">/webfilesys/servlet?command=assignCategory&amp;filePath=<xsl:value-of select="/categoryList/filePath" /></xsl:attribute>
+      <xsl:attribute name="href">/doxee-internal/servlet?command=assignCategory&amp;filePath=<xsl:value-of select="/categoryList/filePath" /></xsl:attribute>
       <span><xsl:value-of select="resources/msg[@key='button.return']/@value" /></span>
     </a>              
 

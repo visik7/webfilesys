@@ -293,7 +293,7 @@ public class MobileFolderFileListHandler extends XslRequestHandlerBase
 			}
 		}
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/mobile/folderFileList.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/mobile/folderFileList.xsl\"");
 
 		Element folderFileListElement = doc.createElement("folderFileList");
 			

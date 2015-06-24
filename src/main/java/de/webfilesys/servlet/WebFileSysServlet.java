@@ -291,7 +291,7 @@ public class WebFileSysServlet extends ServletBase
 	
 	static boolean initialized = false;
 	
-	private static int REQUEST_PATH_LENGTH = "/webfilesys/servlet".length();
+	private static int REQUEST_PATH_LENGTH = "/doxee-internal/servlet".length();
 	
     public void init(ServletConfig config)
     throws ServletException
@@ -2394,7 +2394,7 @@ public class WebFileSysServlet extends ServletBase
 
     	session.invalidate();
 
-        String logoutPage = "/webfilesys/servlet";
+        String logoutPage = "/doxee-internal/servlet";
 
         if (WebFileSys.getInstance().getLogoutURL() != null)
         {
@@ -2457,7 +2457,7 @@ public class WebFileSysServlet extends ServletBase
         		else if ((role != null) && role.equals("blog"))
         		{
         			try {
-            			resp.sendRedirect("/webfilesys/servlet?command=blog");
+            			resp.sendRedirect("/doxee-internal/servlet?command=blog");
         			} catch (IOException ex) {
                 		Logger.getLogger(getClass()).debug("failed to redirect to blog handler", ex);
         			}
@@ -2842,7 +2842,7 @@ public class WebFileSysServlet extends ServletBase
 
 		output.println("<script language=\"javascript\">");
 
-		output.println("  top.location.href='/webfilesys/servlet?command=loginForm';"); 
+		output.println("  top.location.href='/doxee-internal/servlet?command=loginForm';"); 
 
 		output.println("</script>");
 

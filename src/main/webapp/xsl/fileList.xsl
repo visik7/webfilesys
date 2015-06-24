@@ -17,36 +17,36 @@
 <meta http-equiv="expires" content="0" />
 <meta http-equiv="Content-Type" name="text/html; charset=UTF-8" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
 </link>
 
 <xsl:if test="not(fileList/browserXslEnabled)">
-  <script src="/webfilesys/javascript/ajaxslt/util.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/dom.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/util.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/dom.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
 </xsl:if>
 
-<script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/fmweb.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/viewMode.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/ajax.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/fileContextMenu.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/linkContextMenu.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/contextMenuMouse.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/jsFileMenu.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/keyFileList.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/crypto.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/videoAudio.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/fmweb.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/viewMode.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/ajax.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/fileContextMenu.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/linkContextMenu.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/contextMenuMouse.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/jsFileMenu.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/keyFileList.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/crypto.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/videoAudio.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 <script type="text/javascript">
-  <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
+  <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
 </script>
 
 <script language="javascript">
@@ -139,7 +139,7 @@
   
   function uploadParms()
   {
-      window.location.href='/webfilesys/servlet?command=uploadParms&amp;actpath='+encodeURIComponent('<xsl:value-of select="/fileList/menuPath" />');  
+      window.location.href='/doxee-internal/servlet?command=uploadParms&amp;actpath='+encodeURIComponent('<xsl:value-of select="/fileList/menuPath" />');  
   }
   
   function addBookmark()
@@ -247,7 +247,7 @@
   <!-- tabs end -->
   
 
-  <form accept-charset="utf-8" name="sortform" method="get" action="/webfilesys/servlet" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="sortform" method="get" action="/doxee-internal/servlet" style="padding:0px;margin:0px;">
     <input type="hidden" name="command" value="listFiles" />
   
     <table class="topLess" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom-style:none">
@@ -348,7 +348,7 @@
     </table>    
   </form>
 
-  <form accept-charset="utf-8" name="form1" method="post" action="/webfilesys/servlet" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="form1" method="post" action="/doxee-internal/servlet" style="padding:0px;margin:0px;">
 
     <input type="hidden" name="command" value="multiFileOp" />
 
@@ -370,7 +370,7 @@
           </th>
           <th class="fileList fileListIcon">
             <img border="0" width="16" height="16">
-              <xsl:attribute name="src">/webfilesys/images/space.gif</xsl:attribute>
+              <xsl:attribute name="src">/doxee-internal/images/space.gif</xsl:attribute>
             </img>
           </th>
           <th class="fileList fileListName">
@@ -428,7 +428,7 @@
             <td>
               <xsl:attribute name="class">fileList fileListIcon <xsl:if test="not(description)">sepBot</xsl:if></xsl:attribute>
               <img border="0" width="16" height="16">
-                <xsl:attribute name="src">/webfilesys/icons/<xsl:value-of select="@icon" /></xsl:attribute>
+                <xsl:attribute name="src">/doxee-internal/icons/<xsl:value-of select="@icon" /></xsl:attribute>
               </img>
             </td>
             
@@ -559,14 +559,14 @@
               </input> 
               
               <input type="button" resource="button.paste" id="pasteButton">
-                <xsl:attribute name="onclick">javascript:window.location.href='/webfilesys/servlet?command=pasteFiles';</xsl:attribute>
+                <xsl:attribute name="onclick">javascript:window.location.href='/doxee-internal/servlet?command=pasteFiles';</xsl:attribute>
                 <xsl:if test="/fileList/clipBoardEmpty">
                   <xsl:attribute name="style">display:none</xsl:attribute>
                 </xsl:if>
               </input> 
         
               <input type="button" resource="button.pasteLink" id="pasteLinkButton">
-                <xsl:attribute name="onclick">javascript:window.location.href='/webfilesys/servlet?command=pasteLinks';</xsl:attribute>
+                <xsl:attribute name="onclick">javascript:window.location.href='/doxee-internal/servlet?command=pasteLinks';</xsl:attribute>
                 <xsl:if test="not(/fileList/copyOperation) or (/fileList/clipBoardEmpty)">
                   <xsl:attribute name="style">display:none</xsl:attribute>
                 </xsl:if>

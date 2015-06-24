@@ -214,7 +214,7 @@ public class XslSelfRegistrationHandler extends XslRequestHandlerBase
 
 		javascriptAlert(langMgr.getResource(userLanguage, "alert.regsuccess", "New user has been registered successfully.")); 
 
-		output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/webfilesys/servlet\">");
+		output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/doxee-internal/servlet\">");
 
 		output.println("</HEAD></HTML>");
 		output.flush();
@@ -234,7 +234,7 @@ public class XslSelfRegistrationHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(rootElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/registerUser.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/registerUser.xsl\"");
 
 		doc.insertBefore(xslRef, rootElement);
 

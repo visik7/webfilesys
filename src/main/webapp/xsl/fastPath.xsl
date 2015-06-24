@@ -14,10 +14,10 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
   </link>
 
   <style type="text/css">
@@ -71,7 +71,7 @@
     <xsl:if test="not(@bookmark)">
       <xsl:if test="@icon">
         <img class="icon">
-          <xsl:attribute name="src">/webfilesys/icons/<xsl:value-of select="@icon"/></xsl:attribute>
+          <xsl:attribute name="src">/doxee-internal/icons/<xsl:value-of select="@icon"/></xsl:attribute>
         </img>
       </xsl:if>
     
@@ -83,7 +83,7 @@
     <img src="images/space.gif" border="0" width="4" height="1" />
     
     <a class="dirtree">
-      <xsl:attribute name="href">/webfilesys/servlet?command=exp&amp;expandPath=<xsl:value-of select="@path" />&amp;mask=*&amp;fastPath=true</xsl:attribute>
+      <xsl:attribute name="href">/doxee-internal/servlet?command=exp&amp;expandPath=<xsl:value-of select="@path" />&amp;mask=*&amp;fastPath=true</xsl:attribute>
 
       <xsl:if test="not(@visited)">
         <xsl:attribute name="class">

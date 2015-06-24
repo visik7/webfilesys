@@ -16,24 +16,24 @@
   <meta http-equiv="expires" content="0" />
   
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/pictureAlbum.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/pictureAlbum.css</xsl:attribute>
   </link>
 
   <title>WebFileSys Picture Album</title>
 
-  <script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/pictureAlbum.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/thumbnail.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/viewMode.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/pictureAlbum.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/thumbnail.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/viewMode.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 
   <xsl:if test="pictureAlbum/geoTag">
-    <script src="/webfilesys/javascript/geoMap.js" type="text/javascript"></script>
+    <script src="/doxee-internal/javascript/geoMap.js" type="text/javascript"></script>
   </xsl:if>
 
   <script type="text/javascript">
-    <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/pictureAlbum/language" /></xsl:attribute>
+    <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/pictureAlbum/language" /></xsl:attribute>
   </script>
 
   <script language="javascript">
@@ -100,8 +100,8 @@
       </div>
 
       <div class="infoIcon">
-        <a href="#" onclick="window.open('/webfilesys/servlet?command=versionInfo','infowindow','status=no,toolbar=no,location=no,menu=no,width=300,height=220,resizable=no,left=250,top=150,screenX=250,screenY=150')">
-          <img src="/webfilesys/images/info.png" border="0" width="32" height="32" titleResource="label.about" />
+        <a href="#" onclick="window.open('/doxee-internal/servlet?command=versionInfo','infowindow','status=no,toolbar=no,location=no,menu=no,width=300,height=220,resizable=no,left=250,top=150,screenX=250,screenY=150')">
+          <img src="/doxee-internal/images/info.png" border="0" width="32" height="32" titleResource="label.about" />
         </a>
       </div>
 
@@ -200,7 +200,7 @@
 
       <xsl:for-each select="pathElem">
         <a class="pictureAlbumPath">
-          <xsl:attribute name="href">/webfilesys/servlet?command=album&amp;relPath=<xsl:value-of select="@path"/>&amp;initial=true</xsl:attribute>
+          <xsl:attribute name="href">/doxee-internal/servlet?command=album&amp;relPath=<xsl:value-of select="@path"/>&amp;initial=true</xsl:attribute>
           <xsl:value-of select="@name"/> 
         </a>
         <xsl:if test="not(position()=last())"><span class="pictureAlbumPath"> &gt; </span></xsl:if>
@@ -240,7 +240,7 @@
 <!-- ############################## sorting and paging ################################ -->
 
 <xsl:template name="sortAndPaging">
-  <form accept-charset="utf-8" name="sortform" method="get" action="/webfilesys/servlet" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="sortform" method="get" action="/doxee-internal/servlet" style="padding:0px;margin:0px;">
     <input type="hidden" name="command" value="album" />
     <input type="hidden" name="showDetails">
       <xsl:if test="/pictureAlbum/showDetails">
@@ -360,11 +360,11 @@
       <xsl:if test="paging/currentPage &gt; 1">
           
         <div class="albumPagingArrow">
-          <a class="pictureAlbumPaging" href="/webfilesys/servlet?command=album&amp;startIdx=0">|&lt;</a>
+          <a class="pictureAlbumPaging" href="/doxee-internal/servlet?command=album&amp;startIdx=0">|&lt;</a>
           &#160;
           <a class="pictureAlbumPaging">
             <xsl:attribute name="href">
-              <xsl:value-of select="concat('/webfilesys/servlet?command=album&amp;startIdx=',paging/prevStartIdx)"/>
+              <xsl:value-of select="concat('/doxee-internal/servlet?command=album&amp;startIdx=',paging/prevStartIdx)"/>
             </xsl:attribute>
             &lt;
           </a>
@@ -399,7 +399,7 @@
             </xsl:if>
             <xsl:if test="not(@num=../currentPage)">
               <div class="pagingPage pagingPageOther">
-                <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=album&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
+                <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=album&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
                 <xsl:value-of select="@num" />
               </div>
             </xsl:if>
@@ -410,14 +410,14 @@
           <div class="albumPagingArrow">
             <a class="pictureAlbumPaging">
               <xsl:attribute name="href">
-                <xsl:value-of select="concat('/webfilesys/servlet?command=album&amp;startIdx=',paging/nextStartIdx)"/>
+                <xsl:value-of select="concat('/doxee-internal/servlet?command=album&amp;startIdx=',paging/nextStartIdx)"/>
               </xsl:attribute>
               &gt;
             </a>
             &#160;
             <a class="pictureAlbumPaging">
               <xsl:attribute name="href">
-                <xsl:value-of select="concat('/webfilesys/servlet?command=album&amp;startIdx=',paging/lastStartIdx)"/>
+                <xsl:value-of select="concat('/doxee-internal/servlet?command=album&amp;startIdx=',paging/lastStartIdx)"/>
               </xsl:attribute>
               &gt;|
             </a>
@@ -441,9 +441,9 @@
       <tr>
         <td align="left">
           <a class="subdir">
-            <xsl:attribute name="href">/webfilesys/servlet?command=album&amp;relPath=<xsl:value-of select="@path"/>&amp;initial=true</xsl:attribute>
+            <xsl:attribute name="href">/doxee-internal/servlet?command=album&amp;relPath=<xsl:value-of select="@path"/>&amp;initial=true</xsl:attribute>
             <xsl:attribute name="title"><xsl:value-of select="@name" /></xsl:attribute>
-            <img class="albumFolder" src="/webfilesys/images/foldero.gif" border="0" width="22" height="17" />&#160;<xsl:value-of select="@displayName"/> 
+            <img class="albumFolder" src="/doxee-internal/images/foldero.gif" border="0" width="22" height="17" />&#160;<xsl:value-of select="@displayName"/> 
           </a>
         </td>
       </tr>
@@ -457,7 +457,7 @@
 
 <xsl:template name="fileList">
 
-  <form accept-charset="utf-8" name="form2" action="/webfilesys/servlet" method="post" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="form2" action="/doxee-internal/servlet" method="post" style="padding:0px;margin:0px;">
   
     <input type="hidden" name="command" value="compareImg" />
 
@@ -543,7 +543,7 @@
                     <xsl:text> </xsl:text>
                   
                     <xsl:if test="visitorRating">
-                      <img src="/webfilesys/images/oneStar.png" class="voteStar" titleResource="rating.visitor" />
+                      <img src="/doxee-internal/images/oneStar.png" class="voteStar" titleResource="rating.visitor" />
                       <xsl:text> </xsl:text>
                       <span class="albumVoteAverage"><xsl:value-of select="visitorRating" /></span>
                       <xsl:text> </xsl:text>

@@ -47,7 +47,7 @@ public class BlogListCommentsHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(fileCommentsElement);
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/blog/comments.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/blog/comments.xsl\"");
 
 		doc.insertBefore(xslRef, fileCommentsElement);
 

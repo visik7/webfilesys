@@ -47,7 +47,7 @@ public class XslFileSizeStatsHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(treeStatsElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/fileSizeTreeStats.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/fileSizeTreeStats.xsl\"");
 
 		doc.insertBefore(xslRef, treeStatsElement);
 

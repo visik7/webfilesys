@@ -30,7 +30,7 @@ public class BlogPostHandler extends XslRequestHandlerBase {
 			
 		doc.appendChild(blogElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/blog/blogPost.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/blog/blogPost.xsl\"");
 
 		doc.insertBefore(xslRef, blogElement);
 

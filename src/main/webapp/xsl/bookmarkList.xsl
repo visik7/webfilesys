@@ -14,10 +14,10 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/bookmarkList/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/bookmarkList/css" />.css</xsl:attribute>
 </link>
 
 </head>
@@ -42,7 +42,7 @@
     </tr>
   </table>
 
-  <form accept-charset="utf-8" name="bookmarkForm" method="get" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" name="bookmarkForm" method="get" action="/doxee-internal/servlet">
     <input type="hidden" name="command" value="exp" />
     <input type="hidden" name="expandPath">
       <xsl:attribute name="value"><xsl:value-of select="currentPath" /></xsl:attribute>
@@ -57,10 +57,10 @@
             <td>
               <img border="0">
                 <xsl:if test="icon">
-                  <xsl:attribute name="src">/webfilesys/icons/<xsl:value-of select="icon" /></xsl:attribute>
+                  <xsl:attribute name="src">/doxee-internal/icons/<xsl:value-of select="icon" /></xsl:attribute>
                 </xsl:if>
                 <xsl:if test="not(icon)">
-                  <xsl:attribute name="src">/webfilesys/images/bookmark.gif</xsl:attribute>
+                  <xsl:attribute name="src">/doxee-internal/images/bookmark.gif</xsl:attribute>
                 </xsl:if>
               </img>
             </td>
@@ -71,10 +71,10 @@
                   <xsl:attribute name="style">color:<xsl:value-of select="textColor" /></xsl:attribute>
                 </xsl:if>
                 <xsl:if test="/bookmarkList/mobile">
-                  <xsl:attribute name="href">/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;absPath=<xsl:value-of select="encodedPath" /></xsl:attribute>
+                  <xsl:attribute name="href">/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;absPath=<xsl:value-of select="encodedPath" /></xsl:attribute>
                 </xsl:if>
                 <xsl:if test="not(/bookmarkList/mobile)">
-                  <xsl:attribute name="href">/webfilesys/servlet?command=exp&amp;expandPath=<xsl:value-of select="encodedPath" />&amp;mask=*&amp;fastPath=true</xsl:attribute>
+                  <xsl:attribute name="href">/doxee-internal/servlet?command=exp&amp;expandPath=<xsl:value-of select="encodedPath" />&amp;mask=*&amp;fastPath=true</xsl:attribute>
                 </xsl:if>
                 <xsl:attribute name="title"><xsl:value-of select="path" /></xsl:attribute>
     
@@ -87,9 +87,9 @@
               
               <td>
                 <a>
-                  <xsl:attribute name="href">/webfilesys/servlet?command=bookmarks&amp;cmd=delete&amp;id=<xsl:value-of select="@id" /></xsl:attribute>
+                  <xsl:attribute name="href">/doxee-internal/servlet?command=bookmarks&amp;cmd=delete&amp;id=<xsl:value-of select="@id" /></xsl:attribute>
                   <xsl:attribute name="title"><xsl:value-of select="/bookmarkList/resources/msg[@key='label.deleteBookmark']/@value" /></xsl:attribute>
-                  <img src="/webfilesys/images/trash.gif" border="0" />
+                  <img src="/doxee-internal/images/trash.gif" border="0" />
                 </a>
               </td>
             </xsl:if>
@@ -111,7 +111,7 @@
     
     <a class="button" onclick="this.blur()"> 
       <xsl:if test="/bookmarkList/mobile">
-        <xsl:attribute name="href">/webfilesys/servlet?command=mobile&amp;cmd=folderFileList</xsl:attribute>
+        <xsl:attribute name="href">/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList</xsl:attribute>
       </xsl:if>
       <xsl:if test="not(/bookmarkList/mobile)">
         <xsl:attribute name="href">javascript:document.bookmarkForm.submit()</xsl:attribute>

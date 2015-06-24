@@ -13,10 +13,10 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/searchParms/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/searchParms/css" />.css</xsl:attribute>
 </link>
 
 <title resource="label.searchTitle"></title>
@@ -26,9 +26,9 @@
 <script src="javascript/calendar/AnchorPosition.js" type="text/javascript"></script>
 <script src="javascript/calendar/date.js" type="text/javascript"></script>
 <script src="javascript/calendar/PopupWindow.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 <script type="text/javascript">
-  <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/searchParms/language" /></xsl:attribute>
+  <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/searchParms/language" /></xsl:attribute>
 </script>
 
 <style id="calendarStyle">
@@ -181,7 +181,7 @@
 
   <div class="headline" resource="label.searchHead" />
   
-  <form accept-charset="utf-8" name="findform" method="post" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" name="findform" method="post" action="/doxee-internal/servlet">
   
     <input type="hidden" name="command" value="fmfindfile" />
   

@@ -96,7 +96,7 @@ public class MultiFileRequestHandler extends UserRequestHandler
 			javascriptAlert(getResource("alert.noFilesSelected","No files have been selected"));
 
 			output.println("<script language=\"javascript\">");
-			output.println("window.location.href='/webfilesys/servlet?command=listFiles';");
+			output.println("window.location.href='/doxee-internal/servlet?command=listFiles';");
 			output.println("</script>");
 			output.println("</HEAD></HTML>");
 			output.flush();

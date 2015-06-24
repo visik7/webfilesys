@@ -14,17 +14,17 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
 </link>
 
-<script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
 <script src="javascript/fmweb.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
 <script src="javascript/viewMode.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
 <script src="javascript/graphicsContextMenu.js" type="text/javascript"></script>
 
 <script language="javascript">
@@ -32,7 +32,7 @@
   function showImage(imgPath, width, height)
   {
       randNum = (new Date()).getTime();
-      picWin = window.open('/webfilesys/servlet?command=showImg&amp;imgname=' + encodeURIComponent(imgPath) + '&amp;random=' + randNum,'picWin' + randNum,'status=no,toolbar=no,location=no,menu=no,width=' + width + ',height=' + (height + 55) + ',resizable=yes,left=1,top=1,screenX=1,screenY=1');
+      picWin = window.open('/doxee-internal/servlet?command=showImg&amp;imgname=' + encodeURIComponent(imgPath) + '&amp;random=' + randNum,'picWin' + randNum,'status=no,toolbar=no,location=no,menu=no,width=' + width + ',height=' + (height + 55) + ',resizable=yes,left=1,top=1,screenX=1,screenY=1');
       picWin.focus();
   }
 
@@ -173,7 +173,7 @@
 
   <xsl:if test="/fileList/file">
   
-    <form accept-charset="utf-8" name="sortform" method="get" action="/webfilesys/servlet" style="padding:0px;margin:0px;">
+    <form accept-charset="utf-8" name="sortform" method="get" action="/doxee-internal/servlet" style="padding:0px;margin:0px;">
     
       <input type="hidden" name="command" value="storyInFrame" />
     
@@ -187,13 +187,13 @@
             
                 <xsl:if test="paging/currentPage &gt; 1">
                   <td class="fileListFunct" valign="center" nowrap="true">
-                    <a href="/webfilesys/servlet?command=storyInFrame&amp;startIdx=0"><img src="/webfilesys/images/first.gif" border="0" /></a>
+                    <a href="/doxee-internal/servlet?command=storyInFrame&amp;startIdx=0"><img src="/doxee-internal/images/first.gif" border="0" /></a>
                     &#160;
                     <a>
                       <xsl:attribute name="href">
-                        <xsl:value-of select="concat('/webfilesys/servlet?command=storyInFrame&amp;startIdx=',paging/prevStartIdx)"/>
+                        <xsl:value-of select="concat('/doxee-internal/servlet?command=storyInFrame&amp;startIdx=',paging/prevStartIdx)"/>
                       </xsl:attribute>
-                      <img src="/webfilesys/images/previous.gif" border="0" />
+                      <img src="/doxee-internal/images/previous.gif" border="0" />
                     </a>
                   </td>
                 </xsl:if>
@@ -224,7 +224,7 @@
                         </xsl:if>
                         <xsl:if test="not(@num=../currentPage)">
                           <div class="pagingPage pagingPageOther">
-                            <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=storyInFrame&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
+                            <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=storyInFrame&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
                             <xsl:value-of select="@num" />
                           </div>
                         </xsl:if>
@@ -250,22 +250,22 @@
 
                 <xsl:if test="paging/nextStartIdx">
                   <td class="fileListFunct">
-                    <img src="/webfilesys/images/space.gif" border="0" width="16" />
+                    <img src="/doxee-internal/images/space.gif" border="0" width="16" />
                   </td>
               
                   <td class="fileListFunct" align="right" valign="center" nowrap="true">
                     <a>
                       <xsl:attribute name="href">
-                        <xsl:value-of select="concat('/webfilesys/servlet?command=storyInFrame&amp;startIdx=',paging/nextStartIdx)"/>
+                        <xsl:value-of select="concat('/doxee-internal/servlet?command=storyInFrame&amp;startIdx=',paging/nextStartIdx)"/>
                       </xsl:attribute>
-                      <img src="/webfilesys/images/next.gif" border="0" />
+                      <img src="/doxee-internal/images/next.gif" border="0" />
                     </a>
                     &#160;
                     <a>
                       <xsl:attribute name="href">
-                        <xsl:value-of select="concat('/webfilesys/servlet?command=storyInFrame&amp;startIdx=',paging/lastStartIdx)"/>
+                        <xsl:value-of select="concat('/doxee-internal/servlet?command=storyInFrame&amp;startIdx=',paging/lastStartIdx)"/>
                       </xsl:attribute>
-                      <img src="/webfilesys/images/last.gif" border="0" />
+                      <img src="/doxee-internal/images/last.gif" border="0" />
                     </a>
                   </td>
                 
@@ -367,7 +367,7 @@
       <xsl:if test="position() != last()">
         <tr>
           <td class="story2 sepTop">
-            <img src="/webfilesys/images/space.gif" border="0" width="1" height="1" />
+            <img src="/doxee-internal/images/space.gif" border="0" width="1" height="1" />
           </td>
         </tr>
       </xsl:if>  
@@ -381,35 +381,35 @@
       <tr>
         <xsl:if test="paging/currentPage &gt; 1">
           <td class="fileListFunct" valign="center" nowrap="true">
-            <a href="/webfilesys/servlet?command=storyInFrame&amp;startIdx=0"><img src="/webfilesys/images/first.gif" border="0" /></a>
+            <a href="/doxee-internal/servlet?command=storyInFrame&amp;startIdx=0"><img src="/doxee-internal/images/first.gif" border="0" /></a>
               &#160;
             <a>
               <xsl:attribute name="href">
-                <xsl:value-of select="concat('/webfilesys/servlet?command=storyInFrame&amp;startIdx=',paging/prevStartIdx)"/>
+                <xsl:value-of select="concat('/doxee-internal/servlet?command=storyInFrame&amp;startIdx=',paging/prevStartIdx)"/>
               </xsl:attribute>
-              <img src="/webfilesys/images/previous.gif" border="0" />
+              <img src="/doxee-internal/images/previous.gif" border="0" />
             </a>
           </td>
         </xsl:if>
 
         <xsl:if test="paging/nextStartIdx">
           <td class="fileListFunct">
-            <img src="/webfilesys/images/space.gif" border="0" width="16" />
+            <img src="/doxee-internal/images/space.gif" border="0" width="16" />
           </td>
               
           <td class="fileListFunct" align="right" valign="center" nowrap="true">
             <a>
               <xsl:attribute name="href">
-                <xsl:value-of select="concat('/webfilesys/servlet?command=storyInFrame&amp;startIdx=',paging/nextStartIdx)"/>
+                <xsl:value-of select="concat('/doxee-internal/servlet?command=storyInFrame&amp;startIdx=',paging/nextStartIdx)"/>
               </xsl:attribute>
-              <img src="/webfilesys/images/next.gif" border="0" />
+              <img src="/doxee-internal/images/next.gif" border="0" />
             </a>
             &#160;
             <a>
               <xsl:attribute name="href">
-                <xsl:value-of select="concat('/webfilesys/servlet?command=storyInFrame&amp;startIdx=',paging/lastStartIdx)"/>
+                <xsl:value-of select="concat('/doxee-internal/servlet?command=storyInFrame&amp;startIdx=',paging/lastStartIdx)"/>
               </xsl:attribute>
-              <img src="/webfilesys/images/last.gif" border="0" />
+              <img src="/doxee-internal/images/last.gif" border="0" />
             </a>
           </td>
         </xsl:if>
@@ -428,7 +428,7 @@
   <div class="albumPath">
     <xsl:for-each select="pathElem">
       <a class="dirtree">
-        <xsl:attribute name="href"><xsl:value-of select="concat('/webfilesys/servlet?command=album&amp;relPath=',@path)"/></xsl:attribute>
+        <xsl:attribute name="href"><xsl:value-of select="concat('/doxee-internal/servlet?command=album&amp;relPath=',@path)"/></xsl:attribute>
         <xsl:value-of select="@name"/> 
       </a>
       <xsl:if test="not(position()=last())"><font class="fixed"><b> &gt; </b></font></xsl:if>

@@ -1,21 +1,21 @@
 
 function cutCopyToClip(fileName, operation)
 {
-    url = '/webfilesys/servlet?command=cutCopy&fileName=' + encodeURIComponent(fileName) + '&cmd=' + operation;
+    url = '/doxee-internal/servlet?command=cutCopy&fileName=' + encodeURIComponent(fileName) + '&cmd=' + operation;
 
     xmlRequest(url, showCopyResult);
 }
 
 function editLocal(fileName)
 {
-    url = "/webfilesys/servlet?command=editFile&fileName=" + encodeURIComponent(fileName);
+    url = "/doxee-internal/servlet?command=editFile&fileName=" + encodeURIComponent(fileName);
 
     xmlRequest(url, ignoreResult);
 }
 
 function editLocalLink(filePath)
 {
-    url = "/webfilesys/servlet?command=editFile&filePath=" + encodeURIComponent(filePath);
+    url = "/doxee-internal/servlet?command=editFile&filePath=" + encodeURIComponent(filePath);
 
     xmlRequest(url, ignoreResult);
 }
@@ -122,7 +122,7 @@ function ignoreResult()
 
 function reloadPage()
 {
-    window.location.href = '/webfilesys/servlet?command=listFiles';
+    window.location.href = '/doxee-internal/servlet?command=listFiles';
 }
 
 function hideMsg()
@@ -135,7 +135,7 @@ function diffSelect(path)
 {
     parent.diffStarted = true;
 
-    url = "/webfilesys/servlet?command=diffSelect&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=diffSelect&path=" + encodeURIComponent(path);
 
     xmlRequest(url, diffSelectResult);
 }
@@ -207,7 +207,7 @@ function diffSelectResult()
 
 function cancelDiff()
 {
-    url = "/webfilesys/servlet?command=diffSelect&cmd=deselect";
+    url = "/doxee-internal/servlet?command=diffSelect&cmd=deselect";
 
     xmlRequestSynchron(url);
 
@@ -220,7 +220,7 @@ function cancelDiff()
 
 function openDiffWindow()
 {
-    diffWin = window.open('/webfilesys/servlet?command=startDiff','diffWin','width=' + (screen.width - 20) + ',height=' + (screen.height - 80) + ',scrollbars=yes,resizable=yes,status=no,menubar=no,toolbar=no,location=no,directories=no,screenX=0,screenY=0,left=0,top=0');
+    diffWin = window.open('/doxee-internal/servlet?command=startDiff','diffWin','width=' + (screen.width - 20) + ',height=' + (screen.height - 80) + ',scrollbars=yes,resizable=yes,status=no,menubar=no,toolbar=no,location=no,directories=no,screenX=0,screenY=0,left=0,top=0');
     if (diffWin) 
     {
         diffWin.focus();
@@ -231,7 +231,7 @@ function openDiffWindow()
 
 function touch(fileName)
 {
-    url = '/webfilesys/servlet?command=touch&fileName=' + encodeURIComponent(fileName);
+    url = '/doxee-internal/servlet?command=touch&fileName=' + encodeURIComponent(fileName);
 
     xmlRequest(url, showTouchResult);
 }
@@ -263,7 +263,7 @@ function showTouchResult()
 
 function checkFileChange(filePath, lastModifiedOld, sizeOld)
 {
-    var url = "/webfilesys/servlet?command=checkFileChange&filePath=" + encodeURIComponent(filePath) + "&lastModified=" + lastModifiedOld + "&size=" + sizeOld;
+    var url = "/doxee-internal/servlet?command=checkFileChange&filePath=" + encodeURIComponent(filePath) + "&lastModified=" + lastModifiedOld + "&size=" + sizeOld;
 
     var responseXml = xmlRequestSynchron(url);
     
@@ -279,7 +279,7 @@ function checkFileChange(filePath, lastModifiedOld, sizeOld)
 
 function sendFileViaEmail() 
 {
-    xmlRequestPost("/webfilesys/servlet", getFormData(document.emailForm), showEmailResult);
+    xmlRequestPost("/doxee-internal/servlet", getFormData(document.emailForm), showEmailResult);
 }
 
 function showEmailResult()

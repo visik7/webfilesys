@@ -5,7 +5,7 @@ var browserIsChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 
 function copyDirToClip(path)
 {
-    url = "/webfilesys/servlet?command=copyDir&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=copyDir&path=" + encodeURIComponent(path);
 
     xmlRequest(url, showXmlResult);
 }
@@ -15,14 +15,14 @@ function moveDirToClip(path, domId)
     deselectFolder();
 	selectFolder(domId);
 
-    url = "/webfilesys/servlet?command=moveDir&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=moveDir&path=" + encodeURIComponent(path);
 
     xmlRequest(url, showXmlResult);
 }
 
 function removeDir(path)
 {
-    url = "/webfilesys/servlet?command=removeDir&path=" + path;
+    url = "/doxee-internal/servlet?command=removeDir&path=" + path;
     delDirStarted = true;
     xmlRequest(url, handleDirRemoved);
     setTimeout("checkLongRunningDelDir()", 3000);
@@ -60,7 +60,7 @@ function handleDirRemoved()
                 var pathItem = req.responseXML.getElementsByTagName("parentPath")[0];            
                 var parentPath = pathItem.firstChild.nodeValue;
 
-                window.location.href = "/webfilesys/servlet?command=exp&actPath=" + parentPath + "&expand=" + parentPath + "&fastPath=true";
+                window.location.href = "/doxee-internal/servlet?command=exp&actPath=" + parentPath + "&expand=" + parentPath + "&fastPath=true";
             }       
             else
             {
@@ -69,7 +69,7 @@ function handleDirRemoved()
                 if (pathItem) 
                 {
                     var path = pathItem.firstChild.nodeValue;
-                    window.location.href = "/webfilesys/servlet?command=exp&actPath=" + path + "&expand=" + path + "&fastPath=true";
+                    window.location.href = "/doxee-internal/servlet?command=exp&actPath=" + path + "&expand=" + path + "&fastPath=true";
                 }           
             }
         }
@@ -78,28 +78,28 @@ function handleDirRemoved()
 
 function cancelSearch()
 {
-    url = "/webfilesys/servlet?command=cancelSearch";
+    url = "/doxee-internal/servlet?command=cancelSearch";
 
     xmlRequest(url, handleSearchCanceled);
 }
 
 function clearThumbs(path)
 {
-    url = "/webfilesys/servlet?command=clearThumbs&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=clearThumbs&path=" + encodeURIComponent(path);
 
     xmlRequest(url, showXmlResult);
 }
 
 function createThumbs(path)
 {
-    url = "/webfilesys/servlet?command=createThumbs&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=createThumbs&path=" + encodeURIComponent(path);
 
     xmlRequest(url, showXmlResult);
 }
 
 function winCmdLine(path)
 {
-    url = "/webfilesys/servlet?command=winCmdLine&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=winCmdLine&path=" + encodeURIComponent(path);
 
     xmlRequest(url, handleCmdLineResult);
 }
@@ -252,7 +252,7 @@ function col(domId)
         }       
     }
     
-    url = "/webfilesys/servlet?command=ajaxCollapse&path=" + urlEncodedPath;
+    url = "/doxee-internal/servlet?command=ajaxCollapse&path=" + urlEncodedPath;
 
     xmlRequest(url, dummy);
 }
@@ -337,7 +337,7 @@ function listFiles(id)
 
     var urlEncodedPath = parentDiv.getAttribute("path");
 
-    window.parent.frames[2].location.href = '/webfilesys/servlet?command=listFiles&actpath=' + urlEncodedPath + '&mask=*';
+    window.parent.frames[2].location.href = '/doxee-internal/servlet?command=listFiles&actpath=' + urlEncodedPath + '&mask=*';
 
     deselectCurrentDir();
         
@@ -364,9 +364,9 @@ function exp(parentDivId, lastInLevel)
 
     var urlEncodedPath = parentDiv.getAttribute("path");
 
-    var xmlUrl = "/webfilesys/servlet?command=ajaxExp&path=" + urlEncodedPath + "&lastInLevel=" + lastInLevel;
+    var xmlUrl = "/doxee-internal/servlet?command=ajaxExp&path=" + urlEncodedPath + "&lastInLevel=" + lastInLevel;
 
-    var xslUrl = "/webfilesys/xsl/subFolder.xsl";
+    var xslUrl = "/doxee-internal/xsl/subFolder.xsl";
 
     if (window.ActiveXObject !== undefined) 
     {
@@ -397,7 +397,7 @@ function expMozilla(parentDiv, xmlUrl, xslUrl) {
     var xslStyleSheet = xmlRequestSynchron(xslUrl);
    
     if (!xslStyleSheet) {
-        window.parent.parent.location.href = '/webfilesys/servlet?command=loginForm';
+        window.parent.parent.location.href = '/doxee-internal/servlet?command=loginForm';
 
         return;
     }
@@ -408,7 +408,7 @@ function expMozilla(parentDiv, xmlUrl, xslUrl) {
 			    var xmlDoc = req.responseXML;
 				
 				if (!xmlDoc) {
-                    window.parent.parent.location.href = '/webfilesys/servlet?command=loginForm';
+                    window.parent.parent.location.href = '/doxee-internal/servlet?command=loginForm';
                     return;
 				}
 				
@@ -424,7 +424,7 @@ function expMozilla(parentDiv, xmlUrl, xslUrl) {
 
                 parentDiv.parentNode.replaceChild(fragment, parentDiv);
             } else {
-                window.parent.parent.location.href = '/webfilesys/servlet?command=loginForm';
+                window.parent.parent.location.href = '/doxee-internal/servlet?command=loginForm';
                 return;
 			}
 		}
@@ -437,7 +437,7 @@ function expMSIE(parentDiv, xmlUrl, xslUrl)
     xml.async = false;
     if (!xml.load(xmlUrl))
     {
-        window.parent.parent.location.href = '/webfilesys/servlet?command=loginForm';
+        window.parent.parent.location.href = '/doxee-internal/servlet?command=loginForm';
 
         return;
     }
@@ -459,7 +459,7 @@ function expJavascriptXslt(parentDiv, xmlUrl, xslUrl) {
     var xslStyleSheet = xmlRequestSynchron(xslUrl);
    
     if (!xslStyleSheet) {
-        window.parent.parent.location.href = '/webfilesys/servlet?command=loginForm';
+        window.parent.parent.location.href = '/doxee-internal/servlet?command=loginForm';
 
         return;
     }
@@ -470,7 +470,7 @@ function expJavascriptXslt(parentDiv, xmlUrl, xslUrl) {
 			    var xmlDoc = req.responseXML;
 
 				if (!xmlDoc) {
-                    window.parent.parent.location.href = '/webfilesys/servlet?command=loginForm';
+                    window.parent.parent.location.href = '/doxee-internal/servlet?command=loginForm';
                     return;
 				}
 
@@ -484,7 +484,7 @@ function expJavascriptXslt(parentDiv, xmlUrl, xslUrl) {
     
                 currentDirId = newId;
             } else {
-                window.parent.parent.location.href = '/webfilesys/servlet?command=loginForm';
+                window.parent.parent.location.href = '/doxee-internal/servlet?command=loginForm';
                 return;
 			}
         }
@@ -498,7 +498,7 @@ function synchronize(path, domId)
 	deselectFolder();
 	selectFolder(domId);
 
-    url = "/webfilesys/servlet?command=selectSyncFolder&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=selectSyncFolder&path=" + encodeURIComponent(path);
 
     xmlRequest(url, selectSyncFolderResult);
 }
@@ -570,7 +570,7 @@ function openSyncWindow()
 {
     deselectFolder();
 
-    syncWin = window.open("/webfilesys/servlet?command=syncCompare","syncWin","status=no,toolbar=no,location=no,menu=no,scrollbars=yes,width=700,height=500,resizable=yes,left=10,top=10,screenX=10,screenY=10");
+    syncWin = window.open("/doxee-internal/servlet?command=syncCompare","syncWin","status=no,toolbar=no,location=no,menu=no,scrollbars=yes,width=700,height=500,resizable=yes,left=10,top=10,screenX=10,screenY=10");
     
     if (!syncWin)
     {
@@ -584,7 +584,7 @@ function openSyncWindow()
 
 function deselectSyncFolders()
 {
-    url = "/webfilesys/servlet?command=selectSyncFolder&cmd=deselect";
+    url = "/doxee-internal/servlet?command=selectSyncFolder&cmd=deselect";
     
     xmlRequest(url, deselectSyncFolderResult);
 }
@@ -604,7 +604,7 @@ function cancelSynchronize()
 {
     deselectFolder();
 
-    url = "/webfilesys/servlet?command=selectSyncFolder&cmd=deselect";
+    url = "/doxee-internal/servlet?command=selectSyncFolder&cmd=deselect";
 
     xmlRequestSynchron(url);
 
@@ -622,7 +622,7 @@ function compareFolders(path, domId)
 	deselectFolder();
 	selectFolder(domId);
 
-    url = "/webfilesys/servlet?command=selectCompFolder&path=" + encodeURIComponent(path);
+    url = "/doxee-internal/servlet?command=selectCompFolder&path=" + encodeURIComponent(path);
 
     xmlRequest(url, selectCompFolderResult);
 }
@@ -631,7 +631,7 @@ function cancelCompare()
 {
     deselectFolder();
 
-    url = "/webfilesys/servlet?command=selectCompFolder&cmd=deselect";
+    url = "/doxee-internal/servlet?command=selectCompFolder&cmd=deselect";
 
     xmlRequestSynchron(url);
 
@@ -644,7 +644,7 @@ function cancelCompare()
 
 function deselectCompFolders()
 {
-    url = "/webfilesys/servlet?command=selectCompFolder&cmd=deselect";
+    url = "/doxee-internal/servlet?command=selectCompFolder&cmd=deselect";
     
     xmlRequest(url, deselectCompFolderResult);
 }
@@ -662,14 +662,14 @@ function deselectCompFolderResult()
 
 function compFolderParms()
 {
-    showPrompt('/webfilesys/servlet?command=compFolderParms', '/webfilesys/xsl/compFolderParms.xsl', 340, 325);
+    showPrompt('/doxee-internal/servlet?command=compFolderParms', '/doxee-internal/xsl/compFolderParms.xsl', 340, 325);
 }
 
 function openCompWindow()
 {
     deselectFolder();
 
-    compWin = window.open("/webfilesys/servlet?command=blank","compWin","status=no,toolbar=no,location=no,menu=no,scrollbars=yes,width=700,height=500,resizable=yes,left=10,top=10,screenX=10,screenY=10");
+    compWin = window.open("/doxee-internal/servlet?command=blank","compWin","status=no,toolbar=no,location=no,menu=no,scrollbars=yes,width=700,height=500,resizable=yes,left=10,top=10,screenX=10,screenY=10");
     document.compParmsForm.target = 'compWin';
     if (document.compParmsForm.treeView.checked) 
     {

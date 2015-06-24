@@ -70,11 +70,11 @@ public class SynchronizeRequestHandler extends UserRequestHandler
         output.println("<HTML>");
 		output.println("<HEAD>");
 
-        output.println("<script src=\"/webfilesys/javascript/ajaxCommon.js\" type=\"text/javascript\"></script>");
-        output.println("<script src=\"/webfilesys/javascript/ajaxFolder.js\" type=\"text/javascript\"></script>");
+        output.println("<script src=\"/doxee-internal/javascript/ajaxCommon.js\" type=\"text/javascript\"></script>");
+        output.println("<script src=\"/doxee-internal/javascript/ajaxFolder.js\" type=\"text/javascript\"></script>");
         
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("</HEAD>");
 

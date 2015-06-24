@@ -41,7 +41,7 @@ public class XslTreeStatisticsHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(treeStatsElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/treeStats.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/treeStats.xsl\"");
 
 		doc.insertBefore(xslRef, treeStatsElement);
 

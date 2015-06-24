@@ -26,7 +26,7 @@
 
         if (mapType == "1")
         {
-            var mapWin = window.open('/webfilesys/servlet?command=osMap&path=' + encodeURIComponent(folderPath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
+            var mapWin = window.open('/doxee-internal/servlet?command=osMap&path=' + encodeURIComponent(folderPath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
             if (!mapWin) 
             {
             	alert(resourceBundle["alert.enablePopups"]);
@@ -38,7 +38,7 @@
         } 
         else if (mapType == "2")
         {
-            var mapWin = window.open('/webfilesys/servlet?command=googleMap&path=' + encodeURIComponent(folderPath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
+            var mapWin = window.open('/doxee-internal/servlet?command=googleMap&path=' + encodeURIComponent(folderPath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
             if (!mapWin) 
             {
             	alert(resourceBundle["alert.enablePopups"]);
@@ -50,7 +50,7 @@
         } 
         else
         {
-            window.location.href = "/webfilesys/servlet?command=googleEarthFolderPlacemark";
+            window.location.href = "/doxee-internal/servlet?command=googleEarthFolderPlacemark";
         }
     }  
 
@@ -86,7 +86,7 @@
 
         if (mapType == "1")
         {
-            var mapWin = window.open('/webfilesys/servlet?command=osMap&path=' + encodeURIComponent(filePath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
+            var mapWin = window.open('/doxee-internal/servlet?command=osMap&path=' + encodeURIComponent(filePath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
             if (!mapWin) 
             {
             	alert(resourceBundle["alert.enablePopups"]);
@@ -98,7 +98,7 @@
         } 
         else if (mapType == "2")
         {
-            var mapWin = window.open('/webfilesys/servlet?command=googleMap&path=' + encodeURIComponent(filePath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
+            var mapWin = window.open('/doxee-internal/servlet?command=googleMap&path=' + encodeURIComponent(filePath),'mapWin','status=no,toolbar=no,location=no,menu=no,width=600,height=400,resizable=yes,left=20,top=20,screenX=20,screenY=20');
             if (!mapWin) 
             {
             	alert(resourceBundle["alert.enablePopups"]);
@@ -110,6 +110,6 @@
         } 
         else
         {
-            window.location.href = "/webfilesys/servlet?command=googleEarthPlacemark&path=" + filePath;
+            window.location.href = "/doxee-internal/servlet?command=googleEarthPlacemark&path=" + filePath;
         }
     }  

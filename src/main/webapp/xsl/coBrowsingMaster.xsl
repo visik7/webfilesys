@@ -16,10 +16,10 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/slideShow/css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/slideShow/css" />.css</xsl:attribute>
   </link>
 
   <script src="javascript/ajaxCommon.js" type="text/javascript" />
@@ -34,7 +34,7 @@
 
     var direction = 'forward'
 
-    var prefetchSrc = '/webfilesys/images/space.gif';
+    var prefetchSrc = '/doxee-internal/images/space.gif';
     
     var prefetchWidth = 1;
     
@@ -97,7 +97,7 @@
             return;
         }
 
-        var url = '/webfilesys/servlet?command=coBrowsingMasterImage&amp;imageIdx=' + imageIdx + '&amp;windowWidth=' + getWinWidth() + '&amp;windowHeight=' + getWinHeight();
+        var url = '/doxee-internal/servlet?command=coBrowsingMasterImage&amp;imageIdx=' + imageIdx + '&amp;windowWidth=' + getWinWidth() + '&amp;windowHeight=' + getWinHeight();
 
         xmlRequest(url, showImage);
     }
@@ -138,7 +138,7 @@
                     
                     prefetchImg.onLoad = prefetchLoaded();
                     
-                    prefetchSrc = '/webfilesys/servlet?command=getFile&amp;filePath=' + encodeURIComponent(imagePath) + '&amp;cached=true';
+                    prefetchSrc = '/doxee-internal/servlet?command=getFile&amp;filePath=' + encodeURIComponent(imagePath) + '&amp;cached=true';
                     
                     prefetchImg.src = prefetchSrc;
                     
@@ -148,7 +148,7 @@
                     
                     centerDiv.style.height = Math.round(((getWinHeight() - imageHeight) / 2)) + 'px';
                     
-                    imageElement.src = '/webfilesys/images/space.gif';
+                    imageElement.src = '/doxee-internal/images/space.gif';
 
                     imageElement.width = 1;
                     
@@ -233,11 +233,11 @@
 
     function terminate()
     {
-        var url = '/webfilesys/servlet?command=coBrowsingExit';
+        var url = '/doxee-internal/servlet?command=coBrowsingExit';
 
         xmlRequestSynchron(url);
 
-        window.location.href = '/webfilesys/servlet?command=logout';
+        window.location.href = '/doxee-internal/servlet?command=logout';
     }
   </script>  
 
@@ -262,7 +262,7 @@
     <div width="100%" style="padding:0px;margin:0px;">
     
       <img id="slideShowImg" border="0" class="thumb">
-        <xsl:attribute name="src">/webfilesys/images/space.gif</xsl:attribute>
+        <xsl:attribute name="src">/doxee-internal/images/space.gif</xsl:attribute>
       </img>
       
     </div>
@@ -275,19 +275,19 @@
        style="position:absolute;top:6px;left:6px;width=60px;height=20px;padding:5px;background-color:white;text-align:center;border-style:solid;border-width:1px;border-color:#000000;">
     
     <a href="javascript:goBack();">
-      <img src="/webfilesys/images/prev.png" border="0" width="22" height="22">
+      <img src="/doxee-internal/images/prev.png" border="0" width="22" height="22">
         <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.back']/@value" /></xsl:attribute>
       </img>
     </a>
 
     <a href="javascript:terminate()">
-      <img src="/webfilesys/images/exit.gif" border="0" width="20" height="20" style="margin-left:5px;margin-right:5px;">
+      <img src="/doxee-internal/images/exit.gif" border="0" width="20" height="20" style="margin-left:5px;margin-right:5px;">
         <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='exitCoBrowsing']/@value" /></xsl:attribute>
       </img>
     </a>
 
     <a href="javascript:goForward();">
-      <img src="/webfilesys/images/next.png" border="0" width="22" height="22">
+      <img src="/doxee-internal/images/next.png" border="0" width="22" height="22">
         <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.next']/@value" /></xsl:attribute>
       </img>
     </a>

@@ -10,7 +10,7 @@
   <xsl:value-of select="/renameFile/resources/msg[@key='label.renameImage']/@value" />
 </div>
     
-<form accept-charset="utf-8" name="renameForm" id="renameForm" method="get" action="/webfilesys/servlet" style="display:inline;">
+<form accept-charset="utf-8" name="renameForm" id="renameForm" method="get" action="/doxee-internal/servlet" style="display:inline;">
   <input type="hidden" name="command" value="renameImage" />
   <input type="hidden" name="imagePath">
     <xsl:attribute name="value"><xsl:value-of select="/renameFile/imagePath" /></xsl:attribute>

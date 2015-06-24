@@ -332,13 +332,13 @@ public class Email extends Thread
 			if (WebFileSys.getInstance().getHttpServerPort() > 0)
 			{
 				messageBody.append("http://");
-				messageBody.append(InetAddress.getLocalHost().getHostAddress() + ":" + WebFileSys.getInstance().getHttpServerPort() + "/webfilesys/servlet \r\n");
+				messageBody.append(InetAddress.getLocalHost().getHostAddress() + ":" + WebFileSys.getInstance().getHttpServerPort() + "/doxee-internal/servlet \r\n");
 			}
 
             if (WebFileSys.getInstance().getSslServerPort() > 0)
             {
                 messageBody.append("https://");
-				messageBody.append(InetAddress.getLocalHost().getHostAddress() + ":" + WebFileSys.getInstance().getSslServerPort() + "/webfilesys/servlet \r\n");
+				messageBody.append(InetAddress.getLocalHost().getHostAddress() + ":" + WebFileSys.getInstance().getSslServerPort() + "/doxee-internal/servlet \r\n");
             }
             */
         }

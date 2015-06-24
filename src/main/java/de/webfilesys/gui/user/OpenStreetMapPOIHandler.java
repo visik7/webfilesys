@@ -136,7 +136,7 @@ public class OpenStreetMapPOIHandler extends UserRequestHandler
         output.print('\t');
         output.print(description);
         output.print('\t');
-        output.print("/webfilesys/images/OSMaps.png");
+        output.print("/doxee-internal/images/OSMaps.png");
         output.print('\t');
         output.print("32,32");
         output.print('\t');

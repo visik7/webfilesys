@@ -16,13 +16,13 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/treeStats/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/treeStats/css" />.css</xsl:attribute>
 </link>
 
-<script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
@@ -53,11 +53,11 @@
   {
       if (folderNum == 0)
       {
-          document.getElementById('inProgressIcon').src = '/webfilesys/images/space.gif';
+          document.getElementById('inProgressIcon').src = '/doxee-internal/images/space.gif';
           return;
       }
       
-      url = "/webfilesys/servlet?command=ajaxFolderStats&amp;path=" + folderList[folderIdx];
+      url = "/doxee-internal/servlet?command=ajaxFolderStats&amp;path=" + folderList[folderIdx];
       
       folderIdx ++;
 
@@ -115,7 +115,7 @@
              } 
              else
              {
-                 document.getElementById('inProgressIcon').src = '/webfilesys/images/space.gif';
+                 document.getElementById('inProgressIcon').src = '/doxee-internal/images/space.gif';
              
                  prepareDiagram();
              }            
@@ -296,7 +296,7 @@
             <td>
               <a class="fn">
                 <xsl:attribute name="href">
-                  <xsl:value-of select="'/webfilesys/servlet?command=fileStatistics&amp;cmd=treeStats&amp;actpath='" />
+                  <xsl:value-of select="'/doxee-internal/servlet?command=fileStatistics&amp;cmd=treeStats&amp;actpath='" />
                   <xsl:value-of select="@path" />
                 </xsl:attribute>
                 <xsl:if test="@shortName">

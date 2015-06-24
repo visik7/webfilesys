@@ -17,10 +17,10 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/slideShow/css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/slideShow/css" />.css</xsl:attribute>
   </link>
 
   <script src="javascript/browserCheck.js" type="text/javascript" />
@@ -72,12 +72,12 @@
   <p id="centerDiv" width="100%" style="margin:0px;padding:0px;text-align:center;">
     
     <img id="slideShowImg0" border="0" class="thumb" style="position:absolute;opacity:1">
-      <xsl:attribute name="src">/webfilesys/images/space.gif</xsl:attribute>
+      <xsl:attribute name="src">/doxee-internal/images/space.gif</xsl:attribute>
       <xsl:attribute name="onMouseOver">javascript:showActionButtons()</xsl:attribute>
     </img>
 
     <img id="slideShowImg1" border="0" class="thumb" style="position:absolute;opacity:0">
-      <xsl:attribute name="src">/webfilesys/images/space.gif</xsl:attribute>
+      <xsl:attribute name="src">/doxee-internal/images/space.gif</xsl:attribute>
       <xsl:attribute name="onMouseOver">javascript:showActionButtons()</xsl:attribute>
     </img>
       
@@ -90,7 +90,7 @@
     
     <xsl:if test="/slideShow/autoForward='true'">
       <a href="javascript:hideActionButtons()">
-        <img src="/webfilesys/images/winClose.gif" border="0" style="float:right;" />
+        <img src="/doxee-internal/images/winClose.gif" border="0" style="float:right;" />
       </a>
 
       <br/>
@@ -98,14 +98,14 @@
     
     <xsl:if test="/slideShow/autoForward='false'">
       <a href="javascript:goBack()">
-        <img id="privious" src="/webfilesys/images/prev.png" border="0" width="22" height="22">
+        <img id="privious" src="/doxee-internal/images/prev.png" border="0" width="22" height="22">
           <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.back']/@value" /></xsl:attribute>
         </img>
       </a>
     </xsl:if>
 
     <a href="javascript:self.close()">
-      <img src="/webfilesys/images/exit.gif" border="0">
+      <img src="/doxee-internal/images/exit.gif" border="0">
         <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.exitslideshow']/@value" /></xsl:attribute>
       </img>
     </a>
@@ -113,13 +113,13 @@
     <xsl:if test="/slideShow/autoForward">
       <a id="stopAndGoLink" href="javascript:stopAndGo()">
         <xsl:if test="/slideShow/autoForward='true'">
-          <img id="pauseGo" src="/webfilesys/images/pause.gif" border="0">
+          <img id="pauseGo" src="/doxee-internal/images/pause.gif" border="0">
             <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.pause']/@value" /></xsl:attribute>
           </img>
         </xsl:if>
           
         <xsl:if test="/slideShow/autoForward='false'">
-          <img id="pauseGo" src="/webfilesys/images/next.png" border="0" width="22" height="22">
+          <img id="pauseGo" src="/doxee-internal/images/next.png" border="0" width="22" height="22">
             <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.continue']/@value" /></xsl:attribute>
           </img>
         </xsl:if>

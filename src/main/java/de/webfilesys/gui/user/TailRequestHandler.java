@@ -219,13 +219,13 @@ public class TailRequestHandler extends UserRequestHandler
         output.println("<HTML>");
         output.println("<HEAD>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-        output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+        output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
         output.println("<title>WebFileSys: tail</title>");
         
-        output.println("<script src=\"/webfilesys/javascript/ajax.js\" type=\"text/javascript\"></script>");
-        output.println("<script src=\"/webfilesys/javascript/ajaxCommon.js\" type=\"text/javascript\"></script>");
+        output.println("<script src=\"/doxee-internal/javascript/ajax.js\" type=\"text/javascript\"></script>");
+        output.println("<script src=\"/doxee-internal/javascript/ajaxCommon.js\" type=\"text/javascript\"></script>");
         
         output.println("<script type=\"text/javascript\">");
         output.println("var pollTimeout;");        
@@ -266,7 +266,7 @@ public class TailRequestHandler extends UserRequestHandler
         headLine(getHeadlinePath(filePath));
         
         output.println("<div style=\"float:right;border:1px solid black;padding:5px;background-color:ivory;\">");
-        output.println("<form id=\"tailForm\" method=\"get\" accept-charset=\"utf-8\" action=\"/webfilesys/servlet\" style=\"display:inline;\">");
+        output.println("<form id=\"tailForm\" method=\"get\" accept-charset=\"utf-8\" action=\"/doxee-internal/servlet\" style=\"display:inline;\">");
         output.println("<input type=\"hidden\" name=\"command\" value=\"tail\" />");
         output.println("<input type=\"hidden\" name=\"filePath\" value=\"" + filePath + "\" />");
         output.println(getResource("tail.lineCount", "number of lines from end of file") + ":");

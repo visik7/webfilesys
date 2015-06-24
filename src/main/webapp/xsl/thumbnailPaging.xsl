@@ -14,11 +14,11 @@
             
                 <xsl:if test="paging/currentPage &gt; 1">
                   <td class="fileListFunct" valign="center" nowrap="true">
-                    <a href="/webfilesys/servlet?command=thumbnail&amp;startIdx=0"><img src="/webfilesys/images/first.gif" border="0" /></a>
+                    <a href="/doxee-internal/servlet?command=thumbnail&amp;startIdx=0"><img src="/doxee-internal/images/first.gif" border="0" /></a>
                     &#160;
                     <a>
-                      <xsl:attribute name="href">/webfilesys/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="paging/prevStartIdx" /></xsl:attribute>
-                      <img src="/webfilesys/images/previous.gif" border="0" />
+                      <xsl:attribute name="href">/doxee-internal/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="paging/prevStartIdx" /></xsl:attribute>
+                      <img src="/doxee-internal/images/previous.gif" border="0" />
                     </a>
                   </td>
                 </xsl:if>
@@ -48,7 +48,7 @@
                       </xsl:if>
                       <xsl:if test="not(@num=../currentPage)">
                         <div class="pagingPage pagingPageOther">
-                          <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
+                          <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
                           <xsl:value-of select="@num" />
                         </div>
                       </xsl:if>
@@ -59,13 +59,13 @@
               
                     <td class="fileListFunct" align="right" valign="center" nowrap="true">
                       <a>
-                        <xsl:attribute name="href">/webfilesys/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="paging/nextStartIdx" /></xsl:attribute>
-                        <img src="/webfilesys/images/next.gif" border="0" />
+                        <xsl:attribute name="href">/doxee-internal/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="paging/nextStartIdx" /></xsl:attribute>
+                        <img src="/doxee-internal/images/next.gif" border="0" />
                       </a>
                       &#160;
                       <a>
-                        <xsl:attribute name="href">/webfilesys/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="paging/lastStartIdx" /></xsl:attribute>
-                        <img src="/webfilesys/images/last.gif" border="0" />
+                        <xsl:attribute name="href">/doxee-internal/servlet?command=thumbnail&amp;startIdx=<xsl:value-of select="paging/lastStartIdx" /></xsl:attribute>
+                        <img src="/doxee-internal/images/last.gif" border="0" />
                       </a>
                     </td>
                   </xsl:if>

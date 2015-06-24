@@ -61,7 +61,7 @@ public class XslTreeStatSunburstHandler extends XslRequestHandlerBase
 		
 		doc.appendChild(folderStatsElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/sunburstChart.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/sunburstChart.xsl\"");
 
 		doc.insertBefore(xslRef, folderStatsElement);
 

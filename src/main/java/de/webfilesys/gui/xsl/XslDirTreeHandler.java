@@ -92,7 +92,7 @@ public class XslDirTreeHandler extends XslRequestHandlerBase
         	actPath = collapsePath;
         }
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/folderTree.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/folderTree.xsl\"");
 
 		folderTreeElement = doc.createElement("folderTree");
 			

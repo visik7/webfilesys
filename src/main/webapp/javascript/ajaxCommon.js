@@ -118,7 +118,7 @@ function xmlRequestPost(url, params, callBackFunction)
 
 function ajaxRPC(method, param1)
 {
-    var url = "/webfilesys/servlet?command=ajaxRPC&method=" + method + "&param1=" + param1;
+    var url = "/doxee-internal/servlet?command=ajaxRPC&method=" + method + "&param1=" + param1;
 
     var responseXml = xmlRequestSynchron(url);
     
@@ -318,7 +318,7 @@ function showHourGlass() {
     
     var hourGlassElem = document.createElement('img');
     
-    hourGlassElem.setAttribute("src", "/webfilesys/images/hourglass.gif");
+    hourGlassElem.setAttribute("src", "/doxee-internal/images/hourglass.gif");
     hourGlassElem.setAttribute("width", "32");
     hourGlassElem.setAttribute("height", "32");
     hourGlassElem.setAttribute("border", "0");

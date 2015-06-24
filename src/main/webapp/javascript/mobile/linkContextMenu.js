@@ -31,7 +31,7 @@ function jsLinkMenu(linkName, realPath)
 	if (fileExt == ".URL")
 	{
             menuText = menuText 
-                     + menuEntry("/webfilesys/servlet?command=openUrlFile&actPath=" + encodeURIComponent(realPath) + "&random=" + (new Date().getTime()),resourceBundle["menuView"],"_blank");
+                     + menuEntry("/doxee-internal/servlet?command=openUrlFile&actPath=" + encodeURIComponent(realPath) + "&random=" + (new Date().getTime()),resourceBundle["menuView"],"_blank");
 	}
 	else
 	{
@@ -53,7 +53,7 @@ function jsLinkMenu(linkName, realPath)
     }
 
     menuText = menuText 
-             + menuEntry("/webfilesys/servlet?command=getFile&filePath=" + encodeURIComponent(realPath) + "&disposition=download",downloadLabel,null);
+             + menuEntry("/doxee-internal/servlet?command=getFile&filePath=" + encodeURIComponent(realPath) + "&disposition=download",downloadLabel,null);
 
     if (readonly != 'true')
     {
@@ -163,17 +163,17 @@ function jsLinkMenu(linkName, realPath)
 
 function editRemoteLink(path)
 {
-    window.location.href = '/webfilesys/servlet?command=mobile&cmd=editFile&filePath=' + encodeURIComponent(path) + '&screenHeight=' + screen.height;
+    window.location.href = '/doxee-internal/servlet?command=mobile&cmd=editFile&filePath=' + encodeURIComponent(path) + '&screenHeight=' + screen.height;
 }
 
 function origDir(path)
 {
-    window.location.href = "/webfilesys/servlet?command=mobile&cmd=folderFileList&absPath=" + encodeURIComponent(path);
+    window.location.href = "/doxee-internal/servlet?command=mobile&cmd=folderFileList&absPath=" + encodeURIComponent(path);
 }
 
 function emailLink(filePath)
 {
-    showPrompt('/webfilesys/servlet?command=emailFilePrompt&filePath=' + encodeURIComponent(filePath), '/webfilesys/xsl/emailFile.xsl', 400, 210);
+    showPrompt('/doxee-internal/servlet?command=emailFilePrompt&filePath=' + encodeURIComponent(filePath), '/doxee-internal/xsl/emailFile.xsl', 400, 210);
     
     document.emailForm.receiver.focus();
     

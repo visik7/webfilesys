@@ -290,7 +290,7 @@ public class TextSearch
                                     String viewLink = null;
                                     try
                                     {
-                                        viewLink = "/webfilesys/servlet?command=getFile&filePath=" + URLEncoder.encode(fullPath, "UTF-8");
+                                        viewLink = "/doxee-internal/servlet?command=getFile&filePath=" + URLEncoder.encode(fullPath, "UTF-8");
                                     }
                                     catch (UnsupportedEncodingException uex)
                                     {

@@ -2,9 +2,9 @@ function ajaxRotate(path, degrees, domId)
 {
     hideMenu();
 
-    var xmlUrl = '/webfilesys/servlet?command=xformImage&action=rotate&degrees=' + degrees + '&imgName=' + encodeURIComponent(path) + '&domId=' + domId;
+    var xmlUrl = '/doxee-internal/servlet?command=xformImage&action=rotate&degrees=' + degrees + '&imgName=' + encodeURIComponent(path) + '&domId=' + domId;
 
-    var xslUrl = "/webfilesys/xsl/transformImageResult.xsl";
+    var xslUrl = "/doxee-internal/xsl/transformImageResult.xsl";
 
     var newHtml = browserXslt(xmlUrl, xslUrl);
     
@@ -21,7 +21,7 @@ function ajaxRotate(path, degrees, domId)
 
 function checkLossless(path)
 {
-    var xmlUrl = '/webfilesys/servlet?command=checkLossless&imgPath=' + encodeURIComponent(path);
+    var xmlUrl = '/doxee-internal/servlet?command=checkLossless&imgPath=' + encodeURIComponent(path);
 
     var responseXml = xmlRequestSynchron(xmlUrl);
     
@@ -45,7 +45,7 @@ function autoImgRotate()
 
     showHourGlass();
 
-    var xmlUrl = '/webfilesys/servlet?command=autoImgRotate';
+    var xmlUrl = '/doxee-internal/servlet?command=autoImgRotate';
 
     var responseXml = xmlRequest(xmlUrl, autoImgRotateResult);
 }
@@ -63,7 +63,7 @@ function autoImgRotateResult()
                           
              if (anyRotated == "true")
              {
-                 window.location.href = '/webfilesys/servlet?command=thumbnail';
+                 window.location.href = '/doxee-internal/servlet?command=thumbnail';
                  return
              }
              

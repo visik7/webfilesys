@@ -263,7 +263,7 @@
 
           var zoomImgObj = document.getElementById('zoomPic');
 
-          zoomImgObj.src = '/webfilesys/images/space.gif';
+          zoomImgObj.src = '/doxee-internal/images/space.gif';
 
           firstCall = true;
         

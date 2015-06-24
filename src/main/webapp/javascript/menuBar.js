@@ -26,7 +26,7 @@ function gotoDirectPath() {
 	    }
 	}
 	   
-	var url = "/webfilesys/servlet?command=exp&expandPath=" + encodeURIComponent(directPath) + "&mask=*&fastPath=true";
+	var url = "/doxee-internal/servlet?command=exp&expandPath=" + encodeURIComponent(directPath) + "&mask=*&fastPath=true";
 	  
 	hideDirectPath();
 	  

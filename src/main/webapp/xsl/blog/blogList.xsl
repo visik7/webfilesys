@@ -21,33 +21,33 @@
 
       <title>WebFileSys Blog</title>
 
-      <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
-      <link rel="stylesheet" type="text/css" href="/webfilesys/styles/blog.css" />
-      <link rel="stylesheet" type="text/css" href="/webfilesys/styles/pictureAlbum.css" />
-      <link rel="stylesheet" type="text/css" href="/webfilesys/styles/icons.css" />
+      <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
+      <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/blog.css" />
+      <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/pictureAlbum.css" />
+      <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/icons.css" />
 
       <link rel="stylesheet" type="text/css">
-        <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/blog/css" />.css</xsl:attribute>
+        <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/blog/css" />.css</xsl:attribute>
       </link>
       
       <style id="calendarStyle"></style>
       
-      <script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/ajaxUpload.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/popupPicture.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/calendar/CalendarPopup.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/calendar/AnchorPosition.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/calendar/date.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/calendar/PopupWindow.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/geoMap.js" type="text/javascript"></script>
-      <script src="/webfilesys/javascript/blog.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/ajaxUpload.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/popupPicture.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/calendar/CalendarPopup.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/calendar/AnchorPosition.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/calendar/date.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/calendar/PopupWindow.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/geoMap.js" type="text/javascript"></script>
+      <script src="/doxee-internal/javascript/blog.js" type="text/javascript"></script>
       
-	  <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+	  <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 
       <script type="text/javascript">
-        <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/blog/language" /></xsl:attribute>
+        <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/blog/language" /></xsl:attribute>
       </script>
       
       <script type="text/javascript">
@@ -85,7 +85,7 @@
 
             var beforeDay = selectedDate.getFullYear() + "-" + LZ(selectedDate.getMonth() + 1) + "-" + LZ(selectedDate.getDate());
 
-            window.location.href = "/webfilesys/servlet?command=blog&amp;beforeDay=" + beforeDay;
+            window.location.href = "/doxee-internal/servlet?command=blog&amp;beforeDay=" + beforeDay;
         }
 
       </script>
@@ -144,9 +144,9 @@
               <input id="publishBlogButton" type="button" resource="blog.buttonPublish" onclick="publishBlog()" style="display:none"/>
             </xsl:if>
 
-            <input type="button" resource="blog.buttonCreate" onclick="window.location.href='/webfilesys/servlet?command=blog&amp;cmd=post'" />
+            <input type="button" resource="blog.buttonCreate" onclick="window.location.href='/doxee-internal/servlet?command=blog&amp;cmd=post'" />
 
-            <input type="button" resource="blog.buttonlogout" onclick="window.location.href='/webfilesys/servlet?command=logout'" />
+            <input type="button" resource="blog.buttonlogout" onclick="window.location.href='/doxee-internal/servlet?command=logout'" />
 
           </xsl:if>
         </div>   
@@ -157,12 +157,12 @@
           <div class="blogPagingCont">
             <xsl:if test="/blog/paging/prevPageBefore">
               <a class="icon-font icon-paging icon-page-prev" titleResource="blog.pagingNewer">
-                <xsl:attribute name="href">/webfilesys/servlet?command=blog&amp;afterDay=<xsl:value-of select="/blog/paging/prevPageBefore" /></xsl:attribute>
+                <xsl:attribute name="href">/doxee-internal/servlet?command=blog&amp;afterDay=<xsl:value-of select="/blog/paging/prevPageBefore" /></xsl:attribute>
               </a>
             </xsl:if>
             <xsl:if test="/blog/paging/nextPageAfter">
               <a class="icon-font icon-paging icon-page-next" titleResource="blog.pagingOlder">
-                <xsl:attribute name="href">/webfilesys/servlet?command=blog&amp;beforeDay=<xsl:value-of select="/blog/paging/nextPageAfter" /></xsl:attribute>
+                <xsl:attribute name="href">/doxee-internal/servlet?command=blog&amp;beforeDay=<xsl:value-of select="/blog/paging/nextPageAfter" /></xsl:attribute>
               </a>
             </xsl:if>
           </div>
@@ -296,12 +296,12 @@
           <div class="blogPagingCont">
             <xsl:if test="/blog/paging/prevPageBefore">
               <a class="icon-font icon-paging icon-page-prev" titleResource="blog.pagingNewer">
-                <xsl:attribute name="href">/webfilesys/servlet?command=blog&amp;afterDay=<xsl:value-of select="/blog/paging/prevPageBefore" /></xsl:attribute>
+                <xsl:attribute name="href">/doxee-internal/servlet?command=blog&amp;afterDay=<xsl:value-of select="/blog/paging/prevPageBefore" /></xsl:attribute>
               </a>
             </xsl:if>
             <xsl:if test="/blog/paging/nextPageAfter">
               <a class="icon-font icon-paging icon-page-next" titleResource="blog.pagingOlder">
-                <xsl:attribute name="href">/webfilesys/servlet?command=blog&amp;beforeDay=<xsl:value-of select="/blog/paging/nextPageAfter" /></xsl:attribute>
+                <xsl:attribute name="href">/doxee-internal/servlet?command=blog&amp;beforeDay=<xsl:value-of select="/blog/paging/nextPageAfter" /></xsl:attribute>
               </a>
             </xsl:if>
           </div>
@@ -329,7 +329,7 @@
     
     <div id="calDiv"></div>
     
-    <div id="picturePopup" style="position:absolute;top:50px;left:150px;width:400px;height:400px;background-color:#c0c0c0;padding:0px;visibility:hidden;border-style:ridge;border-color:white;border-width:6px;z-index:2;"><img id="zoomPic" src="" border="0" style="width:100%;height:100%;" onclick="hidePopupPicture()"/><div id="popupClose" style="position:absolute;top:5px;left:5px;width:16px;height:14px;padding:0px;visibility:hidden;border-style:none;z-index:3"><img src="/webfilesys/images/winClose.gif" border="0" width="16" height="14" onclick="hidePopupPicture()"/></div></div>
+    <div id="picturePopup" style="position:absolute;top:50px;left:150px;width:400px;height:400px;background-color:#c0c0c0;padding:0px;visibility:hidden;border-style:ridge;border-color:white;border-width:6px;z-index:2;"><img id="zoomPic" src="" border="0" style="width:100%;height:100%;" onclick="hidePopupPicture()"/><div id="popupClose" style="position:absolute;top:5px;left:5px;width:16px;height:14px;padding:0px;visibility:hidden;border-style:none;z-index:3"><img src="/doxee-internal/images/winClose.gif" border="0" width="16" height="14" onclick="hidePopupPicture()"/></div></div>
     
     <div id="publishCont" class="blogPublishCont"></div>
 

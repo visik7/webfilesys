@@ -12,7 +12,7 @@
   
   <br/>
 
-  <form accept-charset="utf-8" name="switchFolderWatchForm" method="get" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" name="switchFolderWatchForm" method="get" action="/doxee-internal/servlet">
   
     <input type="hidden" name="command" value="switchFolderWatch" />
 

@@ -65,7 +65,7 @@ public class BlogListHandler extends XslRequestHandlerBase {
 			
 		doc.appendChild(blogElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/blog/blogList.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/blog/blogList.xsl\"");
 
 		doc.insertBefore(xslRef, blogElement);
 
@@ -343,11 +343,11 @@ public class BlogListHandler extends XslRequestHandlerBase {
 		        					XmlUtil.setChildText(fileElement, "fullScreenWidth", Integer.toString(fullScreenWidth));
 		        					XmlUtil.setChildText(fileElement, "fullScreenHeight", Integer.toString(scaledImage.getScaledHeight()));
 		        					
-		        					String srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(file.getAbsolutePath()) + "&cached=true";
+		        					String srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(file.getAbsolutePath()) + "&cached=true";
 		        					
 		        					XmlUtil.setChildText(fileElement, "imgPath", srcFileName);
 		        					
-		        					String srcPathForScript = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(insertDoubleBackslash(file.getAbsolutePath())) + "&cached=true";
+		        					String srcPathForScript = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(insertDoubleBackslash(file.getAbsolutePath())) + "&cached=true";
 
 		        					XmlUtil.setChildText(fileElement, "imgPathForScript", srcPathForScript);
 

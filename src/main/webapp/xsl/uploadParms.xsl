@@ -14,21 +14,21 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="css" />.css</xsl:attribute>
   </link>
 
-  <script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/fmweb.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxUpload.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/fmweb.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxUpload.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
   
-  <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
   <script type="text/javascript">
-    <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
+    <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
   </script>
 
   <script language="javascript">
@@ -200,7 +200,7 @@
 
   <div class="headline" resource="label.uploadfile"></div>
 
-  <form accept-charset="utf-8" name="form1" method="post" action="/webfilesys/upload" enctype="multipart/form-data">
+  <form accept-charset="utf-8" name="form1" method="post" action="/doxee-internal/upload" enctype="multipart/form-data">
   
     <input type="hidden" name="actpath">
       <xsl:attribute name="value"><xsl:value-of select="currentPath" /></xsl:attribute>
@@ -225,7 +225,7 @@
         </td>
         <td style="text-align:right;padding-right:20px;">
           <input id="linkMultiUpload" type="button" style="visibility:hidden" resource="link.multiUpload">
-            <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=multiUpload';</xsl:attribute>
+            <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=multiUpload';</xsl:attribute>
           </input>
         </td>
       </tr>
@@ -286,7 +286,7 @@
         
         <td class="formButton" align="right">
           <input type="button" resource="button.cancel">
-            <xsl:attribute name="onclick">javascript:window.location.href='/webfilesys/servlet?command=listFiles';</xsl:attribute>
+            <xsl:attribute name="onclick">javascript:window.location.href='/doxee-internal/servlet?command=listFiles';</xsl:attribute>
           </input>
         </td>
       </tr>
@@ -294,7 +294,7 @@
     </table>
   </form>
   
-  <img src="/webfilesys/images/bluedot.gif" border="0" width="1" height="1" />
+  <img src="/doxee-internal/images/bluedot.gif" border="0" width="1" height="1" />
   
 </body>
 
@@ -304,7 +304,7 @@
   <br/><br/>
   <center>
 
-    <div style="width:302px;height:20px;border-style:solid;border-width:1px;border-color:blue;margin:0px;padding:0px;text-align:left;font-size:3px;"><img id="done" src="/webfilesys/images/bluedot.gif" width="1" height="20" border="0"/></div>
+    <div style="width:302px;height:20px;border-style:solid;border-width:1px;border-color:blue;margin:0px;padding:0px;text-align:left;font-size:3px;"><img id="done" src="/doxee-internal/images/bluedot.gif" width="1" height="20" border="0"/></div>
 
     <br/>
 

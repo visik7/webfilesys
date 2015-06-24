@@ -38,7 +38,7 @@ public class XslLogonHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(loginElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/login.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/login.xsl\"");
 
 		doc.insertBefore(xslRef, loginElement);
 

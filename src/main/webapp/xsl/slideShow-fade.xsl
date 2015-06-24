@@ -17,10 +17,10 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/slideShow/css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/slideShow/css" />.css</xsl:attribute>
   </link>
 
   <script src="javascript/browserCheck.js" type="text/javascript" />
@@ -43,7 +43,7 @@
 
     var autoForward = <xsl:value-of select="/slideShow/autoForward" />;
     
-    var prefetchSrc = '/webfilesys/images/space.gif';
+    var prefetchSrc = '/doxee-internal/images/space.gif';
     
     var prefetchWidth = 1;
     
@@ -75,7 +75,7 @@
             return;
         }
 
-        url = '/webfilesys/servlet?command=slideShowImage&amp;imageIdx=' + imageIdx + '&amp;windowWidth=' + getWinWidth() + '&amp;windowHeight=' + getWinHeight();
+        url = '/doxee-internal/servlet?command=slideShowImage&amp;imageIdx=' + imageIdx + '&amp;windowWidth=' + getWinWidth() + '&amp;windowHeight=' + getWinHeight();
 
         xmlRequest(url, showImage);
     }
@@ -116,7 +116,7 @@
                     
                     prefetchImg.onLoad = prefetchLoaded();
                     
-                    prefetchSrc = '/webfilesys/servlet?command=getFile&amp;filePath=' + encodeURIComponent(imagePath) + '&amp;cached=true';
+                    prefetchSrc = '/doxee-internal/servlet?command=getFile&amp;filePath=' + encodeURIComponent(imagePath) + '&amp;cached=true';
 
                     prefetchImg.src = prefetchSrc;
 
@@ -134,7 +134,7 @@
                     }
                     
                     /*
-                    imageElement.src = '/webfilesys/images/space.gif';
+                    imageElement.src = '/doxee-internal/images/space.gif';
 
                     imageElement.width = 1;
                     
@@ -220,7 +220,7 @@
 
             if (pauseGoImg)
             {
-                pauseGoImg.src = '/webfilesys/images/pause.gif';
+                pauseGoImg.src = '/doxee-internal/images/pause.gif';
 
                 pauseGoImg.title = '<xsl:value-of select="/slideShow/resources/msg[@key='alt.pause']/@value" />';            
             }
@@ -233,7 +233,7 @@
         
             if (pauseGoImg)
             {
-                pauseGoImg.src = '/webfilesys/images/go.gif';
+                pauseGoImg.src = '/doxee-internal/images/go.gif';
             
                 pauseGoImg.title = '<xsl:value-of select="/slideShow/resources/msg[@key='alt.continue']/@value" />';            
             }
@@ -244,7 +244,7 @@
     
     function loadImageIgnorePrefetch()
     {
-        url = '/webfilesys/servlet?command=slideShowImage&amp;imageIdx=' + imageIdx + '&amp;windowWidth=' + getWinWidth() + '&amp;windowHeight=' + getWinHeight();
+        url = '/doxee-internal/servlet?command=slideShowImage&amp;imageIdx=' + imageIdx + '&amp;windowWidth=' + getWinWidth() + '&amp;windowHeight=' + getWinHeight();
 
         xmlRequest(url, showImageNoPrefetch);
     }
@@ -284,13 +284,13 @@
                         centerDiv.style.height = Math.round(((getWinHeight() - displayHeight) / 2)) + 'px';
                     }
                     
-                    imageElement.src = '/webfilesys/images/space.gif';
+                    imageElement.src = '/doxee-internal/images/space.gif';
 
                     imageElement.width = 1;
                     
                     imageElement.heigth = 1;
                     
-                    imageElement.src = '/webfilesys/servlet?command=getFile&amp;filePath=' + encodeURIComponent(imagePath) + '&amp;cached=true';
+                    imageElement.src = '/doxee-internal/servlet?command=getFile&amp;filePath=' + encodeURIComponent(imagePath) + '&amp;cached=true';
                     
                     imageElement.width = displayWidth;
                     
@@ -306,7 +306,7 @@
                     } 
                     
                     first = true;
-                    prefetchSrc = '/webfilesys/images/space.gif';
+                    prefetchSrc = '/doxee-internal/images/space.gif';
                 }
             }
         }
@@ -365,7 +365,7 @@
     <div width="100%" style="padding:0px;margin:0px;">
     
       <img id="slideShowImg" border="0" class="thumb">
-        <xsl:attribute name="src">/webfilesys/images/space.gif</xsl:attribute>
+        <xsl:attribute name="src">/doxee-internal/images/space.gif</xsl:attribute>
         <xsl:attribute name="onMouseOver">javascript:showActionButtons()</xsl:attribute>
       </img>
       
@@ -380,7 +380,7 @@
     
     <xsl:if test="/slideShow/autoForward='true'">
       <a href="javascript:hideActionButtons()">
-        <img src="/webfilesys/images/winClose.gif" border="0" style="float:right;" />
+        <img src="/doxee-internal/images/winClose.gif" border="0" style="float:right;" />
       </a>
 
       <br/>
@@ -388,14 +388,14 @@
     
     <xsl:if test="/slideShow/autoForward='false'">
       <a href="javascript:goBack()">
-        <img id="privious" src="/webfilesys/images/prev.png" border="0" width="22" height="22">
+        <img id="privious" src="/doxee-internal/images/prev.png" border="0" width="22" height="22">
           <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.back']/@value" /></xsl:attribute>
         </img>
       </a>
     </xsl:if>
 
     <a href="javascript:self.close()">
-      <img src="/webfilesys/images/exit.gif" border="0">
+      <img src="/doxee-internal/images/exit.gif" border="0">
         <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.exitslideshow']/@value" /></xsl:attribute>
       </img>
     </a>
@@ -403,13 +403,13 @@
     <xsl:if test="/slideShow/autoForward">
       <a href="javascript:stopAndGo()">
         <xsl:if test="/slideShow/autoForward='true'">
-          <img id="pauseGo" src="/webfilesys/images/pause.gif" border="0">
+          <img id="pauseGo" src="/doxee-internal/images/pause.gif" border="0">
             <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.pause']/@value" /></xsl:attribute>
           </img>
         </xsl:if>
           
         <xsl:if test="/slideShow/autoForward='false'">
-          <img id="pauseGo" src="/webfilesys/images/next.png" border="0" width="22" height="22">
+          <img id="pauseGo" src="/doxee-internal/images/next.png" border="0" width="22" height="22">
             <xsl:attribute name="title"><xsl:value-of select="/slideShow/resources/msg[@key='alt.continue']/@value" /></xsl:attribute>
           </img>
         </xsl:if>

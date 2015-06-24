@@ -13,10 +13,10 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/common.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/common.css</xsl:attribute>
 </link>
 
 <style>
@@ -26,7 +26,7 @@
   h3 {font-size:14px;font-family:Arial,Helvetica;font-weight:bold;color:black}
 </style>
 
-<script language="JavaScript" src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
+<script language="JavaScript" src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
 
 <script language="javascript">
   var trackPointList = new Array();

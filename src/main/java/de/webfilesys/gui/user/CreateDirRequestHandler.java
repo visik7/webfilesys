@@ -108,12 +108,12 @@ public class CreateDirRequestHandler extends UserRequestHandler
 
             if (mobile != null) 
             {
-                output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/webfilesys/servlet?command=mobile&cmd=folderFileList\">");
+                output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/doxee-internal/servlet?command=mobile&cmd=folderFileList\">");
             }
             else
             {
                 output.println(
-                        "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/webfilesys/servlet?command=exp&actPath="
+                        "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/doxee-internal/servlet?command=exp&actPath="
                             + UTF8URLEncoder.encode(actPath)
                             + "&expand="
                             + UTF8URLEncoder.encode(actPath)

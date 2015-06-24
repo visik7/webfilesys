@@ -1,5 +1,5 @@
 function saveEditorContent(closeAfterSave) {
-	var url = "/webfilesys/servlet?command=saveRemoteEditor";
+	var url = "/doxee-internal/servlet?command=saveRemoteEditor";
 	
 	var formData = getFormData(document.getElementById("editForm"));
 	

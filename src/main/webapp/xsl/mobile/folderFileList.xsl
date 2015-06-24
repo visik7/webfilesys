@@ -17,34 +17,34 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/mobile.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/mobile.css" />
 
   <title><xsl:value-of select="folderFileList/resources/msg[@key='label.mobileWindowTitle']/@value" /></title>
 
-  <script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/fmweb.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajax.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxFolder.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/mobile/mobileCommon.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/mobile/contextMenuCommon.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/mobile/fileContextMenu.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/mobile/linkContextMenu.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/contextMenuMouse.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/mobile/jsFileMenu.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/mobile/dirContextMenu.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/mobile/jsDirMenu.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/fmweb.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajax.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxFolder.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/mobile/mobileCommon.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/mobile/contextMenuCommon.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/mobile/fileContextMenu.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/mobile/linkContextMenu.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/contextMenuMouse.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/mobile/jsFileMenu.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/mobile/dirContextMenu.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/mobile/jsDirMenu.js" type="text/javascript"></script>
   
-  <script src="/webfilesys/javascript/ajaxslt/util.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/dom.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/util.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/dom.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
 
-  <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
   <script type="text/javascript">
-    <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/folderFileList/language" /></xsl:attribute>
+    <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/folderFileList/language" /></xsl:attribute>
   </script>
 
   <script type="text/javascript">
@@ -158,7 +158,7 @@
         <div class="albumPath">
           <xsl:for-each select="pathElem">
             <a class="currentPath">
-              <xsl:attribute name="href">/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;relPath=<xsl:value-of select="@path"/></xsl:attribute>
+              <xsl:attribute name="href">/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;relPath=<xsl:value-of select="@path"/></xsl:attribute>
               <xsl:value-of select="@name"/> 
             </a>
             <xsl:if test="not(position()=last())"><span class="currentPathSep">/</span></xsl:if>
@@ -185,7 +185,7 @@
 <!-- ############################## sorting and paging ################################ -->
 
 <xsl:template name="sortAndPaging">
-  <form accept-charset="utf-8" name="sortform" method="get" action="/webfilesys/servlet" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="sortform" method="get" action="/doxee-internal/servlet" style="padding:0px;margin:0px;">
     <input type="hidden" name="command" value="mobile" />
     <input type="hidden" name="cmd" value="folderFileList" />
     
@@ -280,13 +280,13 @@
             
                 <xsl:if test="paging/currentPage &gt; 1">
                   <td class="fileListFunct" valign="center" nowrap="true">
-                    <a href="/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=0">
-                      <img src="/webfilesys/images/first.gif" border="0" />
+                    <a href="/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=0">
+                      <img src="/doxee-internal/images/first.gif" border="0" />
                     </a>
                     &#160;
                     <a>
-                      <xsl:attribute name="href">/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="paging/prevStartIdx"/></xsl:attribute>
-                      <img src="/webfilesys/images/previous.gif" border="0" />
+                      <xsl:attribute name="href">/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="paging/prevStartIdx"/></xsl:attribute>
+                      <img src="/doxee-internal/images/previous.gif" border="0" />
                     </a>
                   </td>
                 </xsl:if>
@@ -313,7 +313,7 @@
                         </xsl:if>
                         <xsl:if test="not(@num=../currentPage)">
                           <div class="pagingPage pagingPageOther">
-                            <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
+                            <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="@startIdx" />'</xsl:attribute>
                             <xsl:value-of select="@num" />
                           </div>
                         </xsl:if>
@@ -328,13 +328,13 @@
               
                     <td class="fileListFunct" align="right" valign="center" nowrap="true">
                       <a>
-                        <xsl:attribute name="href">/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="paging/nextStartIdx"/></xsl:attribute>
-                        <img src="/webfilesys/images/next.gif" border="0" />
+                        <xsl:attribute name="href">/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="paging/nextStartIdx"/></xsl:attribute>
+                        <img src="/doxee-internal/images/next.gif" border="0" />
                       </a>
                       &#160;
                       <a>
-                        <xsl:attribute name="href">/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="paging/lastStartIdx"/></xsl:attribute>
-                        <img src="/webfilesys/images/last.gif" border="0" />
+                        <xsl:attribute name="href">/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;startIdx=<xsl:value-of select="paging/lastStartIdx"/></xsl:attribute>
+                        <img src="/doxee-internal/images/last.gif" border="0" />
                       </a>
                     </td>
                   </xsl:if>
@@ -363,18 +363,18 @@
 
       <tr>
         <td nowrap="nowrap">
-          <img src="/webfilesys/images/folder.gif" border="0" style="vertical-align:middle"/>
-          <img src="/webfilesys/images/space.gif" border="0" width="3" height="1" />
+          <img src="/doxee-internal/images/folder.gif" border="0" style="vertical-align:middle"/>
+          <img src="/doxee-internal/images/space.gif" border="0" width="3" height="1" />
           
           <a class="subFolder">
-            <xsl:attribute name="href">/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;relPath=<xsl:value-of select="@path"/>&amp;initial=true</xsl:attribute>
+            <xsl:attribute name="href">/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;relPath=<xsl:value-of select="@path"/>&amp;initial=true</xsl:attribute>
             <xsl:attribute name="title"><xsl:value-of select="@name" /></xsl:attribute>
             <xsl:value-of select="@displayName"/> 
           </a>
           &#160;
           <a>
             <xsl:attribute name="href">javascript:folderContextMenu(decodeURIComponent('<xsl:value-of select="$pathForScript" />'), '<xsl:value-of select="@name" />')</xsl:attribute>
-            <img src="/webfilesys/images/edit2.gif" border="0" width="20" height="18" style="vertical-align:middle"/>
+            <img src="/doxee-internal/images/edit2.gif" border="0" width="20" height="18" style="vertical-align:middle"/>
           </a>
         </td>
       </tr>
@@ -388,7 +388,7 @@
 
 <xsl:template name="fileList">
 
-  <form accept-charset="utf-8" name="form1" action="/webfilesys/servlet" method="post" style="padding:0px;margin:0px;">
+  <form accept-charset="utf-8" name="form1" action="/doxee-internal/servlet" method="post" style="padding:0px;margin:0px;">
   
     <input type="hidden" name="command" value="mobileMultiFile" />
 
@@ -428,7 +428,7 @@
   
             <td class="fileListData" style="padding-right:5px">
               <img border="0" width="16" height="16">
-                <xsl:attribute name="src">/webfilesys/icons/<xsl:value-of select="@icon" /></xsl:attribute>
+                <xsl:attribute name="src">/doxee-internal/icons/<xsl:value-of select="@icon" /></xsl:attribute>
               </img>
             </td>
             
@@ -520,7 +520,7 @@
             <div class="buttonCont">
               <input type="button">
                 <xsl:attribute name="value"><xsl:value-of select="resources/msg[@key='button.upload']/@value" /></xsl:attribute>
-                <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=uploadParms';</xsl:attribute>
+                <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=uploadParms';</xsl:attribute>
               </input>
             </div>
 
@@ -528,7 +528,7 @@
               <div class="buttonCont">
                 <input type="button">
                   <xsl:attribute name="value"><xsl:value-of select="resources/msg[@key='button.paste']/@value" /></xsl:attribute>
-                  <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=pasteFiles';</xsl:attribute>
+                  <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=pasteFiles';</xsl:attribute>
                 </input>
               </div>
 
@@ -536,7 +536,7 @@
                 <div class="buttonCont">
                   <input type="button">
                     <xsl:attribute name="value"><xsl:value-of select="resources/msg[@key='button.pasteLink']/@value" /></xsl:attribute>
-                    <xsl:attribute name="onclick">window.location.href='/webfilesys/servlet?command=pasteLinks';</xsl:attribute>
+                    <xsl:attribute name="onclick">window.location.href='/doxee-internal/servlet?command=pasteLinks';</xsl:attribute>
                   </input>
                 </div>
               </xsl:if>

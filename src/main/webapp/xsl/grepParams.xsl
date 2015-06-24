@@ -10,7 +10,7 @@
   <xsl:value-of select="/result/shortPath" />
 </div>
     
-<form name="grepForm" accept-charset="utf-8" style="display:inline;" method="post" action="/webfilesys/servlet" target="_blank">
+<form name="grepForm" accept-charset="utf-8" style="display:inline;" method="post" action="/doxee-internal/servlet" target="_blank">
   <input type="hidden" name="command" value="grep" />
   <input type="hidden" name="fileName">
     <xsl:attribute name="value"><xsl:value-of select="/result/fileName" /></xsl:attribute>

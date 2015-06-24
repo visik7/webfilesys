@@ -61,7 +61,7 @@ public class XslListCommentsHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(fileCommentsElement);
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/fileComments.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/fileComments.xsl\"");
 
 		doc.insertBefore(xslRef, fileCommentsElement);
 

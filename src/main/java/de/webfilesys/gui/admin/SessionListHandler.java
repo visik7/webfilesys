@@ -30,14 +30,14 @@ public class SessionListHandler extends AdminRequestHandler
 	{
 		output.println("<HTML>");
 		output.println("<HEAD>");
-		output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"30; URL=/webfilesys/servlet?command=admin&cmd=sessionList\">");
+		output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"30; URL=/doxee-internal/servlet?command=admin&cmd=sessionList\">");
 
 		String title = "WebFileSys Administration: Active Sessions";
 		
 		output.print("<TITLE>" + title + "</TITLE>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("</HEAD>");
 		output.println("<BODY>");
@@ -161,7 +161,7 @@ public class SessionListHandler extends AdminRequestHandler
 
 		output.println("<form>");
 
-		output.println("<input type=\"button\" value=\"Return\" onclick=\"window.location.href='/webfilesys/servlet?command=admin&cmd=menu'\">");
+		output.println("<input type=\"button\" value=\"Return\" onclick=\"window.location.href='/doxee-internal/servlet?command=admin&cmd=menu'\">");
 
 		output.println("</form>");
 

@@ -93,7 +93,7 @@
       color: black;
       font-size: 13px;
       border: 1px solid #a0a0a0;
-      background-image:url('/webfilesys/images/buttonBack.png');
+      background-image:url('/doxee-internal/images/buttonBack.png');
       background-repeat:repeat-x;
       padding-left: 12px;
       padding-right: 12px;
@@ -107,7 +107,7 @@
   
   a.button 
   {
-      background: transparent url('/webfilesys/images/buttonRight.gif') no-repeat scroll top right;
+      background: transparent url('/doxee-internal/images/buttonRight.gif') no-repeat scroll top right;
       color: #444;
       display: block;
       float: left;
@@ -120,7 +120,7 @@
 
   a.button span 
   {
-      background: transparent url('/webfilesys/images/buttonLeft.gif') no-repeat;
+      background: transparent url('/doxee-internal/images/buttonLeft.gif') no-repeat;
       display: block;
       line-height: 14px;
       padding: 5px 0 5px 18px;

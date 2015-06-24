@@ -265,7 +265,7 @@
           xhr.upload.addEventListener("progress", updateProgress, false);
           xhr.upload.addEventListener("load", uploadComplete, false);
 
-          xhr.open("POST", "/webfilesys/upload/singleBinary/" + encodeURIComponent(fileName), true);  
+          xhr.open("POST", "/doxee-internal/upload/singleBinary/" + encodeURIComponent(fileName), true);  
 
 		  if (!browserMSIE) {
               xhr.overrideMimeType('text/plain; charset=x-user-defined-binary');  
@@ -302,7 +302,7 @@
                       new singleFileBinaryUpload(file)
                   } else {
                       if (firefoxDragDrop || uploadStartedByButton) {
-                          window.location.href = '/webfilesys/servlet?command=listFiles&keepListStatus=true';
+                          window.location.href = '/doxee-internal/servlet?command=listFiles&keepListStatus=true';
                       } else {
                           document.getElementById('lastUploadedFile').innerHTML = lastUploadedFile;
                           document.getElementById('lastUploaded').style.visibility = 'visible';

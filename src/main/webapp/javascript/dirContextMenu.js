@@ -306,7 +306,7 @@ function extendedDirMenu(shortPath, path, domId)
 	((parent.serverOS == 'ix') && (path.length > 1)))
     {
         menuText = menuText 
-                   + menuEntry("/webfilesys/servlet?command=downloadFolder&path=" + encodeURIComponent(path),resourceBundle["label.downloadFolder"],null);
+                   + menuEntry("/doxee-internal/servlet?command=downloadFolder&path=" + encodeURIComponent(path),resourceBundle["label.downloadFolder"],null);
     }
 
     menuText = menuText + '</table>'; 

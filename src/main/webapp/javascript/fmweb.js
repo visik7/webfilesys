@@ -74,14 +74,14 @@ function multiFileCopyMove()
 {
     document.form1.command.value='multiFileCopyMove';
 
-    xmlRequestPost("/webfilesys/servlet", getFormData(document.form1), showCopyResult);
+    xmlRequestPost("/doxee-internal/servlet", getFormData(document.form1), showCopyResult);
     
     document.form1.command.value='multiFileOp';
 }
 
 function diffCompare() {
     if (checkTwoFilesSelected()) {
-	    var compareWin = window.open('/webfilesys/servlet?command=blank','compareWin','width=' + (screen.width - 20) + ',height=' + (screen.height - 80) + ',scrollbars=yes,resizable=yes,status=no,menubar=no,toolbar=no,location=no,directories=no,screenX=0,screenY=0,left=0,top=0');
+	    var compareWin = window.open('/doxee-internal/servlet?command=blank','compareWin','width=' + (screen.width - 20) + ',height=' + (screen.height - 80) + ',scrollbars=yes,resizable=yes,status=no,menubar=no,toolbar=no,location=no,directories=no,screenX=0,screenY=0,left=0,top=0');
         compareWin.focus();
         document.form1.command.value = 'diff';
         document.form1.target = 'compareWin';
@@ -246,7 +246,7 @@ function checkFileNameSyntax(str)
        
         if ((c == '\'') || (c == '\"') || (c == '*') || (c == '/') || (c == '\\') ||
             (c == '%') || (c == ':') || (c == '+')  || (c == '#') || (c == ';') ||
-            (c == ',') || (c == '§') || (c == '&') || (c == '?') || (c == '@'))
+            (c == ',') || (c == 'ï¿½') || (c == '&') || (c == '?') || (c == '@'))
         {
             return(false);
         } 
@@ -305,7 +305,7 @@ function validateBookmarkName(errorMsg) {
     var bookmarkName = document.bookmarkForm.bookmarkName.value;
 
     if (bookmarkName != '') {
-        var createBookmarkUrl = '/webfilesys/servlet?command=createBookmark&path=' + encodeURIComponent(document.bookmarkForm.currentPath.value) + '&bookmarkName=' + encodeURIComponent(document.bookmarkForm.bookmarkName.value);
+        var createBookmarkUrl = '/doxee-internal/servlet?command=createBookmark&path=' + encodeURIComponent(document.bookmarkForm.currentPath.value) + '&bookmarkName=' + encodeURIComponent(document.bookmarkForm.bookmarkName.value);
         xmlRequestSynchron(createBookmarkUrl);   
         hidePrompt();
         return;
@@ -338,7 +338,7 @@ function submitSwitchReadWrite()
 
 function switchFolderWatch(path)
 {
-    var url = "/webfilesys/servlet?command=switchFolderWatch&path=" + encodeURIComponent(path);
+    var url = "/doxee-internal/servlet?command=switchFolderWatch&path=" + encodeURIComponent(path);
     
     xmlRequestSynchron(url);    
     
@@ -367,11 +367,11 @@ function bookmark(path)
 {
     if (path && (path.length > 0))
     {
-        showPrompt('/webfilesys/servlet?command=addBookmark&path=' + encodeURIComponent(path), '/webfilesys/xsl/addBookmark.xsl', 320, 190);
+        showPrompt('/doxee-internal/servlet?command=addBookmark&path=' + encodeURIComponent(path), '/doxee-internal/xsl/addBookmark.xsl', 320, 190);
     }
     else
     {
-        showPrompt('/webfilesys/servlet?command=addBookmark', '/webfilesys/xsl/addBookmark.xsl', 320, 190);
+        showPrompt('/doxee-internal/servlet?command=addBookmark', '/doxee-internal/xsl/addBookmark.xsl', 320, 190);
     }
     
     document.bookmarkForm.bookmarkName.focus();
@@ -529,7 +529,7 @@ function showPromptDialog(htmlFragmentURL, boxWidth, boxHeight) {
 
 function renameLink(linkName)
 {
-	var promptDialog = showPromptDialog("/webfilesys/html/renameLink.html", 360);	
+	var promptDialog = showPromptDialog("/doxee-internal/html/renameLink.html", 360);	
 	
 	document.getElementById("oldLinkName").value = linkName;
 	document.getElementById("oldLinkNameShort").innerHTML = shortText(linkName, 35);

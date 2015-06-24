@@ -500,7 +500,7 @@ public class UploadServlet extends WebFileSysServlet
             output.println("</script>");
 
 			output.print(
-				"<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/webfilesys/servlet?command=listFiles\">");
+				"<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/doxee-internal/servlet?command=listFiles\">");
 
             output.print("</HEAD>");
             output.println("</html>");
@@ -718,7 +718,7 @@ public class UploadServlet extends WebFileSysServlet
         {
             char c = fileName.charAt(i);
             
-            if ((c == '\'') || (c == '#') || (c == '`') || (c == '%') || (c == '!') || (c == '§') || 
+            if ((c == '\'') || (c == '#') || (c == '`') || (c == '%') || (c == '!') || (c == 'ï¿½') || 
                 (c == '&') || (c == '[') || (c == ']') || (c == '\"'))
             {
                 c = '_';

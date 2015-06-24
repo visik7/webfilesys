@@ -104,7 +104,7 @@ public class BlogPublishHandler extends XmlRequestHandlerBase {
 
     	publicURL.append(serverPort);
 
-		publicURL.append("/webfilesys/visitor/");
+		publicURL.append("/doxee-internal/visitor/");
 		publicURL.append(virtualUser);
 		publicURL.append('/');
 		publicURL.append(accessCode);

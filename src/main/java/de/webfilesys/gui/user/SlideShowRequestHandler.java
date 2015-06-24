@@ -120,7 +120,7 @@ public class SlideShowRequestHandler extends UserRequestHandler
 		
 		String imgFileName = (String) imageFiles.elementAt(imageIdx);
         
-		String nextUrl = "/webfilesys/servlet?command=slideShow&imageIdx=" + (imageIdx+1) + "&delay=" + delay + "&recurse=" + recurseParm;
+		String nextUrl = "/doxee-internal/servlet?command=slideShow&imageIdx=" + (imageIdx+1) + "&delay=" + delay + "&recurse=" + recurseParm;
 
 		if (fullScreen != null)
 		{
@@ -216,7 +216,7 @@ public class SlideShowRequestHandler extends UserRequestHandler
 		int xDisplay=scaledImage.getScaledWidth();
 		int yDisplay=scaledImage.getScaledHeight();
 
-		String srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(imgFileName);
+		String srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(imgFileName);
 
         if (scaledImage.getRealHeight() < (screenHeight - 110))
         {
@@ -254,7 +254,7 @@ public class SlideShowRequestHandler extends UserRequestHandler
 		output.println("<div id=\"buttonDiv\" style=\"position:absolute;top:10px;left:10px;width=" + buttonDivWidth + "px;height=20px;padding:5px;background-color:ivory;text-align:center;border-style:solid;border-width:1px;border-color:#000000;visibility:hidden\">");
 
 		output.print("<a href=\"javascript:hideActionButtons()\">");
-		output.print("<img src=\"/webfilesys/images/winClose.gif\" border=\"0\" style=\"float:right;\" />");
+		output.print("<img src=\"/doxee-internal/images/winClose.gif\" border=\"0\" style=\"float:right;\" />");
 		output.print("</a>");
 		
 		if ((description != null) && (description.trim().length() > 0))
@@ -271,11 +271,11 @@ public class SlideShowRequestHandler extends UserRequestHandler
 			output.println("<br/>");
 		}
 		
-		output.println("<a href=\"javascript:self.close()\"><img src=\"/webfilesys/images/exit.gif\" border=\"0\" title=\"" + getResource("alt.exitslideshow","exit slideshow") + "\"></a>");
+		output.println("<a href=\"javascript:self.close()\"><img src=\"/doxee-internal/images/exit.gif\" border=\"0\" title=\"" + getResource("alt.exitslideshow","exit slideshow") + "\"></a>");
 
 		if (autoForward)
 		{
-			nextUrl = "/webfilesys/servlet?command=slideShow&imageIdx=" + imageIdx + "&delay=" + delay + "&recurse=" + recurseParm + "&autoForward=true";
+			nextUrl = "/doxee-internal/servlet?command=slideShow&imageIdx=" + imageIdx + "&delay=" + delay + "&recurse=" + recurseParm + "&autoForward=true";
 			
 			if (fullScreen != null)
 			{
@@ -285,16 +285,16 @@ public class SlideShowRequestHandler extends UserRequestHandler
 			if (pause==null)
 			{
 				nextUrl=nextUrl + "&pause=true";
-				output.println("<a href=\"" + nextUrl + "\"><img src=\"/webfilesys/images/pause.gif\" border=\"0\" title=\"" + getResource("alt.pause","pause slideshow") + "\"></a>");
+				output.println("<a href=\"" + nextUrl + "\"><img src=\"/doxee-internal/images/pause.gif\" border=\"0\" title=\"" + getResource("alt.pause","pause slideshow") + "\"></a>");
 			}
 			else
 			{
-				output.println("<a href=\"" + nextUrl + "\"><img src=\"/webfilesys/images/go.gif\" border=\"0\" title=\"" + getResource("alt.continue","continue slideshow") + "\"></a>");
+				output.println("<a href=\"" + nextUrl + "\"><img src=\"/doxee-internal/images/go.gif\" border=\"0\" title=\"" + getResource("alt.continue","continue slideshow") + "\"></a>");
 			}
 		}
 		else
 		{
-			output.println("<a href=\"" + nextUrl + "\"><img src=\"/webfilesys/images/go.gif\" border=\"0\" title=\"" + getResource("alt.continue","continue slideshow") + "\"></a>");
+			output.println("<a href=\"" + nextUrl + "\"><img src=\"/doxee-internal/images/go.gif\" border=\"0\" title=\"" + getResource("alt.continue","continue slideshow") + "\"></a>");
 		}
 
 		output.println("</div>");
@@ -326,11 +326,11 @@ public class SlideShowRequestHandler extends UserRequestHandler
 		output.println("  {");
 		output.println("    if ((navigator.appName.indexOf('Netscape')  == -1) && (!window.opera))");
 		output.println("    {");
-		output.println("       showWin=window.open('/webfilesys/servlet?command=slideShow&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked + '&fullScreen=yes','thumbwin','status=no,toolbar=no,menu=no,fullscreen=yes,scrollbars=no');");
+		output.println("       showWin=window.open('/doxee-internal/servlet?command=slideShow&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked + '&fullScreen=yes','thumbwin','status=no,toolbar=no,menu=no,fullscreen=yes,scrollbars=no');");
 		output.println("    }");
 		output.println("    else");
 		output.println("    {");
-		output.println("      showWin=window.open('/webfilesys/servlet?command=slideShow&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked,'thumbwin','status=no,toolbar=no,menu=no,width=' + (screen.width-40) + ',height=' + (screen.height-60) + ',resizable=yes,scrollbars=yes,left=0,top=0,screenX=0,screenY=0');");
+		output.println("      showWin=window.open('/doxee-internal/servlet?command=slideShow&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked,'thumbwin','status=no,toolbar=no,menu=no,width=' + (screen.width-40) + ',height=' + (screen.height-60) + ',resizable=yes,scrollbars=yes,left=0,top=0,screenX=0,screenY=0');");
 		output.println("    }");
 		output.println("  }");
 		output.println("  else");
@@ -348,11 +348,11 @@ public class SlideShowRequestHandler extends UserRequestHandler
 		output.println("    }");		
 		if (browserManufacturer == BROWSER_MSIE)
 		{
-			output.println("    showWin.location.href='/webfilesys/servlet?command=slideShowInFrame&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked + '&crossfade=' + document.form1.crossfade.checked + '&windowWidth=' + windowWidth + '&windowHeight=' + windowHeight;");
+			output.println("    showWin.location.href='/doxee-internal/servlet?command=slideShowInFrame&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked + '&crossfade=' + document.form1.crossfade.checked + '&windowWidth=' + windowWidth + '&windowHeight=' + windowHeight;");
 		}
 		else
 		{
-			output.println("    showWin.location.href='/webfilesys/servlet?command=slideShowInFrame&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked + '&windowWidth=' + windowWidth + '&windowHeight=' + windowHeight;");
+			output.println("    showWin.location.href='/doxee-internal/servlet?command=slideShowInFrame&imageIdx=0&delay=' + document.form1.delay.options[document.form1.delay.selectedIndex].value + '&recurse=' + document.form1.recurse.checked + '&autoForward=' + document.form1.autoForward.checked + '&windowWidth=' + windowWidth + '&windowHeight=' + windowHeight;");
 		}
 		output.println("  }");
 		output.println("  self.close();");
@@ -383,8 +383,8 @@ public class SlideShowRequestHandler extends UserRequestHandler
 
 		output.println("<title>" + getResource("label.slideparmhead","Slideshow Parameters") + "</title>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("</head>");
 		output.println("<body>");
@@ -392,7 +392,7 @@ public class SlideShowRequestHandler extends UserRequestHandler
 		headLine(getResource("label.slideparmhead","Slideshow Parameters"));
 
 		output.println("<br>");
-		output.println("<form accept-charset=\"utf-8\" name=\"form1\" method=\"get\" action=\"/webfilesys/servlet\">");
+		output.println("<form accept-charset=\"utf-8\" name=\"form1\" method=\"get\" action=\"/doxee-internal/servlet\">");
 
 		output.println("<input type=\"hidden\" name=\"command\" value=\"slideShow\">");
 		

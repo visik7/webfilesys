@@ -22,7 +22,7 @@
   {  
       if (confirm(resourceBundle["confirm.delcomments"]))
       { 
-          window.location.href='/webfilesys/servlet?command=delComments&amp;actPath=<xsl:value-of select="/fileComments/encodedPath" />';
+          window.location.href='/doxee-internal/servlet?command=delComments&amp;actPath=<xsl:value-of select="/fileComments/encodedPath" />';
       }
   }
   
@@ -34,7 +34,7 @@
     <span resource="label.commentList"></span>
   </div>
 
-  <form accept-charset="utf-8" id="blogCommentForm" name="blogCommentForm" method="post" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" id="blogCommentForm" name="blogCommentForm" method="post" action="/doxee-internal/servlet">
   
     <input type="hidden" name="command" value="blog" />
     <input type="hidden" name="cmd" value="addComment" />

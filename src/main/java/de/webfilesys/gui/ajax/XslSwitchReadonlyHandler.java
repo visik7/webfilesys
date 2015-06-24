@@ -113,7 +113,7 @@ public class XslSwitchReadonlyHandler extends XmlRequestHandlerBase
 			
 		doc.appendChild(statusElement);
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/switchReadWrite.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/switchReadWrite.xsl\"");
 
 		doc.insertBefore(xslRef, statusElement);
 

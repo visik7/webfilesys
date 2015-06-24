@@ -54,8 +54,8 @@ public class UntarRequestHandler extends UserRequestHandler
 		output.println("<html>");
 		output.println("<head>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("</head>");
 		output.println("<body>");
@@ -196,7 +196,7 @@ public class UntarRequestHandler extends UserRequestHandler
         {
             output.println("<tr>");
             output.println("<td colspan=\"2\" class=\"formButton\">");
-            returnUrl="/webfilesys/servlet?command=listFiles";
+            returnUrl="/doxee-internal/servlet?command=listFiles";
             output.println("<input type=\"button\" value=\"" + getResource("button.return","Return") + "\" onclick=\"window.location.href='" + returnUrl + "'\">");
             output.println("</td>");
             output.println("</tr>");
@@ -210,17 +210,17 @@ public class UntarRequestHandler extends UserRequestHandler
             
             if (mobile != null)
             {
-                returnUrl = "/webfilesys/servlet?command=mobile&cmd=folderFileList&keepListStatus=true";
+                returnUrl = "/doxee-internal/servlet?command=mobile&cmd=folderFileList&keepListStatus=true";
             }
             else
             {
-                returnUrl = "/webfilesys/servlet?command=listFiles&keepListStatus=true";
+                returnUrl = "/doxee-internal/servlet?command=listFiles&keepListStatus=true";
             }
             output.print("<input type=\"button\" value=\"" + getResource("button.keepTarArchive","keep TAR archive") + "\" onclick=\"");
             
             if ((mobile == null) && (dirCreated))
             {
-                output.print("window.parent.frames[1].location.href='/webfilesys/servlet?command=refresh&path=" + UTF8URLEncoder.encode(getCwd()) + "';");
+                output.print("window.parent.frames[1].location.href='/doxee-internal/servlet?command=refresh&path=" + UTF8URLEncoder.encode(getCwd()) + "';");
             }
             output.println("window.location.href='" + returnUrl + "'\">");
 
@@ -228,12 +228,12 @@ public class UntarRequestHandler extends UserRequestHandler
             
             output.println("<td class=\"formButton\" style=\"text-align:right\">");
 
-            returnUrl = "/webfilesys/servlet?command=fmdelete&fileName=" + UTF8URLEncoder.encode(filenameWithoutPath) + "&deleteRO=no";
+            returnUrl = "/doxee-internal/servlet?command=fmdelete&fileName=" + UTF8URLEncoder.encode(filenameWithoutPath) + "&deleteRO=no";
             output.print("<input type=\"button\" value=\"" + getResource("button.delTarArchive","delete TAR archive") + "\" onclick=\"");
             
             if ((mobile == null) && (dirCreated))
             {
-                output.print("window.parent.frames[1].location.href='/webfilesys/servlet?command=refresh&path=" + UTF8URLEncoder.encode(getCwd()) + "';");
+                output.print("window.parent.frames[1].location.href='/doxee-internal/servlet?command=refresh&path=" + UTF8URLEncoder.encode(getCwd()) + "';");
             }
             
             output.println("window.location.href='" + returnUrl + "'\">");

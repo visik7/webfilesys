@@ -60,7 +60,7 @@ public class XslFileAgeStatsHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(treeStatsElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/fileAgeTreeStats.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/fileAgeTreeStats.xsl\"");
 
 		doc.insertBefore(xslRef, treeStatsElement);
 

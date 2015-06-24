@@ -14,10 +14,10 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
   </link>
 
   <style type="text/css">
@@ -78,7 +78,7 @@
     <img src="images/space.gif" border="0" width="4" height="1" />
     
     <a class="dirtree">
-      <xsl:attribute name="href">/webfilesys/servlet?command=getZipContentFile&amp;zipFilePath=<xsl:value-of select="/folderTree/zipFileEncodedPath" />&amp;zipContentPath=<xsl:value-of select="@path" /></xsl:attribute>
+      <xsl:attribute name="href">/doxee-internal/servlet?command=getZipContentFile&amp;zipFilePath=<xsl:value-of select="/folderTree/zipFileEncodedPath" />&amp;zipContentPath=<xsl:value-of select="@path" /></xsl:attribute>
       <xsl:attribute name="target">_blank</xsl:attribute>
       <xsl:attribute name="class">
         <xsl:value-of select="'dirtree'"/>

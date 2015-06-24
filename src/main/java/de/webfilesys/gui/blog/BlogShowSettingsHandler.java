@@ -39,7 +39,7 @@ public class BlogShowSettingsHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(settingsElement);
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/blog/settings.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/blog/settings.xsl\"");
 
 		doc.insertBefore(xslRef, settingsElement);
 

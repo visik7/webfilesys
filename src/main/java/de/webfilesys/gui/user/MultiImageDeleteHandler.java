@@ -94,7 +94,7 @@ public class MultiImageDeleteHandler extends MultiImageRequestHandler
             this.javascriptAlert(alert);
 
             output.println(
-                "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/webfilesys/servlet?command=thumbnail\">");
+                "<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/doxee-internal/servlet?command=thumbnail\">");
             output.println("</HEAD>");
             output.println("</html>");
             output.flush();

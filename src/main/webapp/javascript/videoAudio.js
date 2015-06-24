@@ -6,7 +6,7 @@ if (typeof String.prototype.endsWithIgnoreCase != 'function') {
 
 function playVideo(videoFilePath) {
 
-    var videoUrl = "/webfilesys/servlet?command=getFile&filePath=" + encodeURIComponent(videoFilePath);
+    var videoUrl = "/doxee-internal/servlet?command=getFile&filePath=" + encodeURIComponent(videoFilePath);
 
     var videoType = "mp4";
     
@@ -21,7 +21,7 @@ function playVideo(videoFilePath) {
     videoCont.setAttribute("class", "videoCont");
     
     var closeButton = document.createElement("img");
-    closeButton.setAttribute("src", "/webfilesys/images/winClose.gif");
+    closeButton.setAttribute("src", "/doxee-internal/images/winClose.gif");
     closeButton.setAttribute("class", "closeButton");
     closeButton.setAttribute("onclick", "destroyVideo()");
     videoCont.appendChild(closeButton);

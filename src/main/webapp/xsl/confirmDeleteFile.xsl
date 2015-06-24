@@ -10,7 +10,7 @@
   <xsl:value-of select="/result/filePath" />
 </div>
     
-<form name="delForm" accept-charset="utf-8" style="display:inline;" method="post" action="/webfilesys/servlet">
+<form name="delForm" accept-charset="utf-8" style="display:inline;" method="post" action="/doxee-internal/servlet">
   <input type="hidden" name="command" value="fmdelete" />
   <input type="hidden" name="deleteRO" value="yes" />
   <input type="hidden" name="fileName">

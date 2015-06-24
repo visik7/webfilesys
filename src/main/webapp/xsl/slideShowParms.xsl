@@ -13,20 +13,20 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/slideShowParms/css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/slideShowParms/css" />.css</xsl:attribute>
   </link>
 
   <title><xsl:value-of select="resources/msg[@key='label.slideparmhead']/@value" /></title>
 
-  <script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
   
   <script type="text/javascript">
     function startShow() {
         if (document.form1.extraWin.checked) {
-            var slideshowURL = '/webfilesys/servlet?command=slideShow&amp;imageIdx=0&amp;delay=' + 
+            var slideshowURL = '/doxee-internal/servlet?command=slideShow&amp;imageIdx=0&amp;delay=' + 
                                document.form1.delay.options[document.form1.delay.selectedIndex].value + 
                                '&amp;recurse=' + document.form1.recurse.checked + 
                                '&amp;autoForward=' + document.form1.autoForward.checked +
@@ -40,7 +40,7 @@
             
             showWin.focus();
 
-            window.location.href = '/webfilesys/servlet?command=listFiles';
+            window.location.href = '/doxee-internal/servlet?command=listFiles';
         } else {
             var windowWidth;
             var windowHeigth;
@@ -83,7 +83,7 @@
     <xsl:value-of select="resources/msg[@key='label.slideparmhead']/@value" />
   </div>
 
-  <form accept-charset="utf-8" name="form1" method="post" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" name="form1" method="post" action="/doxee-internal/servlet">
   
     <input type="hidden" name="command" value="slideShowInFrame" />
     <input type="hidden" name="imageIdx" value="" />
@@ -191,7 +191,7 @@
         </td>
        
         <td class="formButton" align="right">
-          <input type="button" name="cancel" onclick="window.location.href = '/webfilesys/servlet?command=listFiles';">
+          <input type="button" name="cancel" onclick="window.location.href = '/doxee-internal/servlet?command=listFiles';">
             <xsl:attribute name="value"><xsl:value-of select="resources/msg[@key='button.cancel']/@value" /></xsl:attribute>
           </input>
         </td>

@@ -54,7 +54,7 @@ public class XslZipContentHandler extends XslRequestHandlerBase
 		
 		doc.appendChild(zipRootElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/zipContent.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/zipContent.xsl\"");
 
 		doc.insertBefore(xslRef, zipRootElement);
 

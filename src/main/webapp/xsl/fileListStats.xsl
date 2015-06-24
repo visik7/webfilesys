@@ -24,22 +24,22 @@
 
 <meta http-equiv="Content-Type" name="text/html; charset=UTF-8" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/fileList/css" />.css</xsl:attribute>
 </link>
 
-<script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/fmweb.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/viewMode.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/graphicsContextMenu.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/fileListStats.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/fmweb.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/viewMode.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/graphicsContextMenu.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/fileListStats.js" type="text/javascript"></script>
 
-<script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 <script type="text/javascript">
-  <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
+  <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/fileList/language" /></xsl:attribute>
 </script>
 
 <script type="text/javascript" language="JavaScript">
@@ -80,7 +80,7 @@
 
   function setSortField(sortBy)
   {
-      window.location.href='/webfilesys/servlet?command=fileStats&amp;initial=true&amp;sortBy=' + sortBy;
+      window.location.href='/doxee-internal/servlet?command=fileStats&amp;initial=true&amp;sortBy=' + sortBy;
   }
 </script>
 
@@ -148,7 +148,7 @@
   
   <xsl:if test="/fileList/file">
   
-  <form accept-charset="utf-8" name="resetForm" method="get" action="/webfilesys/servlet" style="margin:0">
+  <form accept-charset="utf-8" name="resetForm" method="get" action="/doxee-internal/servlet" style="margin:0">
     <input type="hidden" name="command" value="resetStatistics" />
     <input type="hidden" name="actPath">
       <xsl:attribute name="value"><xsl:value-of select="/fileList/currentPath" /></xsl:attribute>
@@ -218,7 +218,7 @@
             <td class="fileList sepBot" style="padding-left:5px;width:22px">
               <img border="0" width="16" height="16">
                 <xsl:if test="@icon">
-                  <xsl:attribute name="src">/webfilesys/icons/<xsl:value-of select="@icon" /></xsl:attribute>
+                  <xsl:attribute name="src">/doxee-internal/icons/<xsl:value-of select="@icon" /></xsl:attribute>
                 </xsl:if>
                 <xsl:if test="not(@icon)">
                   <xsl:attribute name="src">webfilesys/images/space.gif</xsl:attribute>

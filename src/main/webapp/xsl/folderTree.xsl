@@ -16,34 +16,34 @@
 
     <meta http-equiv="expires" content="0" />
 
-    <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
     <link rel="stylesheet" type="text/css">
-      <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
+      <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/folderTree/css" />.css</xsl:attribute>
     </link>
 
     <xsl:if test="not(folderTree/browserXslEnabled)">
-      <script language="JavaScript" src="/webfilesys/javascript/ajaxslt/util.js" type="text/javascript"></script>
-      <script language="JavaScript" src="/webfilesys/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
-      <script language="JavaScript" src="/webfilesys/javascript/ajaxslt/dom.js" type="text/javascript"></script>
-      <script language="JavaScript" src="/webfilesys/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
-      <script language="JavaScript" src="/webfilesys/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
+      <script language="JavaScript" src="/doxee-internal/javascript/ajaxslt/util.js" type="text/javascript"></script>
+      <script language="JavaScript" src="/doxee-internal/javascript/ajaxslt/xmltoken.js" type="text/javascript"></script>
+      <script language="JavaScript" src="/doxee-internal/javascript/ajaxslt/dom.js" type="text/javascript"></script>
+      <script language="JavaScript" src="/doxee-internal/javascript/ajaxslt/xpath.js" type="text/javascript"></script>
+      <script language="JavaScript" src="/doxee-internal/javascript/ajaxslt/xslt.js" type="text/javascript"></script>
     </xsl:if>
 
-    <script language="JavaScript" src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/tooltips.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/fmweb.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/ajaxFolder.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/dirContextMenu.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/contextMenuMouse.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/jsDirMenu.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/keyDirTree.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/util.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/tooltips.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/fmweb.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/ajaxFolder.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/dirContextMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/contextMenuMouse.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/jsDirMenu.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/keyDirTree.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
 
-    <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+    <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
     <script type="text/javascript">
-      <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/folderTree/language" /></xsl:attribute>
+      <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/folderTree/language" /></xsl:attribute>
     </script>
 
     <script language="javascript">
@@ -75,7 +75,7 @@
       {
           var xsl = new ActiveXObject('MSXML2.FreeThreadedDOMDocument.3.0');
           xsl.async = false;
-          xsl.load("/webfilesys/xsl/subFolder.xsl");
+          xsl.load("/doxee-internal/xsl/subFolder.xsl");
 
           xslTemplate = new ActiveXObject("Msxml2.XSLTemplate.3.0");
           xslTemplate.stylesheet = xsl;
@@ -108,7 +108,7 @@
   <xsl:if test="folderTree/loginEvent">
     <div id="hint" class="hint" style="position:absolute;top:10px;left:50%;width:40%;">
       <xsl:attribute name="onClick">javascript:hideHint()</xsl:attribute>
-      <img src="/webfilesys/images/winClose.gif" border="0" style="float:right;" />
+      <img src="/doxee-internal/images/winClose.gif" border="0" style="float:right;" />
       <span resource="label.loginHint"></span>
     </div>
   </xsl:if>
@@ -127,7 +127,7 @@
   <xsl:if test="fastPath">
     <script language="javascript">
       encodedPath = encodeURIComponent('<xsl:value-of select="fastPath" />');
-      parent.frames[2].window.location.href = "/webfilesys/servlet?command=listFiles&amp;actpath=" + encodedPath + "&amp;mask=*";
+      parent.frames[2].window.location.href = "/doxee-internal/servlet?command=listFiles&amp;actpath=" + encodedPath + "&amp;mask=*";
     </script>
   </xsl:if>
 
@@ -135,8 +135,8 @@
 
 <xsl:template name="computer" match="computer"> 
 
-  <img src="/webfilesys/images/space.gif" style="border-style:none;width:10px;height:17px;" />
-  <img src="/webfilesys/images/computer.gif" class="computer" />
+  <img src="/doxee-internal/images/space.gif" style="border-style:none;width:10px;height:17px;" />
+  <img src="/doxee-internal/images/computer.gif" class="computer" />
   <a class="dirtree">
     <xsl:value-of select="@name" />
   </a>
@@ -159,10 +159,10 @@
           <xsl:attribute name="href">javascript:col('<xsl:value-of select="@id" />')</xsl:attribute>
 
           <xsl:if test="position()=last()">
-            <img src="/webfilesys/images/minusLast.gif" class="expCol" />
+            <img src="/doxee-internal/images/minusLast.gif" class="expCol" />
           </xsl:if>
           <xsl:if test="position()!=last()">
-            <img src="/webfilesys/images/minusMore.gif" class="expCol" />
+            <img src="/doxee-internal/images/minusMore.gif" class="expCol" />
           </xsl:if>
         </a>
       </xsl:if>
@@ -174,20 +174,20 @@
             <xsl:attribute name="href">javascript:exp('<xsl:value-of select="@id" />', '<xsl:value-of select="position()=last()" />')</xsl:attribute>
 
             <xsl:if test="position()=last()">
-              <img src="/webfilesys/images/plusLast.gif" class="expCol" />
+              <img src="/doxee-internal/images/plusLast.gif" class="expCol" />
             </xsl:if>
             <xsl:if test="position()!=last()">
-              <img src="/webfilesys/images/plusMore.gif" class="expCol" />
+              <img src="/doxee-internal/images/plusMore.gif" class="expCol" />
             </xsl:if>
           </a>
 
         </xsl:if>
         <xsl:if test="@leaf">
           <xsl:if test="position()=last()">
-            <img src="/webfilesys/images/branchLast.gif" class="expCol" />
+            <img src="/doxee-internal/images/branchLast.gif" class="expCol" />
           </xsl:if>
           <xsl:if test="position()!=last()">
-            <img src="/webfilesys/images/branch.gif" class="expCol" />
+            <img src="/doxee-internal/images/branch.gif" class="expCol" />
           </xsl:if>
         </xsl:if>
       </xsl:if>
@@ -197,7 +197,7 @@
       <xsl:attribute name="href">javascript:dirContextMenu('<xsl:value-of select="@id" />')</xsl:attribute>
       
       <xsl:if test="@type='drive'">
-        <img src="/webfilesys/images/miniDisk.gif" border="0" width="17" height="14">
+        <img src="/doxee-internal/images/miniDisk.gif" border="0" width="17" height="14">
           <xsl:if test="@label">
             <xsl:attribute name="title"><xsl:value-of select="@label" /></xsl:attribute>
           </xsl:if>
@@ -205,7 +205,7 @@
       </xsl:if>
 
       <xsl:if test="@type='floppy'">
-        <img src="/webfilesys/images/miniFloppy.gif" border="0" width="18" height="16">
+        <img src="/doxee-internal/images/miniFloppy.gif" border="0" width="18" height="16">
           <xsl:if test="@label">
             <xsl:attribute name="title"><xsl:value-of select="@label" /></xsl:attribute>
           </xsl:if>
@@ -216,11 +216,11 @@
         <xsl:if test="@current">
           <xsl:if test="@icon">
             <img class="icon">
-              <xsl:attribute name="src">/webfilesys/icons/<xsl:value-of select="@icon"/></xsl:attribute>
+              <xsl:attribute name="src">/doxee-internal/icons/<xsl:value-of select="@icon"/></xsl:attribute>
             </img>
           </xsl:if>
           <xsl:if test="not(@icon)">
-            <img src="/webfilesys/images/folder1.gif" class="folder" />
+            <img src="/doxee-internal/images/folder1.gif" class="folder" />
           </xsl:if>
           <script language="javascript">
             currentDirId = '<xsl:value-of select="@id" />';
@@ -229,11 +229,11 @@
         <xsl:if test="not(@current)">
           <xsl:if test="@icon">
             <img class="icon">
-              <xsl:attribute name="src">/webfilesys/icons/<xsl:value-of select="@icon"/></xsl:attribute>
+              <xsl:attribute name="src">/doxee-internal/icons/<xsl:value-of select="@icon"/></xsl:attribute>
             </img>
           </xsl:if>
           <xsl:if test="not(@icon)">
-            <img src="/webfilesys/images/folder.gif" class="folder" />
+            <img src="/doxee-internal/images/folder.gif" class="folder" />
           </xsl:if>
         </xsl:if>
       </xsl:if>

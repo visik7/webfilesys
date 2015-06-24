@@ -16,18 +16,18 @@
     <meta http-equiv="expires" content="0" />
 
     <link rel="stylesheet" type="text/css">
-      <xsl:attribute name="href">/webfilesys/styles/pictureAlbum.css</xsl:attribute>
+      <xsl:attribute name="href">/doxee-internal/styles/pictureAlbum.css</xsl:attribute>
     </link>
 
     <title>WebFileSys <span resource="label.slideshow"/></title>
  
-    <script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/util.js" type="text/javascript"></script>
-    <script src="/webfilesys/javascript/viewMode.js" type="text/javascript"></script>
-    <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+    <script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
+    <script src="/doxee-internal/javascript/viewMode.js" type="text/javascript"></script>
+    <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 
     <script type="text/javascript">
-      <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/slideShow/language" /></xsl:attribute>
+      <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/slideShow/language" /></xsl:attribute>
     </script>
 
     <script type="text/javascript">
@@ -55,7 +55,7 @@
       function preloadNextImage()
       {
           nextImage = new Image();
-          nextImage.src = '/webfilesys/servlet?command=getFile&amp;filePath=<xsl:value-of select="/slideShow/nextImgPath"/>&amp;cached=true';
+          nextImage.src = '/doxee-internal/servlet?command=getFile&amp;filePath=<xsl:value-of select="/slideShow/nextImgPath"/>&amp;cached=true';
 
           <xsl:if test="/slideShow/autoForward">
             <xsl:if test="not(slideShow/paused)">
@@ -131,7 +131,7 @@
 
       function getPrevNextBaseUrl()
       {
-          var url = '/webfilesys/servlet?command=albumSlideShow';
+          var url = '/doxee-internal/servlet?command=albumSlideShow';
           url = url + '&amp;delay=<xsl:value-of select="/slideShow/delay"/>';
           url = url + '&amp;recurse=<xsl:value-of select="/slideShow/recurse"/>';
           url = url + '&amp;autoForward=' + autoForward;
@@ -283,7 +283,7 @@
         <div class="slideShowImgCont">
 
           <img id="currentImg" border="0">
-            <xsl:attribute name="src">/webfilesys/servlet?command=getFile&amp;filePath=<xsl:value-of select="/slideShow/encodedPath"/>&amp;cached=true</xsl:attribute>
+            <xsl:attribute name="src">/doxee-internal/servlet?command=getFile&amp;filePath=<xsl:value-of select="/slideShow/encodedPath"/>&amp;cached=true</xsl:attribute>
             <xsl:attribute name="width"><xsl:value-of select="/slideShow/displayWidth"/></xsl:attribute>
             <xsl:attribute name="height"><xsl:value-of select="/slideShow/displayHeight"/></xsl:attribute>
             <xsl:if test="/slideShow/crossfade">

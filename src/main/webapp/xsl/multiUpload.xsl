@@ -12,10 +12,10 @@
 <html>
   <head>
   
-    <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
   
     <link rel="stylesheet" type="text/css">
-       <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="css" />.css</xsl:attribute>
+       <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="css" />.css</xsl:attribute>
     </link>
        
     <style type="text/css">
@@ -26,14 +26,14 @@
       li.selectedFile {color:navy;font-family:Arial,Helvetica;font-size:10pt;}
     </style>
   
-    <script language="JavaScript" src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/ajaxUpload.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/webfilesys/javascript/util.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/ajaxUpload.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/util.js" type="text/javascript"></script>
     
-    <script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+    <script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
     <script type="text/javascript">
-      <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="language" /></xsl:attribute>
+      <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="language" /></xsl:attribute>
     </script>
   
     <script type="text/javascript">
@@ -79,7 +79,7 @@
           
     </script>
 
-    <script language="JavaScript" src="/webfilesys/javascript/multiUpload.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/doxee-internal/javascript/multiUpload.js" type="text/javascript"></script>
   </head>
 
   <body onload="prepareDropZone();hideBrowserSpecifics();positionStatusDiv();">
@@ -140,11 +140,11 @@
         <td class="formButton">
           <input id="uploadButton" type="button" onclick="positionStatusDiv();sendFiles()" resource="button.startUpload" style="visibility:hidden;display:none;" />
           <input id="doneButton" type="button" style="visibility:hidden" resource="upload.button.done"
-                 onclick="window.location.href='/webfilesys/servlet?command=listFiles&amp;keepListStatus=true'" />
+                 onclick="window.location.href='/doxee-internal/servlet?command=listFiles&amp;keepListStatus=true'" />
         </td>
         
         <td class="formButton" align="right">
-          <input type="button" onclick="window.location.href='/webfilesys/servlet?command=listFiles&amp;keepListStatus=true'" resource="button.cancel" />
+          <input type="button" onclick="window.location.href='/doxee-internal/servlet?command=listFiles&amp;keepListStatus=true'" resource="button.cancel" />
         </td>
       </tr>
       
@@ -165,8 +165,8 @@
     <center>
 
       <div class="uploadStatusBar">
-        <img id="done" src="/webfilesys/images/bluedot.gif" width="1" height="20" border="0" />
-        <img id="todo" src="/webfilesys/images/space.gif" width="299" height="20" border="0" />  
+        <img id="done" src="/doxee-internal/images/bluedot.gif" width="1" height="20" border="0" />
+        <img id="todo" src="/doxee-internal/images/space.gif" width="299" height="20" border="0" />  
       </div>
 
       <table border="0" cellspacing="0" cellpadding="0" style="width:300px">
@@ -187,8 +187,8 @@
 	  </div>
 	  
       <div class="uploadStatusBar">
-        <img id="totalDone" src="/webfilesys/images/bluedot.gif" width="1" height="20" border="0" />
-        <img id="totalTodo" src="/webfilesys/images/space.gif" width="299" height="20" border="0" />  
+        <img id="totalDone" src="/doxee-internal/images/bluedot.gif" width="1" height="20" border="0" />
+        <img id="totalTodo" src="/doxee-internal/images/space.gif" width="299" height="20" border="0" />  
       </div>
 
       <table border="0" cellspacing="0" cellpadding="0" style="width:300px">

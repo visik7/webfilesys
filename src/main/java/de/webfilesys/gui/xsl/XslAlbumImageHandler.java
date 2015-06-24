@@ -152,7 +152,7 @@ public class XslAlbumImageHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(imageDataElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/albumImage.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/albumImage.xsl\"");
 
 		doc.insertBefore(xslRef, imageDataElement);
 
@@ -271,7 +271,7 @@ public class XslAlbumImageHandler extends XslRequestHandlerBase
 		XmlUtil.setChildText(imageDataElement, "commentCount", Integer.toString(numberOfComments), false);
         */
 		
-		String srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(imgPath);
+		String srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(imgPath);
 
 		XmlUtil.setChildText(imageDataElement, "imageSource", srcFileName, false);
 

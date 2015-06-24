@@ -36,7 +36,7 @@ public class XslCoBrowsingClientHandler extends XslRequestHandlerBase
 		
 		doc.appendChild(slideShowElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/coBrowsingClient.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/coBrowsingClient.xsl\"");
 
 		doc.insertBefore(xslRef, slideShowElement);
 

@@ -14,18 +14,18 @@
 
   <meta http-equiv="expires" content="0" />
 
-  <link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+  <link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
   <link rel="stylesheet" type="text/css">
-    <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/compareFolder/css" />.css</xsl:attribute>
+    <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/compareFolder/css" />.css</xsl:attribute>
   </link>
 
   <title>
     <xsl:value-of select="/compareFolder/resources/msg[@key='headline.compareFolders']/@value" />
   </title>
 
-  <script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-  <script src="/webfilesys/javascript/ajaxFolder.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+  <script src="/doxee-internal/javascript/ajaxFolder.js" type="text/javascript"></script>
 
 </head>
 
@@ -113,13 +113,13 @@
           
           <td class="syncCompare">
             <xsl:if test="(diffType='1')">
-              <img src="/webfilesys/images/checked.gif" width="18" height="15" border="0" />
+              <img src="/doxee-internal/images/checked.gif" width="18" height="15" border="0" />
             </xsl:if>
             <xsl:if test="(diffType='2')">
               <xsl:value-of select="/compareFolder/resources/msg[@key='sync.missing']/@value" />
             </xsl:if>
             <xsl:if test="(diffType='3')">
-              <img src="/webfilesys/images/checked.gif" width="18" height="15" border="0" />
+              <img src="/doxee-internal/images/checked.gif" width="18" height="15" border="0" />
             </xsl:if>
             <xsl:if test="(diffType='4')">
               <xsl:value-of select="/compareFolder/resources/msg[@key='sync.missing']/@value" />
@@ -159,13 +159,13 @@
               <xsl:value-of select="/compareFolder/resources/msg[@key='sync.missing']/@value" />
             </xsl:if>
             <xsl:if test="(diffType='2')">
-              <img src="/webfilesys/images/checked.gif" width="18" height="15" border="0" />
+              <img src="/doxee-internal/images/checked.gif" width="18" height="15" border="0" />
             </xsl:if>
             <xsl:if test="(diffType='3')">
               <xsl:value-of select="/compareFolder/resources/msg[@key='sync.missing']/@value" />
             </xsl:if>
             <xsl:if test="(diffType='4')">
-              <img src="/webfilesys/images/checked.gif" width="18" height="15" border="0" />
+              <img src="/doxee-internal/images/checked.gif" width="18" height="15" border="0" />
             </xsl:if>
             <xsl:if test="(diffType='5')">
               <xsl:value-of select="target/size" />

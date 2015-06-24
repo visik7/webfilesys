@@ -91,7 +91,7 @@ public class MultiDeleteRequestHandler extends MultiFileRequestHandler
 			output.println("</script>");
 		}
 
-		output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/webfilesys/servlet?command=listFiles&actpath=" + UTF8URLEncoder.encode(actPath) +"&mask=*&keepListStatus=true\">");
+		output.println("<META HTTP-EQUIV=\"REFRESH\" CONTENT=\"0; URL=/doxee-internal/servlet?command=listFiles&actpath=" + UTF8URLEncoder.encode(actPath) +"&mask=*&keepListStatus=true\">");
 		output.println("</HEAD>");
 		output.println("</html>");
 		output.flush();

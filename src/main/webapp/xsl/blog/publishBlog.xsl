@@ -8,7 +8,7 @@
 
 <div class="promptHead" resource="blog.publishTitle"></div>
     
-<form accept-charset="utf-8" name="publishForm" id="publishForm" method="post" action="/webfilesys/servlet" style="display:inline;">
+<form accept-charset="utf-8" name="publishForm" id="publishForm" method="post" action="/doxee-internal/servlet" style="display:inline;">
   <input type="hidden" name="command" value="blog" />
   <input type="hidden" name="cmd" value="publish" />
   

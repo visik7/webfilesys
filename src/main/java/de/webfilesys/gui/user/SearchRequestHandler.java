@@ -161,11 +161,11 @@ public class SearchRequestHandler extends UserRequestHandler
 			output.print("<title>" + getResource("label.searchresults","Search Results") + ": " + search_arg + " </title>");
 		}
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
-		output.println("<script language=\"JavaScript\" src=\"/webfilesys/javascript/ajaxCommon.js\" type=\"text/javascript\"></script>");
-		output.println("<script language=\"JavaScript\" src=\"/webfilesys/javascript/ajaxFolder.js\" type=\"text/javascript\"></script>");
+		output.println("<script language=\"JavaScript\" src=\"/doxee-internal/javascript/ajaxCommon.js\" type=\"text/javascript\"></script>");
+		output.println("<script language=\"JavaScript\" src=\"/doxee-internal/javascript/ajaxFolder.js\" type=\"text/javascript\"></script>");
 
         output.println("<script language=\"javascript\">"); 
 
@@ -182,11 +182,11 @@ public class SearchRequestHandler extends UserRequestHandler
 			output.println("keepSearchResults = true;");
             if (mobile != null) 
             {
-                output.println("window.opener.location.href='/webfilesys/servlet?command=mobile&cmd=folderFileList&absPath=" + UTF8URLEncoder.encode(searchResultDir)+ "';"); 
+                output.println("window.opener.location.href='/doxee-internal/servlet?command=mobile&cmd=folderFileList&absPath=" + UTF8URLEncoder.encode(searchResultDir)+ "';"); 
             }
             else
             {
-                output.println("window.opener.parent.DirectoryPath.location.href='/webfilesys/servlet?command=exp&expand=" + UTF8URLEncoder.encode(searchResultDir) + "&fastPath=true';"); 
+                output.println("window.opener.parent.DirectoryPath.location.href='/doxee-internal/servlet?command=exp&expand=" + UTF8URLEncoder.encode(searchResultDir) + "&fastPath=true';"); 
             }
 			output.println("setTimeout(\"self.close()\", 1000);"); 
 			output.println("}");
@@ -195,7 +195,7 @@ public class SearchRequestHandler extends UserRequestHandler
 			output.println("if (keepSearchResults || resultsDiscarded) {");
 			output.println("return;");
 			output.println("}");
-			output.println("var discardURL = '/webfilesys/servlet?command=discardSearchResults&resultDir=" + UTF8URLEncoder.encode(searchResultDir) + "';");
+			output.println("var discardURL = '/doxee-internal/servlet?command=discardSearchResults&resultDir=" + UTF8URLEncoder.encode(searchResultDir) + "';");
 			output.println("xmlRequestSynchron(discardURL);");
 			output.println("resultsDiscarded = true;");
 			output.println("}");
@@ -463,7 +463,7 @@ public class SearchRequestHandler extends UserRequestHandler
 								{
 									if ((category == null) || metaInfMgr.isCategoryAssigned(act_path, file_list[i], category))
 									{
-										String viewLink = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(temp_file.getAbsolutePath());
+										String viewLink = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(temp_file.getAbsolutePath());
 										
 						                String iconImg = "doc.gif";
 

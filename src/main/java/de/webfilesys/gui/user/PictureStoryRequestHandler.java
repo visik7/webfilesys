@@ -102,8 +102,8 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 		output.println("<HEAD>");
 		output.println("<TITLE>WebFilesys " + getResource("label.story", "picture story") + "</TITLE>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("<SCRIPT language=\"JavaScript\" src=\"javascript/fmweb.js\" type=\"text/javascript\"></SCRIPT>");
 		output.println("<SCRIPT language=\"JavaScript\" src=\"javascript/viewMode.js\" type=\"text/javascript\"></SCRIPT>");
@@ -195,13 +195,13 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 			output.println("<td valign=\"center\" nowrap>");
 			if (selectionStatus.getBeginIndex()>0)
 			{
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory\"><img src=\"/webfilesys/images/first.gif\" border=\"0\"></a>");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory\"><img src=\"/doxee-internal/images/first.gif\" border=\"0\"></a>");
 
 				output.println("&nbsp;");
 
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory");
 				output.print("&beforeName=" + UTF8URLEncoder.encode(selectionStatus.getFirstFileName()) + "\">");
-				output.println("<img src=\"/webfilesys/images/previous.gif\" border=\"0\"></a>");
+				output.println("<img src=\"/doxee-internal/images/previous.gif\" border=\"0\"></a>");
 			}
 			else
 			{
@@ -218,15 +218,15 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 
 			if (!selectionStatus.getIsLastPage())
 			{
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory");
 				output.print("&afterName=" + UTF8URLEncoder.encode(selectionStatus.getLastFileName()) + "\">");
-				output.println("<img src=\"/webfilesys/images/next.gif\" border=\"0\"></a>");
+				output.println("<img src=\"/doxee-internal/images/next.gif\" border=\"0\"></a>");
 
 				output.println("&nbsp;");
 
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory");
 				output.print("&beforeName=" + UTF8URLEncoder.encode("zzzzzzzzzz") + "\">");
-				output.println("<img src=\"/webfilesys/images/last.gif\" border=\"0\"></a>");
+				output.println("<img src=\"/doxee-internal/images/last.gif\" border=\"0\"></a>");
 			}
 			else
 			{
@@ -266,7 +266,7 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 
 			String fullFileName = fileCont.getRealFile().getAbsolutePath();
 
-			String srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(fullFileName);
+			String srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(fullFileName);
 
 			int xsize=100;
 			int ysize=100;
@@ -362,7 +362,7 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 				output.println(description);
 				output.println("</td>");
 
-				output.println("<td><img src=\"/webfilesys/images/space.gif\" border=\"0\" width=\"10\" height=\"1\"></td>");
+				output.println("<td><img src=\"/doxee-internal/images/space.gif\" border=\"0\" width=\"10\" height=\"1\"></td>");
 
 				output.println("<td valign=\"top\">");
 			}
@@ -371,12 +371,12 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 				output.println("<td align=\"right\" valign=\"top\">");
 			}
 
-			output.print("<a name=\"" + imgCounter + "\" href=\"#" + imgCounter + "\" onclick=\"window.open('/webfilesys/servlet?command=showImg&imgname=" + filenameForScript + "','" + newWindowName + "','status=no,toolbar=no,location=no,menu=no,width=" + (wDisplay + 20) + ",height=" + (hDisplay+52) + ",resizable=yes,left=1,top=1,screenX=1,screenY=1')\">");
+			output.print("<a name=\"" + imgCounter + "\" href=\"#" + imgCounter + "\" onclick=\"window.open('/doxee-internal/servlet?command=showImg&imgname=" + filenameForScript + "','" + newWindowName + "','status=no,toolbar=no,location=no,menu=no,width=" + (wDisplay + 20) + ",height=" + (hDisplay+52) + ",resizable=yes,left=1,top=1,screenX=1,screenY=1')\">");
 			output.println("<img src=\"" + srcFileName + "\" border=0 width=" + xDisplay + " height=" + yDisplay + " title=\"" + fullFileName + "\"></a></td>");
 
 			if (imgCounter % 2 == 0)
 			{
-				output.println("<td align=\"right\"><img src=\"/webfilesys/images/space.gif\" border=\"0\" width=\"10\" height=\"1\"></td>");
+				output.println("<td align=\"right\"><img src=\"/doxee-internal/images/space.gif\" border=\"0\" width=\"10\" height=\"1\"></td>");
 
 				output.println("<td class=\"story\" valign=\"top\">");
 				output.println("<br>");
@@ -386,7 +386,7 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 
 			output.println("</tr>");
 
-			output.println("<tr><td colspan=\"3\"><img src=\"/webfilesys/images/space.gif\" border=\"0\" width=\"1\" height=\"10\"></td></tr>");
+			output.println("<tr><td colspan=\"3\"><img src=\"/doxee-internal/images/space.gif\" border=\"0\" width=\"1\" height=\"10\"></td></tr>");
 
 			imgCounter++;
 		}
@@ -402,13 +402,13 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 			output.println("<td valign=\"center\">");
 			if (selectionStatus.getBeginIndex()>0)
 			{
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory\"><img src=\"/webfilesys/images/first.gif\" border=\"0\"></a>");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory\"><img src=\"/doxee-internal/images/first.gif\" border=\"0\"></a>");
 
 				output.println("&nbsp;");
 
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory");
 				output.print("&beforeName=" + UTF8URLEncoder.encode(selectionStatus.getFirstFileName()) + "\">");
-				output.println("<img src=\"/webfilesys/images/previous.gif\" border=\"0\"></a>");
+				output.println("<img src=\"/doxee-internal/images/previous.gif\" border=\"0\"></a>");
 			}
 			else
 			{
@@ -430,15 +430,15 @@ public class PictureStoryRequestHandler extends UserRequestHandler
 
 			if (!selectionStatus.getIsLastPage())
 			{
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory");
 				output.print("&afterName=" + UTF8URLEncoder.encode(selectionStatus.getLastFileName()) + "\">");
-				output.println("<img src=\"/webfilesys/images/next.gif\" border=\"0\"></a>");
+				output.println("<img src=\"/doxee-internal/images/next.gif\" border=\"0\"></a>");
 
 				output.println("&nbsp;");
 
-				output.print("<a href=\"/webfilesys/servlet?command=pictureStory");
+				output.print("<a href=\"/doxee-internal/servlet?command=pictureStory");
 				output.print("&beforeName=" + UTF8URLEncoder.encode("zzzzzzzzzz") + "\">");
-				output.println("<img src=\"/webfilesys/images/last.gif\" border=\"0\"></a>");
+				output.println("<img src=\"/doxee-internal/images/last.gif\" border=\"0\"></a>");
 			}
 			else
 			{

@@ -32,7 +32,7 @@ public class BlogPublishFormHandler extends XslRequestHandlerBase {
 			
 		doc.appendChild(blogElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/blog/publishBlog.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/blog/publishBlog.xsl\"");
 
 		doc.insertBefore(xslRef, blogElement);
 

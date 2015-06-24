@@ -24,7 +24,7 @@ function menuEntryPlus(href, label, plusRef, plusTitle) {
             + '<td class="jsmenu">'
             + '<a class="menuitem" href="' + href + '" ' + targetText + '>' + label + '</a>'
             + '<a href="' + plusRef + '" class="menuPlus" >'
-            + '<img src="/webfilesys/images/menuPlus.gif" title="' + plusTitle + '"/>'
+            + '<img src="/doxee-internal/images/menuPlus.gif" title="' + plusTitle + '"/>'
             + '</a>'
             + '</td>'
             + '</tr>');
@@ -83,7 +83,7 @@ function contextMenu(fileName)
                  + menuEntry("javascript:viewZip('" + scriptPreparedPath + "')",resourceBundle["label.viewzip"],null);
     } else if (fileExt == ".URL") {
         menuText = menuText 
-                 + menuEntry("/webfilesys/servlet?command=openUrlFile&actPath=" + encodeURIComponent(fullPath) + "&random=" + (new Date().getTime()),resourceBundle["label.view"],"_blank");
+                 + menuEntry("/doxee-internal/servlet?command=openUrlFile&actPath=" + encodeURIComponent(fullPath) + "&random=" + (new Date().getTime()),resourceBundle["label.view"],"_blank");
     } else {
          if ((fileExt == ".MP4") || (fileExt == ".OGG") || (fileExt == ".OGV")|| (fileExt == ".WEBM")) {
              menuText = menuText 
@@ -101,7 +101,7 @@ function contextMenu(fileName)
 	    }
 
         menuText = menuText 
-                 + menuEntry("/webfilesys/servlet?command=getFile&filePath=" + encodeURIComponent(fullPath) + "&disposition=download",downloadLabel,null);
+                 + menuEntry("/doxee-internal/servlet?command=getFile&filePath=" + encodeURIComponent(fullPath) + "&disposition=download",downloadLabel,null);
     }
 
     if (parent.readonly != 'true')
@@ -290,7 +290,7 @@ function extendedFileMenu(shortFileName, path)
             if ((fileExt == ".EXE") || (fileExt == ".COM") || (fileExt == ".BAT") || (fileExt == ".CMD"))
             {
                 menuText = menuText 
-                         + menuEntry("/webfilesys/servlet?command=execProgram&progname=" + encodeURIComponent(fullPath),resourceBundle["label.run"],null);
+                         + menuEntry("/doxee-internal/servlet?command=execProgram&progname=" + encodeURIComponent(fullPath),resourceBundle["label.run"],null);
             }
             else
             {

@@ -89,7 +89,7 @@ public class BlogGetPublicUrlHandler extends XmlRequestHandlerBase {
 
         	publicURL.append(serverPort);
 
-    		publicURL.append("/webfilesys/visitor/");
+    		publicURL.append("/doxee-internal/visitor/");
     		publicURL.append(virtualUserId);
     		publicURL.append('/');
     		publicURL.append(publicAccessCode);

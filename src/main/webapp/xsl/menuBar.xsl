@@ -14,68 +14,68 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/icons.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/icons.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/menubar/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/menubar/css" />.css</xsl:attribute>
 </link>
 
-<script src="/webfilesys/javascript/browserCheck.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/ajaxCommon.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/menuBar.js" type="text/javascript"></script>
-<script src="/webfilesys/javascript/resourceBundle.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/browserCheck.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/ajaxCommon.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/menuBar.js" type="text/javascript"></script>
+<script src="/doxee-internal/javascript/resourceBundle.js" type="text/javascript"></script>
 <script type="text/javascript">
-  <xsl:attribute name="src">/webfilesys/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/menubar/language" /></xsl:attribute>
+  <xsl:attribute name="src">/doxee-internal/servlet?command=getResourceBundle&amp;lang=<xsl:value-of select="/menubar/language" /></xsl:attribute>
 </script>
 
 
 <script language="javascript">
   function fastpath() 
   {
-      parent.DirectoryPath.location.href = '/webfilesys/servlet?command=fastpath';
+      parent.DirectoryPath.location.href = '/doxee-internal/servlet?command=fastpath';
   }
 
   function bookmarks() 
   {
-      parent.DirectoryPath.location.href = '/webfilesys/servlet?command=bookmarks';
+      parent.DirectoryPath.location.href = '/doxee-internal/servlet?command=bookmarks';
   }
   
   <xsl:if test="not(readonly) or (readonly='false')">
     function watchList() 
     {
-       parent.DirectoryPath.location.href = '/webfilesys/servlet?command=watchList';
+       parent.DirectoryPath.location.href = '/doxee-internal/servlet?command=watchList';
     }
   </xsl:if>
   
   function publishList()
   {
-      window.open('/webfilesys/servlet?command=publishList&amp;random=' + new Date().getTime(),'PublishList','scrollbars=yes,resizable=yes,width=740,height=300,left=20,top=100,screenX=50,screenY=100');
+      window.open('/doxee-internal/servlet?command=publishList&amp;random=' + new Date().getTime(),'PublishList','scrollbars=yes,resizable=yes,width=740,height=300,left=20,top=100,screenX=50,screenY=100');
   }
   
   function diskQuota() 
   {
-      window.open('/webfilesys/servlet?command=diskQuota&amp;random=' + new Date().getTime(),'quotaWin','scrollbars=no,resizable=no,width=400,height=230,left=100,top=100,screenX=100,screenY=100');
+      window.open('/doxee-internal/servlet?command=diskQuota&amp;random=' + new Date().getTime(),'quotaWin','scrollbars=no,resizable=no,width=400,height=230,left=100,top=100,screenX=100,screenY=100');
   }
 
   function pictureStory()
   {
-      thumbwin=open('/webfilesys/servlet?command=pictureStory&amp;random=' + new Date().getTime() + '&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height,'thumbwin','status=no,toolbar=no,menu=no,width=' + (screen.width-20) + ',height=' + (screen.height-80) + ',resizable=yes,scrollbars=yes,left=5,top=1,screenX=5,screenY=1');
+      thumbwin=open('/doxee-internal/servlet?command=pictureStory&amp;random=' + new Date().getTime() + '&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height,'thumbwin','status=no,toolbar=no,menu=no,width=' + (screen.width-20) + ',height=' + (screen.height-80) + ',resizable=yes,scrollbars=yes,left=5,top=1,screenX=5,screenY=1');
   }
  
   function slideshow()
   {
-      parent.frames[2].location.href = '/webfilesys/servlet?command=slideShowParms&amp;cmd=getParms&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height;
+      parent.frames[2].location.href = '/doxee-internal/servlet?command=slideShowParms&amp;cmd=getParms&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height;
   }
   
   function ftpBackup()
   {
-      ftpwin=open('/webfilesys/servlet?command=ftpBackup','ftpwin','status=no,toolbar=no,menu=no,width=520,height=300,resizable=no,scrollbars=yes,left=150,top=60,screenX=150,screenY=60');ftpwin.focus();
+      ftpwin=open('/doxee-internal/servlet?command=ftpBackup','ftpwin','status=no,toolbar=no,menu=no,width=520,height=300,resizable=no,scrollbars=yes,left=150,top=60,screenX=150,screenY=60');ftpwin.focus();
   }
 
   function searchParms()
   {
-      searchWin=open('/webfilesys/servlet?command=search','searchWin','scrollbars=yes,resizable=yes,width=500,height=480,left=100,top=60,screenX=100,screenY=60');
+      searchWin=open('/doxee-internal/servlet?command=search','searchWin','scrollbars=yes,resizable=yes,width=500,height=480,left=100,top=60,screenX=100,screenY=60');
       searchWin.focus();
   }
 
@@ -98,30 +98,30 @@
           windowWidth = windowHeight + 250;
       }
   
-      calWin = window.open('/webfilesys/servlet?command=calendar','calWin','scrollbars=yes,resizable=yes,width=' + windowWidth + ',height=' + windowHeight);
+      calWin = window.open('/doxee-internal/servlet?command=calendar','calWin','scrollbars=yes,resizable=yes,width=' + windowWidth + ',height=' + windowHeight);
       calWin.focus();
   }
   
   function fileSysStats()
   {
-      statWin = window.open('/webfilesys/servlet?command=fileSysUsage','statWin','scrollbars=yes,resizable=yes,width=700,height=480,left=20,top=20,screenX=20,screenY=20');
+      statWin = window.open('/doxee-internal/servlet?command=fileSysUsage','statWin','scrollbars=yes,resizable=yes,width=700,height=480,left=20,top=20,screenX=20,screenY=20');
       statWin.focus();
   }
   
   function mobileVersion()
   {
-      parent.location.href = '/webfilesys/servlet?command=mobile&amp;cmd=folderFileList&amp;initial=true&amp;relPath=/';
+      parent.location.href = '/doxee-internal/servlet?command=mobile&amp;cmd=folderFileList&amp;initial=true&amp;relPath=/';
   }
   
   function returnToPrevDir()
   {
-      parent.location.href = '/webfilesys/servlet?command=returnToPrevDir';
+      parent.location.href = '/doxee-internal/servlet?command=returnToPrevDir';
   }
   
   <xsl:if test="/menubar/unixAdmin">
     function unixCmdWin()
     {
-        var unixCmdWin = window.open('/webfilesys/servlet?command=unixCmdLine','cmdPrompt','status=no,toolbar=no,menu=no,width=600,height=600,resizable=yes,scrollbars=yes,left=10,top=10,screenX=10,screenY=10');
+        var unixCmdWin = window.open('/doxee-internal/servlet?command=unixCmdLine','cmdPrompt','status=no,toolbar=no,menu=no,width=600,height=600,resizable=yes,scrollbars=yes,left=10,top=10,screenX=10,screenY=10');
         unixCmdWin.focus();
     }
   </xsl:if>
@@ -130,13 +130,13 @@
     function refreshDriveList()
     {
         ajaxRPC("refreshDriveList", "");
-        parent.location.href = '/webfilesys/servlet';    
+        parent.location.href = '/doxee-internal/servlet';    
     }
   </xsl:if>
   
   function setScreenSize()
   {
-      var url = '/webfilesys/servlet?command=setScreenSize&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height;
+      var url = '/doxee-internal/servlet?command=setScreenSize&amp;screenWidth=' + screen.width + '&amp;screenHeight=' + screen.height;
       xmlRequest(url, dummyCallback);
   }
   
@@ -186,7 +186,7 @@
             <xsl:if test="/menubar/unixAdmin">
               <th>
 	            <div class="icon-button">
-                  <a href="/webfilesys/servlet?command=processList" target="_blank" class="icon-font icon-process">
+                  <a href="/doxee-internal/servlet?command=processList" target="_blank" class="icon-font icon-process">
                     <xsl:attribute name="titleResource">label.processes</xsl:attribute>
                     <xsl:text> </xsl:text>
                   </a>
@@ -215,7 +215,7 @@
             <xsl:if test="/menubar/role='admin'">
               <th>
 	            <div class="icon-button">
-                  <a href="/webfilesys/servlet?command=admin&amp;cmd=menu" target="_parent" class="icon-font icon-admin">
+                  <a href="/doxee-internal/servlet?command=admin&amp;cmd=menu" target="_parent" class="icon-font icon-admin">
                     <xsl:attribute name="titleResource">label.admin</xsl:attribute>
                     <xsl:text> </xsl:text>
                   </a>
@@ -228,7 +228,7 @@
                 <xsl:if test="registrationType='open'">
                   <th>
 	                <div class="icon-button">
-                      <a href="/webfilesys/servlet?command=selfEditUser" target="FileList" class="icon-font icon-user">
+                      <a href="/doxee-internal/servlet?command=selfEditUser" target="FileList" class="icon-font icon-user">
                         <xsl:attribute name="titleResource">label.editregistration</xsl:attribute>
                         <xsl:text> </xsl:text>
                       </a>
@@ -239,7 +239,7 @@
                 <xsl:if test="not(registrationType='open')">
                   <th>
 	                <div class="icon-button">
-                      <a href="/webfilesys/servlet?command=editPw" target="FileList" class="icon-font icon-user">
+                      <a href="/doxee-internal/servlet?command=editPw" target="FileList" class="icon-font icon-user">
                         <xsl:attribute name="titleResource">label.settings</xsl:attribute>
                         <xsl:text> </xsl:text>
                       </a>
@@ -386,7 +386,7 @@
             <th>
 			  <div class="icon-button">
                 <a target="_blank" class="icon-font icon-help">
-                  <xsl:attribute name="href">/webfilesys/help/<xsl:value-of select="helpLanguage" />/help.html</xsl:attribute>
+                  <xsl:attribute name="href">/doxee-internal/help/<xsl:value-of select="helpLanguage" />/help.html</xsl:attribute>
                   <xsl:attribute name="titleResource">label.help</xsl:attribute>
                   <xsl:text> </xsl:text>
                 </a>
@@ -395,7 +395,7 @@
 
             <th>
 			  <div class="icon-button">
-                <a href="#" onclick="window.open('/webfilesys/servlet?command=versionInfo','infowindow','status=no,toolbar=no,location=no,menu=no,width=300,height=220,resizable=no,left=250,top=150,screenX=250,screenY=150')"
+                <a href="#" onclick="window.open('/doxee-internal/servlet?command=versionInfo','infowindow','status=no,toolbar=no,location=no,menu=no,width=300,height=220,resizable=no,left=250,top=150,screenX=250,screenY=150')"
 				    class="icon-font icon-info">
                   <xsl:attribute name="titleResource">label.about</xsl:attribute>
                   <xsl:text> </xsl:text>
@@ -405,7 +405,7 @@
 
             <th style="padding-left:20px">
 			  <div class="icon-button">
-                <a href="/webfilesys/servlet?command=logout" target="_parent" class="icon-font icon-exit">
+                <a href="/doxee-internal/servlet?command=logout" target="_parent" class="icon-font icon-exit">
                   <xsl:attribute name="titleResource">label.logout</xsl:attribute>
                   <xsl:text> </xsl:text>
                 </a>

@@ -132,7 +132,7 @@ public class XslFindFileHandler extends XslRequestHandlerBase
         
         doc.appendChild(searchResultElement);
             
-        ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/findFileResult.xsl\"");
+        ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/findFileResult.xsl\"");
 
         doc.insertBefore(xslRef, searchResultElement);
 
@@ -208,7 +208,7 @@ public class XslFindFileHandler extends XslRequestHandlerBase
                                 if ((category == null) || 
                                     metaInfMgr.isCategoryAssigned(actPath, fileList[i], category))
                                 {
-                                    String viewLink = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(tempFile.getAbsolutePath());
+                                    String viewLink = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(tempFile.getAbsolutePath());
                                     
                                     String iconImg = "doc.gif";
 

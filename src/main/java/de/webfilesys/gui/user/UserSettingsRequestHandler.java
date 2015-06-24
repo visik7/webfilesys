@@ -183,8 +183,8 @@ public class UserSettingsRequestHandler extends UserRequestHandler {
 			javascriptAlert(errorMsg);
 		}
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("</head>");
 		output.println("<body>");
@@ -193,7 +193,7 @@ public class UserSettingsRequestHandler extends UserRequestHandler {
 
 		output.println("<br>");
 
-		output.println("<form accept-charset=\"utf-8\" method=\"post\" action=\"/webfilesys/servlet\">");
+		output.println("<form accept-charset=\"utf-8\" method=\"post\" action=\"/doxee-internal/servlet\">");
 		output.println("<input type=\"hidden\" name=\"command\" value=\"changePw\">");
 
 		output.println("<table class=\"dataForm\" style=\"width:100%\">");
@@ -270,7 +270,7 @@ public class UserSettingsRequestHandler extends UserRequestHandler {
 		output.println("<input type=\"submit\" name=\"changebutton\" value=\"" + getResource("button.save","&nbsp;Save&nbsp;") + "\">");
 		output.println("</td>");
 		output.println("<td class=\"formButton\" style=\"text-align:right\">");
-		output.println("<input type=\"button\" value=\"" + getResource("button.cancel","&nbsp;Cancel&nbsp;") + "\" onclick=\"window.location.href='/webfilesys/servlet?command=listFiles';\">");
+		output.println("<input type=\"button\" value=\"" + getResource("button.cancel","&nbsp;Cancel&nbsp;") + "\" onclick=\"window.location.href='/doxee-internal/servlet?command=listFiles';\">");
 		output.println("</td>");
 		output.println("</tr>");    
 

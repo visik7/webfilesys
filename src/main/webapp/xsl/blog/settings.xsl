@@ -18,7 +18,7 @@
     <span resource="blog.settingsHeadline"></span>
   </div>
 
-  <form accept-charset="utf-8" id="blogSettingsForm" name="blogSettingsForm" method="post" action="/webfilesys/servlet" class="blogSettingsForm">
+  <form accept-charset="utf-8" id="blogSettingsForm" name="blogSettingsForm" method="post" action="/doxee-internal/servlet" class="blogSettingsForm">
   
     <input type="hidden" name="command" value="blog" />
     <input type="hidden" name="cmd" value="saveSettings" />

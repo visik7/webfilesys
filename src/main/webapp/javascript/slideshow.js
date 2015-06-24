@@ -8,7 +8,7 @@ var first = true;
    
 var stopped = false;
     
-var prefetchSrc = '/webfilesys/images/space.gif';
+var prefetchSrc = '/doxee-internal/images/space.gif';
     
 var prefetchWidth = 1;
     
@@ -55,7 +55,7 @@ function enableNextButton() {
     if (!fadeRunning) {
         var pauseGoImg = document.getElementById('pauseGo');
         if (pauseGoImg) {
-            pauseGoImg.src = '/webfilesys/images/next.png';
+            pauseGoImg.src = '/doxee-internal/images/next.png';
             pauseGoImg.title = pauseGoTitle;
         }
         document.getElementById('stopAndGoLink').href = 'javascript:stopAndGo()';
@@ -80,11 +80,11 @@ function loadImage() {
         document.getElementById('stopAndGoLink').href = 'javascript:void(0)';
         
         var pauseGoImg = document.getElementById('pauseGo');
-        pauseGoImg.src = '/webfilesys/images/pause.gif';
+        pauseGoImg.src = '/doxee-internal/images/pause.gif';
         pauseGoImg.title = 'loading next picture ...';
     }
 
-    url = '/webfilesys/servlet?command=slideShowImage&imageIdx=' + imageIdx + '&windowWidth=' + getWinWidth() + '&windowHeight=' + getWinHeight();
+    url = '/doxee-internal/servlet?command=slideShowImage&imageIdx=' + imageIdx + '&windowWidth=' + getWinWidth() + '&windowHeight=' + getWinHeight();
 
     xmlRequest(url, showImage);
 }
@@ -119,13 +119,13 @@ function showImage() {
                     
                 prefetchLoading = true;
                     
-                prefetchSrc = '/webfilesys/servlet?command=getFile&filePath=' + encodeURIComponent(imagePath) + '&cached=true';
+                prefetchSrc = '/doxee-internal/servlet?command=getFile&filePath=' + encodeURIComponent(imagePath) + '&cached=true';
 
                 prefetchImg.src = prefetchSrc;
                     
                 imageElement.style.visibility = 'hidden';
 
-                imageElement.src = '/webfilesys/images/space.gif';
+                imageElement.src = '/doxee-internal/images/space.gif';
 
                 imageElement.width = 1;
                     
@@ -195,7 +195,7 @@ function stopAndGo() {
         timeout = window.setTimeout('loadImage()', 1000);
 
         if (pauseGoImg) {
-            pauseGoImg.src = '/webfilesys/images/pause.gif';
+            pauseGoImg.src = '/doxee-internal/images/pause.gif';
 
             pauseGoImg.title = pauseTitle;            
         }
@@ -205,7 +205,7 @@ function stopAndGo() {
         clearTimeout(timeout);
         
         if (pauseGoImg) {
-            pauseGoImg.src = '/webfilesys/images/go.gif';
+            pauseGoImg.src = '/doxee-internal/images/go.gif';
             
             pauseGoImg.title = continueTitle;            
         }
@@ -215,7 +215,7 @@ function stopAndGo() {
 }
     
 function loadImageIgnorePrefetch() {
-    url = '/webfilesys/servlet?command=slideShowImage&imageIdx=' + imageIdx + '&windowWidth=' + getWinWidth() + '&windowHeight=' + getWinHeight();
+    url = '/doxee-internal/servlet?command=slideShowImage&imageIdx=' + imageIdx + '&windowWidth=' + getWinWidth() + '&windowHeight=' + getWinHeight();
 
     xmlRequest(url, showImageNoPrefetch);
 }
@@ -251,7 +251,7 @@ function showImageNoPrefetch() {
 				    }
 
 				    alternateImg.style.visibility = 'hidden';
-			        alternateImg.src = '/webfilesys/images/space.gif';
+			        alternateImg.src = '/doxee-internal/images/space.gif';
                     alternateImg.width = 1;
                     alternateImg.heigth = 1;
 		            alternateImg.style.opacity = 1;
@@ -260,13 +260,13 @@ function showImageNoPrefetch() {
 			    imageElement.style.top = Math.round(((getWinHeight() - displayHeight) / 2)) + 'px';
 				imageElement.style.left = Math.round(((getWinWidth() - displayWidth) / 2)) + 'px';
                     
-                imageElement.src = '/webfilesys/images/space.gif';
+                imageElement.src = '/doxee-internal/images/space.gif';
 
                 imageElement.width = 1;
                     
                 imageElement.heigth = 1;
                     
-                imageElement.src = '/webfilesys/servlet?command=getFile&filePath=' + encodeURIComponent(imagePath) + '&cached=true';
+                imageElement.src = '/doxee-internal/servlet?command=getFile&filePath=' + encodeURIComponent(imagePath) + '&cached=true';
                     
                 imageElement.width = displayWidth;
                     
@@ -285,7 +285,7 @@ function showImageNoPrefetch() {
                 } 
                     
                 first = true;
-                prefetchSrc = '/webfilesys/images/space.gif';
+                prefetchSrc = '/doxee-internal/images/space.gif';
             }
         }
     }

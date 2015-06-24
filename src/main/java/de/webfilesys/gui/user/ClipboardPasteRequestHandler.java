@@ -79,8 +79,8 @@ public class ClipboardPasteRequestHandler extends UserRequestHandler
 		output.println("<HTML>");
 		output.println("<HEAD>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("</HEAD>");
 
@@ -296,7 +296,7 @@ public class ClipboardPasteRequestHandler extends UserRequestHandler
 					output.println("<script language=\"javascript\">");
 					output.println("alert('" + insertDoubleBackslash(sourceDir) + "\\n" + getResource("alert.copytosubdir","cannot be copied to an own subdirectory") + "!');");
 
-					output.println("window.location.href='/webfilesys/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
+					output.println("window.location.href='/doxee-internal/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
 
 					output.println("</script>");
 					output.println("</BODY></html>");
@@ -317,15 +317,15 @@ public class ClipboardPasteRequestHandler extends UserRequestHandler
 						
 						if (pasteToFileWin) 
 						{
-							output.println("{window.location=\"/webfilesys/servlet?command=pasteFiles&ignoreExist=true\";}");
+							output.println("{window.location=\"/doxee-internal/servlet?command=pasteFiles&ignoreExist=true\";}");
 						}
 						else 
 						{
-							output.println("{window.location=\"/webfilesys/servlet?command=pasteFiles&actpath=" + UTF8URLEncoder.encode(actPath) + "&ignoreExist=true\";}");
+							output.println("{window.location=\"/doxee-internal/servlet?command=pasteFiles&actpath=" + UTF8URLEncoder.encode(actPath) + "&ignoreExist=true\";}");
 						}
 						output.println("else");
 
-						output.println("window.location.href='/webfilesys/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
+						output.println("window.location.href='/doxee-internal/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
 
 						output.println("</script>");
 						output.println("</BODY></html>");
@@ -340,7 +340,7 @@ public class ClipboardPasteRequestHandler extends UserRequestHandler
 						output.println("<script language=\"javascript\">");
 						output.println("alert('" + getResource("alert.mkdirfail","Cannot create directory") + "\\n" + insertDoubleBackslash(destSubdir) + "!');");
 
-						output.println("window.location.href='/webfilesys/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
+						output.println("window.location.href='/doxee-internal/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
 
 						output.println("</script>");
 						output.println("</BODY></html>");
@@ -393,21 +393,21 @@ public class ClipboardPasteRequestHandler extends UserRequestHandler
 		{
 			if (thumbView)
 			{
-				output.println("window.location.href='/webfilesys/servlet?command=thumbnail&zoom=no&random="  + (new Date()).getTime() + "';");
+				output.println("window.location.href='/doxee-internal/servlet?command=thumbnail&zoom=no&random="  + (new Date()).getTime() + "';");
 			}
 			else
 			{
-				output.println("window.location.href='/webfilesys/servlet?command=listFiles&mask=*';");
+				output.println("window.location.href='/doxee-internal/servlet?command=listFiles&mask=*';");
 			}
 			
 			if (clipDirs != null)
 			{
-				output.print("window.parent.DirectoryPath.location.href='/webfilesys/servlet?command=refresh&path=" + UTF8URLEncoder.encode(getCwd()) + "';");
+				output.print("window.parent.DirectoryPath.location.href='/doxee-internal/servlet?command=refresh&path=" + UTF8URLEncoder.encode(getCwd()) + "';");
 			}
 		}
 		else
 		{
-			output.println("window.location.href='/webfilesys/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
+			output.println("window.location.href='/doxee-internal/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
 		}
 		output.println("</script>");
 

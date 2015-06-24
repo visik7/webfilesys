@@ -321,15 +321,15 @@ public class UnixOwnerRequestHandler extends UserRequestHandler
                 + getResource("label.accessrights", "owner and access rights")
                 + "</title>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
         output.println(
-            "<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+            "<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
         output.println("</head><body>");
 
         headLine(getResource("label.accessrights", "owner and access rights"));
 
-        output.println("<form accept-charset=\"utf-8\" method=\"post\" action=\"/webfilesys/servlet\">");
+        output.println("<form accept-charset=\"utf-8\" method=\"post\" action=\"/doxee-internal/servlet\">");
         output.println("<input type=\"hidden\" name=\"command\" value=\"setUnixRights\">");
         output.println(
             "<input type=\"hidden\" name=\"filename\" value=\""

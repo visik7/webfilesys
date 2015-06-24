@@ -164,7 +164,7 @@ public class XslPublishFileHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(publishFileElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/publishFile.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/publishFile.xsl\"");
 
 		doc.insertBefore(xslRef, publishFileElement);
 
@@ -250,7 +250,7 @@ public class XslPublishFileHandler extends XslRequestHandlerBase
 
 		secretURL.append(serverPort);
 
-		secretURL.append("/webfilesys/servlet?command=visitorFile&accessCode=");
+		secretURL.append("/doxee-internal/servlet?command=visitorFile&accessCode=");
 		secretURL.append(accessCode);
 
 		if (sendMail != null)
@@ -301,7 +301,7 @@ public class XslPublishFileHandler extends XslRequestHandlerBase
 			
 		doc.appendChild(publishFileElement);
 			
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/filePublished.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/filePublished.xsl\"");
 
 		doc.insertBefore(xslRef, publishFileElement);
 

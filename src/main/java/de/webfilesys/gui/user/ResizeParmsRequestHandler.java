@@ -71,12 +71,12 @@ public class ResizeParmsRequestHandler extends UserRequestHandler
 
 		output.println("<title>WebFileSys - " + getResource("label.resizetitle","resize pictures") + "</title>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
-		output.println("<script src=\"/webfilesys/javascript/areaSelector.js\" type=\"text/javascript\"></script>");
+		output.println("<script src=\"/doxee-internal/javascript/areaSelector.js\" type=\"text/javascript\"></script>");
 		
-        output.println("<script src=\"/webfilesys/javascript/resizeImage.js\" type=\"text/javascript\"></script>");
+        output.println("<script src=\"/doxee-internal/javascript/resizeImage.js\" type=\"text/javascript\"></script>");
 		
         if ((imgFileName != null) && (popup == null)) 
         {
@@ -100,7 +100,7 @@ public class ResizeParmsRequestHandler extends UserRequestHandler
 		output.println("<tr>");
 		output.println("<td valign=\"top\">");
 		
-		output.println("<form accept-charset=\"utf-8\" name=\"form1\" method=\"get\" action=\"/webfilesys/servlet\">");
+		output.println("<form accept-charset=\"utf-8\" name=\"form1\" method=\"get\" action=\"/doxee-internal/servlet\">");
 		output.println("<input type=\"hidden\" name=\"command\" value=\"resizeImages\">");
 
 		if (imgFileName == null)
@@ -164,7 +164,7 @@ public class ResizeParmsRequestHandler extends UserRequestHandler
 	                
 	                String srcFileName = imgFileName;
 
-	                srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(imgFileName);
+	                srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(imgFileName);
 
                     int xDisplay = scaledImage.getScaledWidth();
                     int yDisplay = scaledImage.getScaledHeight();
@@ -319,7 +319,7 @@ public class ResizeParmsRequestHandler extends UserRequestHandler
 		}
 		else
 		{
-			output.println("<input type=\"button\" class=\"formButton\" name=\"cancel\" value=\"" + getResource("button.cancel","Cancel") + "\" onclick=\"window.location.href='/webfilesys/servlet?command=listFiles';\">");
+			output.println("<input type=\"button\" class=\"formButton\" name=\"cancel\" value=\"" + getResource("button.cancel","Cancel") + "\" onclick=\"window.location.href='/doxee-internal/servlet?command=listFiles';\">");
 		}
 		
         output.println("</td></tr>");

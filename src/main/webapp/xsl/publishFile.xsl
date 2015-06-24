@@ -14,10 +14,10 @@
 
 <meta http-equiv="expires" content="0" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/publishFile/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/publishFile/css" />.css</xsl:attribute>
 </link>
 
 <title>
@@ -62,7 +62,7 @@
     </tr>
   </table>
 
-  <form accept-charset="utf-8" name="form1" method="get" action="/webfilesys/servlet">
+  <form accept-charset="utf-8" name="form1" method="get" action="/doxee-internal/servlet">
 
     <input type="hidden" name="command" value="publishFile" />
   

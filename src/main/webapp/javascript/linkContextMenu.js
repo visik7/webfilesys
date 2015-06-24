@@ -52,7 +52,7 @@ function jsLinkMenu(linkName, realPath)
 	    if (fileExt == ".URL")
 	    {
             menuText = menuText 
-                     + menuEntry("/webfilesys/servlet?command=openUrlFile&actPath=" + encodeURIComponent(realPath) + "&random=" + (new Date().getTime()),resourceBundle["label.view"],"_blank");
+                     + menuEntry("/doxee-internal/servlet?command=openUrlFile&actPath=" + encodeURIComponent(realPath) + "&random=" + (new Date().getTime()),resourceBundle["label.view"],"_blank");
 	    }
 	    else
 	    {
@@ -73,7 +73,7 @@ function jsLinkMenu(linkName, realPath)
 	    }
 
         menuText = menuText 
-                 + menuEntry("/webfilesys/servlet?command=getFile&filePath=" + encodeURIComponent(realPath) + "&disposition=download",downloadLabel,null);
+                 + menuEntry("/doxee-internal/servlet?command=getFile&filePath=" + encodeURIComponent(realPath) + "&disposition=download",downloadLabel,null);
     }
 
     if (parent.readonly != 'true')
@@ -102,7 +102,7 @@ function jsLinkMenu(linkName, realPath)
 		        if ((fileExt == ".EXE") || (fileExt == ".COM") || (fileExt == ".BAT") || (fileExt == ".CMD"))
                 {
                     menuText = menuText 
-                             + menuEntry("/webfilesys/servlet?command=execProgram&progname=" + encodeURIComponent(realPath), resourceBundle["label.run"], null);
+                             + menuEntry("/doxee-internal/servlet?command=execProgram&progname=" + encodeURIComponent(realPath), resourceBundle["label.run"], null);
                 }
                 else
                 {
@@ -224,19 +224,19 @@ function editRemoteLink(path)
         editWinHeight = 700;
     }
     
-    editWin=window.open("/webfilesys/servlet?command=editFile&filePath=" + encodeURIComponent(path) + "&screenHeight=" + editWinHeight,"editWin","status=no,toolbar=no,location=no,menu=no,width=" + editWinWidth + ",height=" + editWinHeight + ",resizable=yes,left=20,top=5,screenX=20,screenY=5");
+    editWin=window.open("/doxee-internal/servlet?command=editFile&filePath=" + encodeURIComponent(path) + "&screenHeight=" + editWinHeight,"editWin","status=no,toolbar=no,location=no,menu=no,width=" + editWinWidth + ",height=" + editWinHeight + ",resizable=yes,left=20,top=5,screenX=20,screenY=5");
     editWin.focus();
     editWin.opener=self;
 }
 
 function origDir(path)
 {
-    parent.parent.frames[1].location.href="/webfilesys/servlet?command=exp&expandPath=" + encodeURIComponent(path) + "&fastPath=true";
+    parent.parent.frames[1].location.href="/doxee-internal/servlet?command=exp&expandPath=" + encodeURIComponent(path) + "&fastPath=true";
 }
 
 function emailLink(filePath)
 {
-    showPrompt('/webfilesys/servlet?command=emailFilePrompt&filePath=' + encodeURIComponent(filePath), '/webfilesys/xsl/emailFile.xsl', 400, 250);
+    showPrompt('/doxee-internal/servlet?command=emailFilePrompt&filePath=' + encodeURIComponent(filePath), '/doxee-internal/xsl/emailFile.xsl', 400, 250);
     
     document.emailForm.receiver.focus();
     

@@ -386,7 +386,7 @@ public class XslThumbnailHandler extends XslFileListHandlerBase
         	}
         }
 
-		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/webfilesys/xsl/thumbnails.xsl\"");
+		ProcessingInstruction xslRef = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"/doxee-internal/xsl/thumbnails.xsl\"");
 
 		Element fileListElement = doc.createElement("fileList");
 			
@@ -771,7 +771,7 @@ public class XslThumbnailHandler extends XslFileListHandlerBase
 						File thumbnailFile = new File(thumbFileName);
 						if (thumbnailFile.exists())
 						{
-                            srcFileName="/webfilesys/servlet?command=getThumb&imgFile=" + UTF8URLEncoder.encode(fullFileName);
+                            srcFileName="/doxee-internal/servlet?command=getThumb&imgFile=" + UTF8URLEncoder.encode(fullFileName);
                             useThumb = true;
                             
                             try
@@ -845,13 +845,13 @@ public class XslThumbnailHandler extends XslFileListHandlerBase
                                         {
                                             exifThumbWidth = exifData.getThumbHeight();
                                             exifThumbHeight = exifData.getThumbWidth();
-                                            srcFileName = "/webfilesys/servlet?command=exifThumb&imgFile=" + UTF8URLEncoder.encode(fullFileName) + "&rotate=true";
+                                            srcFileName = "/doxee-internal/servlet?command=exifThumb&imgFile=" + UTF8URLEncoder.encode(fullFileName) + "&rotate=true";
                                         }
                                         else
                                         {
                                             exifThumbWidth = exifData.getThumbWidth();
                                             exifThumbHeight = exifData.getThumbHeight();
-                                            srcFileName = "/webfilesys/servlet?command=exifThumb&imgFile=" + UTF8URLEncoder.encode(fullFileName);
+                                            srcFileName = "/doxee-internal/servlet?command=exifThumb&imgFile=" + UTF8URLEncoder.encode(fullFileName);
                                         }
                                             
                                         if (exifThumbHeight > exifThumbWidth)
@@ -877,7 +877,7 @@ public class XslThumbnailHandler extends XslFileListHandlerBase
 
 					if (!useThumb)
 					{
-						srcFileName = "/webfilesys/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(srcFileName);
+						srcFileName = "/doxee-internal/servlet?command=getFile&filePath=" + UTF8URLEncoder.encode(srcFileName);
 					}
 					
 					XmlUtil.setChildText(fileElement, "imgPath", srcFileName);

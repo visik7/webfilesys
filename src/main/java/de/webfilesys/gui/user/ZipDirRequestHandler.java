@@ -54,8 +54,8 @@ public class ZipDirRequestHandler extends UserRequestHandler
 		output.println("<HTML>");
 		output.println("<HEAD>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("</head>");
 		output.println("<body>");
@@ -192,11 +192,11 @@ public class ZipDirRequestHandler extends UserRequestHandler
 
 			if (isMobile()) 
 			{
-	            output.println("location.href='/webfilesys/servlet?command=mobile&cmd=folderFileList&absPath=" + UTF8URLEncoder.encode(actPath) + "';");
+	            output.println("location.href='/doxee-internal/servlet?command=mobile&cmd=folderFileList&absPath=" + UTF8URLEncoder.encode(actPath) + "';");
 			}
 			else
 			{
-	            output.println("location.href='/webfilesys/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
+	            output.println("location.href='/doxee-internal/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) + "';");
 			}
 
 			output.println("</script>");
@@ -278,11 +278,11 @@ public class ZipDirRequestHandler extends UserRequestHandler
         
         if (mobile != null) 
         {
-            output.println("<input type=\"button\" value=\"" + getResource("button.return","Return") + "\" onclick=\"window.location.href='/webfilesys/servlet?command=mobile&cmd=folderFileList&absPath=" + UTF8URLEncoder.encode(actPath) + "'\">");
+            output.println("<input type=\"button\" value=\"" + getResource("button.return","Return") + "\" onclick=\"window.location.href='/doxee-internal/servlet?command=mobile&cmd=folderFileList&absPath=" + UTF8URLEncoder.encode(actPath) + "'\">");
         }
         else
         {
-            output.println("<input type=\"button\" value=\"" + getResource("button.return","Return") + "\" onclick=\"window.location.href='/webfilesys/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) +"&fastPath=true'\">");
+            output.println("<input type=\"button\" value=\"" + getResource("button.return","Return") + "\" onclick=\"window.location.href='/doxee-internal/servlet?command=exp&expand=" + UTF8URLEncoder.encode(actPath) +"&fastPath=true'\">");
         }
 		
 		output.println("</td></tr>");

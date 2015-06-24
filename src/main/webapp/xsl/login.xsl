@@ -16,13 +16,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-<link rel="stylesheet" type="text/css" href="/webfilesys/styles/common.css" />
+<link rel="stylesheet" type="text/css" href="/doxee-internal/styles/common.css" />
 
 <link rel="stylesheet" type="text/css">
-  <xsl:attribute name="href">/webfilesys/styles/skins/<xsl:value-of select="/login/css" />.css</xsl:attribute>
+  <xsl:attribute name="href">/doxee-internal/styles/skins/<xsl:value-of select="/login/css" />.css</xsl:attribute>
 </link>
 
-<link rel="shortcut icon" href="/webfilesys/images/favicon.ico" />
+<link rel="shortcut icon" href="/doxee-internal/images/favicon.ico" />
 
 <title>
   WebFileSys: 
@@ -36,7 +36,7 @@
 
   function about()
   {
-      infowindow = window.open('/webfilesys/servlet?command=versionInfo','infowindow','status=no,toolbar=no,location=no,menu=no,width=300,height=220,resizable=no,left=250,top=150,screenX=250,screenY=150');
+      infowindow = window.open('/doxee-internal/servlet?command=versionInfo','infowindow','status=no,toolbar=no,location=no,menu=no,width=300,height=220,resizable=no,left=250,top=150,screenX=250,screenY=150');
       infowindow.focus();
   }
 
@@ -75,14 +75,14 @@
     <table border="0" cellpadding="5" cellspacing="0" width="100%">
       <tr>
         <td class="loginTitle" style="padding-left:10px">
-          <img src="/webfilesys/images/logo.gif" border="0" />
+          <img src="/doxee-internal/images/logo.gif" border="0" />
           <div style="width:100%;padding-top:10px;padding-left:0px;">
             <xsl:value-of select="/login/resources/msg[@key='label.login.title']/@value" />
           </div>
         </td>
         
         <td>
-          <form accept-charset="utf-8" name="passwordform" method="post" action="/webfilesys/servlet">
+          <form accept-charset="utf-8" name="passwordform" method="post" action="/doxee-internal/servlet">
             <input type="hidden" name="command" value="login" />
           
             <table border="0" cellpadding="5" cellspacing="0" width="100%">
@@ -125,7 +125,7 @@
               <tr>
                 <td colspan="2" align="right">
                   <xsl:if test="/login/resources/msg[@key='label.registerself']">
-                    <a class="dir" href="/webfilesys/servlet?command=registerSelf">
+                    <a class="dir" href="/doxee-internal/servlet?command=registerSelf">
                       <xsl:value-of select="/login/resources/msg[@key='label.registerself']/@value" />
                     </a>
                   </xsl:if>

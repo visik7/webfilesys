@@ -1,6 +1,6 @@
 function submitCmd()
 {
-    var ajaxUrl = '/webfilesys/servlet';
+    var ajaxUrl = '/doxee-internal/servlet';
 
     xmlRequestPost(ajaxUrl, getFormData(document.form1), showCmdOutput);
 }

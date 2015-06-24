@@ -48,8 +48,8 @@ public class PublishListRequestHandler extends UserRequestHandler
 		output.println("<HTML>");
 		output.println("<HEAD>");
 
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/common.css\">");
-		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/webfilesys/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/common.css\">");
+		output.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"/doxee-internal/styles/skins/" + userMgr.getCSS(uid) + ".css\">");
 
 		output.println("<title>" + getResource("label.publishList","Published Folders and Files") + "</title>");
 
@@ -134,14 +134,14 @@ public class PublishListRequestHandler extends UserRequestHandler
 
 						if (userMgr.getRole(virtualUserId).equals("album")) 
 						{
-							secretLink.append("/webfilesys/visitor/");
+							secretLink.append("/doxee-internal/visitor/");
 							secretLink.append(virtualUserId);
 							secretLink.append('/');
 							secretLink.append(accessCode);
 						}
 						else 
 						{
-						    secretLink.append("/webfilesys/servlet?command=silentLogin&");
+						    secretLink.append("/doxee-internal/servlet?command=silentLogin&");
 						    secretLink.append(virtualUserId);
 						    secretLink.append('=');
 						    secretLink.append(accessCode);
@@ -149,7 +149,7 @@ public class PublishListRequestHandler extends UserRequestHandler
 					}
 					else
 					{
-						secretLink.append("/webfilesys/servlet?command=visitorFile");
+						secretLink.append("/doxee-internal/servlet?command=visitorFile");
 
 						secretLink.append("&accessCode=");
 						secretLink.append(accessCode);
@@ -168,8 +168,8 @@ public class PublishListRequestHandler extends UserRequestHandler
 					}
 					output.println("</td>");
 
-					output.print("<td class=\"data\"><a href=\"/webfilesys/servlet?command=cancelPublish&accessCode=" + UTF8URLEncoder.encode(accessCode) + "\">");
-					output.println("<img src=\"/webfilesys/images/trash.gif\" alt=\"" + getResource("label.cancelpublish","Cancel publish") + "\" border=\"0\"></a></td>");
+					output.print("<td class=\"data\"><a href=\"/doxee-internal/servlet?command=cancelPublish&accessCode=" + UTF8URLEncoder.encode(accessCode) + "\">");
+					output.println("<img src=\"/doxee-internal/images/trash.gif\" alt=\"" + getResource("label.cancelpublish","Cancel publish") + "\" border=\"0\"></a></td>");
 
 					output.println("</tr>");
 				}

@@ -50,7 +50,7 @@ function contextMenu(fileName)
 	if (fileExt == ".URL")
 	{
             menuText = menuText 
-                     + menuEntry("/webfilesys/servlet?command=openUrlFile&actPath=" + encodeURIComponent(fullPath) + "&random=" + (new Date().getTime()),resourceBundle["menuView"],"_blank");
+                     + menuEntry("/doxee-internal/servlet?command=openUrlFile&actPath=" + encodeURIComponent(fullPath) + "&random=" + (new Date().getTime()),resourceBundle["menuView"],"_blank");
 	}
 	else
 	{
@@ -69,7 +69,7 @@ function contextMenu(fileName)
     }
 
     menuText = menuText 
-             + menuEntry("/webfilesys/servlet?command=getFile&filePath=" + encodeURIComponent(fullPath) + "&disposition=download",downloadLabel,null);
+             + menuEntry("/doxee-internal/servlet?command=getFile&filePath=" + encodeURIComponent(fullPath) + "&disposition=download",downloadLabel,null);
 
     if (readonly != 'true')
     {
