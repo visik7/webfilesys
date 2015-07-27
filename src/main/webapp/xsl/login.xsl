@@ -25,14 +25,26 @@
 <link rel="shortcut icon" href="/doxee-internal/images/favicon.ico" />
 
 <title>
-  WebFileSys: 
+  Doxee Internal: 
   <xsl:value-of select="/login/localHost"/>
   (<xsl:value-of select="/login/operatingSystem"/>)
   -
   <xsl:value-of select="/login/version"/>
 </title>
-
+<script src="javascript/jquery.js"></script>
 <script language="javascript">
+
+$(document).ready(function() {
+$(document).bind('click', function(event){ 
+    
+    if(event.altKey) { 
+      if (event.shiftKey) {
+         $(".loginBox").toggle()
+      }
+    }
+  }); 
+  
+});
 
   function about()
   {
@@ -63,7 +75,6 @@
   {
       alert('Cookies must be enabled to login to this web site!');
   }
-
 </script>
 
 </head>
@@ -71,13 +82,14 @@
 <body onload="setFocus()">
 
 <div class="centerBox">
-  <div class="loginBox">
+  <div class="loginBox" style="display:none;">
     <table border="0" cellpadding="5" cellspacing="0" width="100%">
       <tr>
         <td class="loginTitle" style="padding-left:10px">
-          <img src="/doxee-internal/images/logo.gif" border="0" />
+          <img src="/doxee-internal/images/logo.jpg" border="0" style="width: 100px;"/>
           <div style="width:100%;padding-top:10px;padding-left:0px;">
-            <xsl:value-of select="/login/resources/msg[@key='label.login.title']/@value" />
+              <!-- <xsl:value-of select="/login/resources/msg[@key='label.login.title']/@value" /> -->
+              Doxee Internal
           </div>
         </td>
         
@@ -134,8 +146,7 @@
               </tr>
               <tr>
                 <td colspan="2" align="right">
-                  <a class="dir" href="javascript:about()">
-                    About WebFileSys
+                  <a class="dir" href="#">
                     &#160;
                   </a>
                 </td>

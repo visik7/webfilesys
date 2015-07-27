@@ -304,7 +304,7 @@
         <a href="#" onclick="window.open('/doxee-internal/servlet?command=versionInfo','infowindow','status=no,toolbar=no,location=no,menu=no,width=300,height=220,resizable=no,left=250,top=150,screenX=250,screenY=150')">
           <xsl:attribute name="title">About WebFileSys</xsl:attribute>
           <img id="pauseImg" border="0">
-            <xsl:attribute name="src">/doxee-internal/images/logo.gif</xsl:attribute>
+            <xsl:attribute name="src">/doxee-internal/images/logo.jpg</xsl:attribute>
           </img>
         </a>
       </div>
