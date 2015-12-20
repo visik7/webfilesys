@@ -109,7 +109,7 @@
 	-->
   </dependencies>
   <build>
-    <finalName>webfilesys</finalName>
+    <finalName>doxee-internal</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
